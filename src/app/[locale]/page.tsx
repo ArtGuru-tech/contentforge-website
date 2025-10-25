@@ -58,44 +58,44 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="px-6 py-20 max-w-7xl mx-auto text-center bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      <section className="px-4 sm:px-6 py-12 sm:py-16 md:py-20 max-w-7xl mx-auto text-center bg-gradient-to-br from-[#003399] to-[#001155] text-white">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
           {t('hero.headline1')}<br />
           <span className="text-[#FFD700]">{t('hero.headline2')}</span>
         </h1>
 
-        <p className="text-blue-100 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+        <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
           {t('hero.description')}
         </p>
 
-        <div className="flex flex-col items-center gap-6 mb-12">
+        <div className="flex flex-col items-center gap-4 sm:gap-6 mb-8 sm:mb-12">
           <Button
-            className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold"
+            className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-sm"
             onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('hero.ctaButton')}
           </Button>
 
           {/* Trust Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-white text-sm md:text-base">
-            <div className="flex items-center gap-2">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-white text-xs sm:text-sm md:text-base max-w-2xl">
+            <div className="flex items-center gap-2 justify-center">
               <span className="text-[#FFD700] font-bold">✓</span>
-              <span>{t('hero.trustBar1')}</span>
+              <span className="whitespace-nowrap">{t('hero.trustBar1')}</span>
             </div>
             <div className="hidden md:block text-blue-300">|</div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 justify-center">
               <span className="text-[#FFD700] font-bold">✓</span>
-              <span>{t('hero.trustBar2')}</span>
+              <span className="whitespace-nowrap">{t('hero.trustBar2')}</span>
             </div>
             <div className="hidden md:block text-blue-300">|</div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 justify-center">
               <span className="text-[#FFD700] font-bold">✓</span>
-              <span>{t('hero.trustBar3')}</span>
+              <span className="whitespace-nowrap">{t('hero.trustBar3')}</span>
             </div>
             <div className="hidden md:block text-blue-300">|</div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 justify-center">
               <span className="text-[#FFD700] font-bold">✓</span>
-              <span>{t('hero.trustBar4')}</span>
+              <span className="whitespace-nowrap">{t('hero.trustBar4')}</span>
             </div>
           </div>
         </div>
