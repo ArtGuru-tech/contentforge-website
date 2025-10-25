@@ -1,0 +1,10 @@
+{
+  "lite_price": 97,
+  "pro_price": 397,
+  "lite_renewal": false,
+  "pro_renewal": false,
+  "show_badge": true,
+  "badge_text": "🚀 LIMITED TIME OFFER",
+  "urgency_text": "Special pricing — Price increases soon",
+  "cta_text": "Get Started Now"
+}

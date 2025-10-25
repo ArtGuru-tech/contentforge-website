@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
+import PricingSection from "@/components/PricingSection"
 
 export default function Home() {
   return (
@@ -596,42 +597,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="pricing" className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="bg-[#FFD700] text-[#003399] px-4 py-2 rounded-full inline-block text-sm mb-8 font-semibold">
-            Unlimited Business Library
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Discover done-for-you<br />
-            digital products you can<br />
-            <span className="text-[#FFD700]">sell or use in any way</span>
-          </h2>
-          <p className="text-blue-100 text-lg mb-12 max-w-2xl mx-auto">
-            Imagine you have more than 1000 business and marketing video courses, books, templates, audios,
-            and more. Your own digital library without limits.
-          </p>
-
-          <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold mb-12">
-            ▶ Learn about Master Library
-          </Button>
-
-          {/* Animated Avatars Section */}
-          <div className="flex justify-center items-center space-x-4 mb-4">
-            <div className="flex -space-x-2">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
-            </div>
-            <div className="flex items-center space-x-1 text-[#FFD700]">
-              <span>★★★★★</span>
-            </div>
-          </div>
-          <p className="text-blue-200 text-sm">Trusted by early adopters</p>
-        </div>
-      </section>
+      {/* Pricing Section */}
+      <PricingSection />
 
       {/* Footer */}
       <footer className="px-6 py-16 bg-gray-900 text-white border-t border-gray-800">
