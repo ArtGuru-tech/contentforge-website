@@ -59,30 +59,44 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="px-6 py-20 max-w-7xl mx-auto text-center bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <div className="mb-6">
-          <span className="text-blue-200 text-sm">{t('hero.tagline')}</span>
-        </div>
-
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           {t('hero.headline1')}<br />
           <span className="text-[#FFD700]">{t('hero.headline2')}</span>
         </h1>
 
-        <p className="text-blue-100 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+        <p className="text-blue-100 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
           {t('hero.description')}
         </p>
 
-        <div className="flex flex-col items-center gap-4 mb-12">
-          <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold">
+        <div className="flex flex-col items-center gap-6 mb-12">
+          <Button
+            className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold"
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             {t('hero.ctaButton')}
           </Button>
 
-          {/* 14-Day Money-Back Guarantee Badge */}
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-[#FFD700] rounded-full px-6 py-3">
-            <div className="w-8 h-8 bg-[#FFD700] rounded-full flex items-center justify-center">
-              <span className="text-[#003399] font-bold text-lg">✓</span>
+          {/* Trust Bar */}
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-white text-sm md:text-base">
+            <div className="flex items-center gap-2">
+              <span className="text-[#FFD700] font-bold">✓</span>
+              <span>{t('hero.trustBar1')}</span>
             </div>
-            <span className="text-white font-semibold">{t('hero.guarantee')}</span>
+            <div className="hidden md:block text-blue-300">|</div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#FFD700] font-bold">✓</span>
+              <span>{t('hero.trustBar2')}</span>
+            </div>
+            <div className="hidden md:block text-blue-300">|</div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#FFD700] font-bold">✓</span>
+              <span>{t('hero.trustBar3')}</span>
+            </div>
+            <div className="hidden md:block text-blue-300">|</div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#FFD700] font-bold">✓</span>
+              <span>{t('hero.trustBar4')}</span>
+            </div>
           </div>
         </div>
 
