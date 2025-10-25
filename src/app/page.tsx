@@ -644,7 +644,7 @@ export default function Home() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
                 <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
+                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Partner Terms</a></li>
               </ul>
             </div>
