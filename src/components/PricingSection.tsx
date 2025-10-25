@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useTranslations, useLocale } from 'next-intl'
 
 interface PricingConfig {
   lite_price: number
@@ -16,11 +17,23 @@ interface PricingConfig {
 }
 
 export default function PricingSection() {
+  const t = useTranslations('pricing')
+  const locale = useLocale()
   const [config, setConfig] = useState<PricingConfig | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/pricing-config.json')
+    // Try to load locale-specific config, fallback to default
+    const configPath = locale === 'en' ? '/pricing-config.json' : `/pricing-config-${locale}.json`
+
+    fetch(configPath)
+      .then(res => {
+        if (!res.ok && locale !== 'en') {
+          // Fallback to default config
+          return fetch('/pricing-config.json')
+        }
+        return res
+      })
       .then(res => res.json())
       .then(data => {
         setConfig(data)
@@ -30,13 +43,13 @@ export default function PricingSection() {
         console.error('Failed to load pricing config:', err)
         setLoading(false)
       })
-  }, [])
+  }, [locale])
 
   if (loading) {
     return (
       <section id="pricing" className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-blue-200">Loading pricing...</p>
+          <p className="text-blue-200">{t('loading')}</p>
         </div>
       </section>
     )
@@ -57,10 +70,10 @@ export default function PricingSection() {
             </div>
           )}
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Choose Your Plan
+            {t('headline')}
           </h2>
           <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-4">
-            Get instant access to 1000+ done-for-you digital products
+            {t('description')}
           </p>
           {config.urgency_text && (
             <p className="text-[#FFD700] text-sm font-semibold">
@@ -75,15 +88,15 @@ export default function PricingSection() {
           <Card className="bg-white text-gray-900 border-0 shadow-xl">
             <CardContent className="p-8">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">Lite Plan</h3>
-                <p className="text-gray-600 mb-6">Perfect for getting started</p>
+                <h3 className="text-2xl font-bold mb-2">{t('liteTitle')}</h3>
+                <p className="text-gray-600 mb-6">{t('liteDesc')}</p>
 
                 <div className="mb-6">
                   <div className="text-5xl font-bold text-[#003399] mb-2">
                     ${config.lite_price}
                   </div>
                   <p className="text-gray-600 text-sm">
-                    {config.lite_renewal ? 'per month' : 'one-time payment'}
+                    {config.lite_renewal ? t('perMonth') : t('oneTime')}
                   </p>
                 </div>
               </div>
@@ -93,25 +106,25 @@ export default function PricingSection() {
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-700">Access to 500+ digital products</p>
+                  <p className="text-gray-700">{t('liteFeature1')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-700">Ebooks, templates, and guides</p>
+                  <p className="text-gray-700">{t('liteFeature2')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-700">Private Label Rights</p>
+                  <p className="text-gray-700">{t('liteFeature3')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-700">Lifetime access</p>
+                  <p className="text-gray-700">{t('liteFeature4')}</p>
                 </div>
               </div>
 
@@ -125,20 +138,20 @@ export default function PricingSection() {
           <Card className="bg-gradient-to-br from-[#FFD700] to-[#FFA500] text-gray-900 border-0 shadow-xl relative overflow-hidden">
             {/* Most Popular Badge */}
             <div className="absolute top-4 right-4 bg-[#003399] text-white px-3 py-1 rounded-full text-xs font-semibold">
-              MOST POPULAR
+              {t('mostPopular')}
             </div>
 
             <CardContent className="p-8">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">Pro Plan</h3>
-                <p className="text-gray-800 mb-6">Everything you need to succeed</p>
+                <h3 className="text-2xl font-bold mb-2">{t('proTitle')}</h3>
+                <p className="text-gray-800 mb-6">{t('proDesc')}</p>
 
                 <div className="mb-6">
                   <div className="text-5xl font-bold text-[#003399] mb-2">
                     ${config.pro_price}
                   </div>
                   <p className="text-gray-800 text-sm">
-                    {config.pro_renewal ? 'per month' : 'one-time payment'}
+                    {config.pro_renewal ? t('perMonth') : t('oneTime')}
                   </p>
                 </div>
               </div>
@@ -148,37 +161,37 @@ export default function PricingSection() {
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-900 font-semibold">Everything in Lite, plus:</p>
+                  <p className="text-gray-900 font-semibold">{t('proFeature1')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-900">Access to 1000+ digital products</p>
+                  <p className="text-gray-900">{t('proFeature2')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-900">Video & audio courses</p>
+                  <p className="text-gray-900">{t('proFeature3')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-900">Premium templates & resources</p>
+                  <p className="text-gray-900">{t('proFeature4')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-900">Monthly new content additions</p>
+                  <p className="text-gray-900">{t('proFeature5')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-white text-xs">✓</span>
                   </div>
-                  <p className="text-gray-900">Priority support</p>
+                  <p className="text-gray-900">{t('proFeature6')}</p>
                 </div>
               </div>
 
@@ -196,19 +209,19 @@ export default function PricingSection() {
               <div className="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center">
                 <span className="text-[#003399] font-bold text-lg">✓</span>
               </div>
-              <span className="text-white font-semibold">14-Day Money-Back Guarantee</span>
+              <span className="text-white font-semibold">{t('guarantee')}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center">
                 <span className="text-[#003399] font-bold text-lg">🔒</span>
               </div>
-              <span className="text-white font-semibold">Secure Payment</span>
+              <span className="text-white font-semibold">{t('securePayment')}</span>
             </div>
           </div>
 
           {/* Payment Processors */}
           <div className="mb-8">
-            <p className="text-blue-200 text-xs mb-4 uppercase tracking-wide">Secure Payment Methods</p>
+            <p className="text-blue-200 text-xs mb-4 uppercase tracking-wide">{t('paymentMethods')}</p>
             <div className="flex justify-center items-center gap-6 flex-wrap">
               {/* Stripe */}
               <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
@@ -254,7 +267,7 @@ export default function PricingSection() {
               <span>★★★★★</span>
             </div>
           </div>
-          <p className="text-blue-200 text-sm mt-4">Trusted by early adopters</p>
+          <p className="text-blue-200 text-sm mt-4">{t('trustedBy')}</p>
         </div>
       </div>
     </section>

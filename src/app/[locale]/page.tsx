@@ -5,8 +5,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import PricingSection from "@/components/PricingSection"
+import { useTranslations } from 'next-intl'
+import LanguageSwitcher from "@/components/LanguageSwitcher"
 
 export default function Home() {
+  const t = useTranslations();
+
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       {/* Header */}
@@ -15,7 +19,7 @@ export default function Home() {
           <div className="w-10 h-10 relative">
             <img
               src="/logo.svg"
-              alt="ContentForge Logo"
+              alt={t('hero.logoAlt')}
               className="w-full h-full object-contain"
             />
           </div>
@@ -23,9 +27,9 @@ export default function Home() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.home')}</a>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.resources')}</a>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.freeResources')}</a>
           <a
             href="#pricing"
             className="text-gray-600 hover:text-[#003399] transition-colors font-medium"
@@ -34,38 +38,41 @@ export default function Home() {
               document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Pricing
+            {t('nav.pricing')}
           </a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <a href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.blog')}</a>
+          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.contact')}</Link>
         </nav>
 
-        <Button
-          className="bg-[#003399] hover:bg-[#002266] text-white border-0"
-          onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-        >
-          Subscribe
-        </Button>
+        <div className="flex items-center gap-4">
+          <LanguageSwitcher />
+          <Button
+            className="bg-[#003399] hover:bg-[#002266] text-white border-0"
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            {t('nav.subscribe')}
+          </Button>
+        </div>
       </header>
 
       {/* Hero Section */}
       <section className="px-6 py-20 max-w-7xl mx-auto text-center bg-gradient-to-br from-[#003399] to-[#001155] text-white">
         <div className="mb-6">
-          <span className="text-blue-200 text-sm">We create digital infoproducts for you</span>
+          <span className="text-blue-200 text-sm">{t('hero.tagline')}</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Done-For-You Digital Products<br />
-          <span className="text-[#FFD700]">to Grow Your Business</span>
+          {t('hero.headline1')}<br />
+          <span className="text-[#FFD700]">{t('hero.headline2')}</span>
         </h1>
 
         <p className="text-blue-100 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-          You can instantly have your own digital products. Rebrand, sell, or use in any way. Without high investments or months of creation.
+          {t('hero.description')}
         </p>
 
         <div className="flex flex-col items-center gap-4 mb-12">
           <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold">
-            ▶ Learn about Master Library
+            {t('hero.ctaButton')}
           </Button>
 
           {/* 14-Day Money-Back Guarantee Badge */}
@@ -73,7 +80,7 @@ export default function Home() {
             <div className="w-8 h-8 bg-[#FFD700] rounded-full flex items-center justify-center">
               <span className="text-[#003399] font-bold text-lg">✓</span>
             </div>
-            <span className="text-white font-semibold">14-Day Money-Back Guarantee</span>
+            <span className="text-white font-semibold">{t('hero.guarantee')}</span>
           </div>
         </div>
 
@@ -90,7 +97,7 @@ export default function Home() {
             <span>★★★★★</span>
           </div>
         </div>
-        <p className="text-blue-200 text-sm">Trusted by early adopters</p>
+        <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
 
         {/* Product Showcase */}
         <div className="mt-16 relative">
@@ -99,30 +106,30 @@ export default function Home() {
               <Card className="bg-white text-gray-900 border-0 shadow-lg">
                 <CardContent className="p-4">
                   <div className="w-full h-32 bg-gradient-to-br from-[#003399] to-[#0066CC] rounded mb-4 flex items-center justify-center">
-                    <span className="text-white font-bold">EBOOK</span>
+                    <span className="text-white font-bold">{t('productShowcase.ebook')}</span>
                   </div>
-                  <h3 className="text-gray-900 font-semibold">Business Guide</h3>
-                  <p className="text-gray-600 text-sm">Complete business strategy</p>
+                  <h3 className="text-gray-900 font-semibold">{t('productShowcase.businessGuide')}</h3>
+                  <p className="text-gray-600 text-sm">{t('productShowcase.businessGuideDesc')}</p>
                 </CardContent>
               </Card>
 
               <Card className="bg-white text-gray-900 border-0 shadow-lg">
                 <CardContent className="p-4">
                   <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#40E0D0] rounded mb-4 flex items-center justify-center">
-                    <span className="text-white font-bold">COURSE</span>
+                    <span className="text-white font-bold">{t('productShowcase.course')}</span>
                   </div>
-                  <h3 className="text-gray-900 font-semibold">Video Training</h3>
-                  <p className="text-gray-600 text-sm">Step-by-step tutorials</p>
+                  <h3 className="text-gray-900 font-semibold">{t('productShowcase.videoTraining')}</h3>
+                  <p className="text-gray-600 text-sm">{t('productShowcase.videoTrainingDesc')}</p>
                 </CardContent>
               </Card>
 
               <Card className="bg-white text-gray-900 border-0 shadow-lg">
                 <CardContent className="p-4">
                   <div className="w-full h-32 bg-gradient-to-br from-[#FFD700] to-[#FFA500] rounded mb-4 flex items-center justify-center">
-                    <span className="text-white font-bold">TEMPLATE</span>
+                    <span className="text-white font-bold">{t('productShowcase.template')}</span>
                   </div>
-                  <h3 className="text-gray-900 font-semibold">Ready Templates</h3>
-                  <p className="text-gray-600 text-sm">Professional designs</p>
+                  <h3 className="text-gray-900 font-semibold">{t('productShowcase.readyTemplates')}</h3>
+                  <p className="text-gray-600 text-sm">{t('productShowcase.readyTemplatesDesc')}</p>
                 </CardContent>
               </Card>
             </div>
@@ -132,7 +139,7 @@ export default function Home() {
 
       {/* Trusted By Section */}
       <section className="px-6 py-12 max-w-7xl mx-auto text-center bg-gray-50">
-        <p className="text-gray-500 text-sm mb-8 font-medium">TRUSTED BY TOP BRANDS AND INDIVIDUALS WORLDWIDE</p>
+        <p className="text-gray-500 text-sm mb-8 font-medium">{t('trustedBySection.title')}</p>
         <div className="flex justify-center items-center space-x-12 opacity-60">
           <div className="text-gray-600 font-semibold">CPHERE</div>
           <div className="text-gray-600 font-semibold">CEO MasterMind</div>
@@ -146,15 +153,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Discover Master Library
+              {t('sellDigitalProducts.badge')}
             </Button>
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-              Sell digital products that<br />
-              are ready to market
+              {t('sellDigitalProducts.headline').split('\n')[0]}<br />
+              {t('sellDigitalProducts.headline').split('\n')[1]}
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Imagine you have over 1000 done-for-you digital products. Including video courses, ebooks, templates,
-              and more. Sell them as your own products or use the content anywhere. <strong className="text-[#003399]">You set the limits</strong>.
+              {t('sellDigitalProducts.description')} <strong className="text-[#003399]">{t('sellDigitalProducts.emphasisText')}</strong>.
             </p>
           </div>
 
@@ -164,19 +170,19 @@ export default function Home() {
               <div>
                 <div className="space-y-6">
                   <div className="bg-gray-800 rounded-lg p-6">
-                    <h3 className="text-white font-semibold mb-2">Demanded Content</h3>
-                    <p className="text-gray-400 text-sm">We create best-selling topics only that people buy most of the time.</p>
+                    <h3 className="text-white font-semibold mb-2">{t('sellDigitalProducts.demandedContentTitle')}</h3>
+                    <p className="text-gray-400 text-sm">{t('sellDigitalProducts.demandedContentDesc')}</p>
                   </div>
                   <div className="bg-gray-800 rounded-lg p-6">
-                    <h3 className="text-white font-semibold mb-2">Constantly Updated</h3>
-                    <p className="text-gray-400 text-sm">The latest trends and strategies, ensuring reliability and accuracy of information.</p>
+                    <h3 className="text-white font-semibold mb-2">{t('sellDigitalProducts.constantlyUpdatedTitle')}</h3>
+                    <p className="text-gray-400 text-sm">{t('sellDigitalProducts.constantlyUpdatedDesc')}</p>
                   </div>
                 </div>
               </div>
               <div>
                 <Card className="bg-[#003399] text-white p-8 border-0">
-                  <h3 className="text-2xl font-bold mb-4">Private Label Rights</h3>
-                  <p className="mb-6">Sell, rebrand, edit, and use as you want, without any restrictions.</p>
+                  <h3 className="text-2xl font-bold mb-4">{t('sellDigitalProducts.plrTitle')}</h3>
+                  <p className="mb-6">{t('sellDigitalProducts.plrDesc')}</p>
                   <div className="bg-[#002266] rounded-lg p-4">
                     <div className="text-3xl font-bold text-[#FFD700]">📋</div>
                   </div>
@@ -188,16 +194,16 @@ export default function Home() {
           {/* Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="bg-gray-900 text-white p-8 border-0">
-              <div className="text-4xl font-bold text-[#FFD700] mb-2">1000+</div>
-              <h3 className="text-xl font-semibold mb-4">Digital Products</h3>
-              <p className="text-gray-400">Almost unlimited selection in one of the biggest libraries. Endless options to use.</p>
+              <div className="text-4xl font-bold text-[#FFD700] mb-2">{t('sellDigitalProducts.statsDigitalProducts')}</div>
+              <h3 className="text-xl font-semibold mb-4">{t('sellDigitalProducts.statsDigitalProductsTitle')}</h3>
+              <p className="text-gray-400">{t('sellDigitalProducts.statsDigitalProductsDesc')}</p>
             </Card>
             <Card className="bg-gray-100 p-8 border-0">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">15 Media Formats</h3>
-              <p className="text-gray-600 mb-4">Business, Marketing, Social Media, E-commerce, and Entrepreneurship.</p>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">{t('sellDigitalProducts.mediaFormatsTitle')}</h3>
+              <p className="text-gray-600 mb-4">{t('sellDigitalProducts.mediaFormatsDesc')}</p>
               <div className="mt-6">
-                <h4 className="font-semibold mb-2 text-[#003399]">Premium Quality</h4>
-                <p className="text-gray-600 text-sm">Interesting content that is inspired by the best brands in the world.</p>
+                <h4 className="font-semibold mb-2 text-[#003399]">{t('sellDigitalProducts.premiumQualityTitle')}</h4>
+                <p className="text-gray-600 text-sm">{t('sellDigitalProducts.premiumQualityDesc')}</p>
               </div>
             </Card>
           </div>
@@ -208,11 +214,11 @@ export default function Home() {
       <section className="px-6 py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gray-900 text-white px-4 py-2 rounded-full inline-block text-sm mb-8">
-            You have complete freedom
+            {t('unlimitedOptions.badge')}
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-gray-900">
-            Unlimited options to<br />
-            use the products
+            {t('unlimitedOptions.headline').split('\n')[0]}<br />
+            {t('unlimitedOptions.headline').split('\n')[1]}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -220,24 +226,24 @@ export default function Home() {
               <div className="w-16 h-16 bg-[#003399] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">💼</span>
               </div>
-              <h3 className="font-semibold mb-2 text-gray-900">Expand product portfolio</h3>
+              <h3 className="font-semibold mb-2 text-gray-900">{t('unlimitedOptions.option1')}</h3>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[#00CED1] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">🧲</span>
               </div>
-              <h3 className="font-semibold mb-2 text-gray-900">Offer as free leadmagnet</h3>
+              <h3 className="font-semibold mb-2 text-gray-900">{t('unlimitedOptions.option2')}</h3>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">🎓</span>
               </div>
-              <h3 className="font-semibold mb-2 text-gray-900">Educate your audience</h3>
+              <h3 className="font-semibold mb-2 text-gray-900">{t('unlimitedOptions.option3')}</h3>
             </div>
           </div>
 
           <Button className="bg-[#003399] hover:bg-[#002266] text-white px-8 py-3 rounded-full text-lg font-semibold mt-12">
-            ▶ Explore Master Library
+            {t('unlimitedOptions.ctaButton')}
           </Button>
         </div>
       </section>
@@ -250,25 +256,25 @@ export default function Home() {
               <div className="w-8 h-8 bg-[#FFD700] rounded-full flex items-center justify-center">
                 <span className="text-gray-900 text-sm">★</span>
               </div>
-              <span className="text-sm text-gray-400">Rated 4.7/5 overall by our users</span>
+              <span className="text-sm text-gray-400">{t('testimonials.badge')}</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold">"Must have content"</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">{t('testimonials.headline')}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="text-center">
               <div className="text-[#FFD700] text-2xl mb-2">★</div>
-              <div className="text-lg font-semibold">Trustpilot 4.7/5</div>
+              <div className="text-lg font-semibold">{t('testimonials.trustpilot')}</div>
               <div className="text-[#FFD700]">★★★★★</div>
             </div>
             <div className="text-center">
               <div className="text-[#00CED1] text-2xl mb-2">f</div>
-              <div className="text-lg font-semibold">Facebook 5.0/5</div>
+              <div className="text-lg font-semibold">{t('testimonials.facebook')}</div>
               <div className="text-[#FFD700]">★★★★★</div>
             </div>
             <div className="text-center">
               <div className="text-[#003399] text-2xl mb-2">G</div>
-              <div className="text-lg font-semibold">Google 4.5/5</div>
+              <div className="text-lg font-semibold">{t('testimonials.google')}</div>
               <div className="text-[#FFD700]">★★★★★</div>
             </div>
           </div>
@@ -276,26 +282,26 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="bg-gray-800 border-gray-700 p-6 border-0">
               <div className="text-[#FFD700] text-xl mb-4">"</div>
-              <p className="text-gray-300 mb-4">I saved thousands of hours of creation with one investment.</p>
-              <p className="text-gray-400 text-sm mb-4">Now I can focus on changing the lives of others with information that not everybody has access to.</p>
+              <p className="text-gray-300 mb-4">{t('testimonials.testimonial1Quote')}</p>
+              <p className="text-gray-400 text-sm mb-4">{t('testimonials.testimonial1Description')}</p>
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-[#003399] rounded-full"></div>
                 <div>
-                  <div className="font-semibold">Emily B.</div>
-                  <div className="text-gray-400 text-sm">United Kingdom</div>
+                  <div className="font-semibold">{t('testimonials.testimonial1Name')}</div>
+                  <div className="text-gray-400 text-sm">{t('testimonials.testimonial1Location')}</div>
                 </div>
               </div>
             </Card>
 
             <Card className="bg-gray-800 border-gray-700 p-6 border-0">
               <div className="text-[#FFD700] text-xl mb-4">"</div>
-              <p className="text-gray-300 mb-4">It saved me so much time! I'm happy to have found it right now.</p>
-              <p className="text-gray-400 text-sm mb-4">I believe this package to have saved me 6 months of development time and boosted my credibility instantly.</p>
+              <p className="text-gray-300 mb-4">{t('testimonials.testimonial2Quote')}</p>
+              <p className="text-gray-400 text-sm mb-4">{t('testimonials.testimonial2Description')}</p>
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-[#00CED1] rounded-full"></div>
                 <div>
-                  <div className="font-semibold">James W.</div>
-                  <div className="text-gray-400 text-sm">Australia</div>
+                  <div className="font-semibold">{t('testimonials.testimonial2Name')}</div>
+                  <div className="text-gray-400 text-sm">{t('testimonials.testimonial2Location')}</div>
                 </div>
               </div>
             </Card>
@@ -308,15 +314,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="bg-[#FFD700] text-[#003399] px-4 py-2 rounded-full inline-block text-sm mb-8 font-semibold">
-              Premium infoproduct from A to Z
+              {t('customProduct.badge')}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Get custom digital product<br />
-              <span className="text-[#FFD700]">tailored to your brand</span>
+              {t('customProduct.headline')}<br />
+              <span className="text-[#FFD700]">{t('customProduct.headlineEmphasis')}</span>
             </h2>
             <p className="text-blue-100 text-lg max-w-3xl mx-auto">
-              Now you can have fully custom-made, highest-quality infoproduct with complete ownership license.
-              Grow your sales, get leads, engage your audience and increase credibility.
+              {t('customProduct.description')}
             </p>
           </div>
 
@@ -325,13 +330,13 @@ export default function Home() {
               <div className="w-full h-48 bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
                 <span className="text-gray-600 font-bold">EBOOK MOCKUP</span>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Produced by experts</h3>
-              <p className="text-gray-600 text-sm">Each part of the resource is created by our experienced team.</p>
+              <h3 className="text-lg font-semibold mb-2">{t('customProduct.expertTitle')}</h3>
+              <p className="text-gray-600 text-sm">{t('customProduct.expertDesc')}</p>
             </Card>
 
             <Card className="bg-gray-800 border-gray-700 p-6 border-0">
-              <h3 className="text-white text-lg font-semibold mb-4">Professional designs</h3>
-              <p className="text-gray-400 text-sm mb-6">We bring your digital products to life with beautiful mockups.</p>
+              <h3 className="text-white text-lg font-semibold mb-4">{t('customProduct.designTitle')}</h3>
+              <p className="text-gray-400 text-sm mb-6">{t('customProduct.designDesc')}</p>
               <div className="w-full h-32 bg-[#003399] rounded-lg flex items-center justify-center">
                 <span className="text-[#FFD700]">3D MOCKUP</span>
               </div>
@@ -339,22 +344,22 @@ export default function Home() {
 
             <div className="space-y-4">
               <Card className="bg-white text-gray-900 p-6 border-0">
-                <h3 className="font-semibold mb-2">Engaging content</h3>
-                <p className="text-gray-600 text-sm">You'll get content that people actually want to read.</p>
+                <h3 className="font-semibold mb-2">{t('customProduct.contentTitle')}</h3>
+                <p className="text-gray-600 text-sm">{t('customProduct.contentDesc')}</p>
               </Card>
               <Card className="bg-[#00CED1] text-white p-6 border-0">
-                <h3 className="font-semibold mb-2">Full Ownership</h3>
-                <p className="text-sm">You receive full rights to the product, ensuring it's yours to use.</p>
+                <h3 className="font-semibold mb-2">{t('customProduct.ownershipTitle')}</h3>
+                <p className="text-sm">{t('customProduct.ownershipDesc')}</p>
               </Card>
             </div>
           </div>
 
           <div className="text-center">
             <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold mb-8">
-              ▶ Get Custom Digital Product
+              {t('customProduct.ctaButton')}
             </Button>
             <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-6 py-2 rounded-full text-sm font-semibold ml-4">
-              Up to 6 Formats
+              {t('customProduct.formatsBadge')}
             </Button>
           </div>
         </div>
@@ -365,15 +370,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="bg-[#003399] text-white px-4 py-2 rounded-full inline-block text-sm mb-8 font-semibold">
-              Grow your business to the next level
+              {t('productCategories.badge')}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              What digital products<br />
-              you can get?
+              {t('productCategories.headline').split('\n')[0]}<br />
+              {t('productCategories.headline').split('\n')[1]}
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Stop wasting time searching for quality content or creating products from scratch.
-              Eliminate the barrier of huge initial investments and no product ideas.
+              {t('productCategories.description')}
             </p>
           </div>
 
@@ -382,12 +386,11 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="bg-gray-900 text-white px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  200+ Premium PLR Ebooks
+                  {t('productCategories.ebooksBadge')}
                 </div>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Ebooks and Guidebooks</h3>
+                <h3 className="text-3xl font-bold mb-6 text-gray-900">{t('productCategories.ebooksTitle')}</h3>
                 <p className="text-gray-600 mb-6">
-                  Give your audience engaging, quality reading. Only real and useful information.
-                  Both, in-depth and straightforward explanations on topics your customers want to consume.
+                  {t('productCategories.ebooksDesc')}
                 </p>
 
                 <div className="grid grid-cols-3 gap-4 mb-6">
@@ -395,24 +398,24 @@ export default function Home() {
                     <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">✓</span>
                     </div>
-                    <span className="text-sm text-gray-700">Unique content</span>
+                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature1')}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">✓</span>
                     </div>
-                    <span className="text-sm text-gray-700">20-150 Pages per book</span>
+                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature2')}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">✓</span>
                     </div>
-                    <span className="text-sm text-gray-700">Well-structured</span>
+                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature3')}</span>
                   </div>
                 </div>
 
                 <Button className="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-800">
-                  🔍 Preview Ebooks
+                  {t('productCategories.ebooksButton')}
                 </Button>
               </div>
 
@@ -447,12 +450,11 @@ export default function Home() {
 
               <div>
                 <div className="bg-white text-gray-900 px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  200+ PLR Videos and Audios
+                  {t('productCategories.videoBadge')}
                 </div>
-                <h3 className="text-3xl font-bold mb-6">Video and Audio Courses</h3>
+                <h3 className="text-3xl font-bold mb-6">{t('productCategories.videoTitle')}</h3>
                 <p className="text-gray-300 mb-6">
-                  Straight to the point, actionable, and explanatory courses.
-                  Highly-demanded visual form of content and also perfect for those who prefer to listen podcasts and learn on the move.
+                  {t('productCategories.videoDesc')}
                 </p>
 
                 <div className="grid grid-cols-3 gap-4 mb-6">
@@ -460,24 +462,24 @@ export default function Home() {
                     <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
                       <span className="text-gray-900 text-xs">✓</span>
                     </div>
-                    <span className="text-sm">Hands-on courses</span>
+                    <span className="text-sm">{t('productCategories.videoFeature1')}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
                       <span className="text-gray-900 text-xs">✓</span>
                     </div>
-                    <span className="text-sm">With and without face</span>
+                    <span className="text-sm">{t('productCategories.videoFeature2')}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
                       <span className="text-gray-900 text-xs">✓</span>
                     </div>
-                    <span className="text-sm">Presentation style</span>
+                    <span className="text-sm">{t('productCategories.videoFeature3')}</span>
                   </div>
                 </div>
 
                 <Button className="bg-white text-gray-900 px-6 py-2 rounded-full hover:bg-gray-100">
-                  🔍 Preview Courses
+                  {t('productCategories.videoButton')}
                 </Button>
               </div>
             </div>
@@ -488,12 +490,11 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="bg-gray-900 text-white px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  1000+ PLR Short Formats
+                  {t('productCategories.resourcesBadge')}
                 </div>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Actionable Resources</h3>
+                <h3 className="text-3xl font-bold mb-6 text-gray-900">{t('productCategories.resourcesTitle')}</h3>
                 <p className="text-gray-600 mb-6">
-                  Provide other rich content formats that are increasing in popularity.
-                  Mini-courses, Workbooks, Notion Templates, AI prompts, Templates, Articles, Toolstacks, and more.
+                  {t('productCategories.resourcesDesc')}
                 </p>
 
                 <div className="grid grid-cols-3 gap-4 mb-6">
@@ -501,24 +502,24 @@ export default function Home() {
                     <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">✓</span>
                     </div>
-                    <span className="text-sm text-gray-700">Focused learning</span>
+                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature1')}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">✓</span>
                     </div>
-                    <span className="text-sm text-gray-700">Solution and goal oriented</span>
+                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature2')}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">✓</span>
                     </div>
-                    <span className="text-sm text-gray-700">Short-form content</span>
+                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature3')}</span>
                   </div>
                 </div>
 
                 <Button className="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-800">
-                  🔍 Preview Resources
+                  {t('productCategories.resourcesButton')}
                 </Button>
               </div>
 
@@ -538,7 +539,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Button className="bg-[#003399] hover:bg-[#002266] text-white px-8 py-3 rounded-full text-lg font-semibold">
-              ▶ Explore All Products
+              {t('productCategories.ctaButton')}
             </Button>
           </div>
         </div>
@@ -548,9 +549,9 @@ export default function Home() {
       <section className="px-6 py-20 bg-gray-900 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Free Resources</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('freeResourcesSection.headline')}</h2>
             <p className="text-gray-400 text-lg">
-              All designed to simplify your online business journey, no matter your experience level.
+              {t('freeResourcesSection.description')}
             </p>
           </div>
 
@@ -559,12 +560,12 @@ export default function Home() {
               <div className="w-full h-48 bg-[#003399] rounded-lg mb-6 flex items-center justify-center">
                 <span className="text-white font-bold">BUSINESS PLAN</span>
               </div>
-              <h3 className="text-xl font-bold mb-4">Online Business Master Plan</h3>
+              <h3 className="text-xl font-bold mb-4">{t('freeResourcesSection.masterPlanTitle')}</h3>
               <p className="text-gray-400 mb-6">
-                Access a guide full of actionable steps and tips for growing your online business.
+                {t('freeResourcesSection.masterPlanDesc')}
               </p>
               <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 py-2 rounded-full font-semibold">
-                Kickstart your business
+                {t('freeResourcesSection.masterPlanButton')}
               </Button>
             </Card>
 
@@ -572,12 +573,12 @@ export default function Home() {
               <div className="w-full h-48 bg-gray-600 rounded-lg mb-6 flex items-center justify-center">
                 <span className="text-white font-bold">TOOLS</span>
               </div>
-              <h3 className="text-xl font-bold mb-4">Digital Tools Collection</h3>
+              <h3 className="text-xl font-bold mb-4">{t('freeResourcesSection.toolsTitle')}</h3>
               <p className="text-gray-400 mb-6">
-                Explore a curated selection of best tools that will help you achieve your goals.
+                {t('freeResourcesSection.toolsDesc')}
               </p>
               <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-6 py-2 rounded-full font-semibold">
-                Explore tools repository
+                {t('freeResourcesSection.toolsButton')}
               </Button>
             </Card>
 
@@ -585,12 +586,12 @@ export default function Home() {
               <div className="w-full h-48 bg-[#FFD700] rounded-lg mb-6 flex items-center justify-center">
                 <span className="text-white font-bold">IDEAS</span>
               </div>
-              <h3 className="text-xl font-bold mb-4">Digital Product Ideas</h3>
+              <h3 className="text-xl font-bold mb-4">{t('freeResourcesSection.ideasTitle')}</h3>
               <p className="text-gray-400 mb-6">
-                Get inspired by 100+ digital product ideas that you can create and offer to your audience.
+                {t('freeResourcesSection.ideasDesc')}
               </p>
               <Button className="bg-[#003399] hover:bg-[#002266] text-white px-6 py-2 rounded-full font-semibold">
-                Explore ideas
+                {t('freeResourcesSection.ideasButton')}
               </Button>
             </Card>
           </div>
@@ -609,7 +610,7 @@ export default function Home() {
                 <div className="w-8 h-8 relative">
                   <img
                     src="/logo.svg"
-                    alt="ContentForge Logo"
+                    alt={t('hero.logoAlt')}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -618,41 +619,41 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Pages</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">{t('footer.pagesTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Home</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Digital Tools Repository</a></li>
-                <li><a href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.home')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.resources')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.freeResources')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.toolsRepository')}</a></li>
+                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">{t('footer.contact')}</Link></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.blog')}</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Products</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">{t('footer.productsTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Master Library</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Custom Book Service</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Custom Digital Product</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">PLR Digital Products</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.masterLibrary')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.customBookService')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.customDigitalProduct')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.plrProducts')}</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Legal</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">{t('footer.legalTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
-                <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Partner Terms</a></li>
+                <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">{t('footer.terms')}</a></li>
+                <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">{t('footer.privacy')}</a></li>
+                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">{t('footer.plr')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.partnerTerms')}</a></li>
               </ul>
             </div>
           </div>
 
           {/* Payment Methods */}
           <div className="border-t border-gray-800 mt-12 pt-8">
-            <p className="text-gray-400 text-xs text-center mb-4 uppercase tracking-wide">Secure Payment Methods</p>
+            <p className="text-gray-400 text-xs text-center mb-4 uppercase tracking-wide">{t('footer.paymentMethods')}</p>
             <div className="flex justify-center items-center gap-4 flex-wrap mb-8">
               {/* Stripe */}
               <div className="bg-white px-4 py-2 rounded shadow-sm">
@@ -687,7 +688,7 @@ export default function Home() {
           </div>
 
           <div className="text-center text-gray-400 text-sm">
-            <p>© 2024 Made by ContentForge s.r.o.</p>
+            <p>{t('footer.copyright')}</p>
           </div>
         </div>
       </footer>
