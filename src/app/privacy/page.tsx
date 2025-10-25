@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
+          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
         </nav>
 
         <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
@@ -33,194 +33,167 @@ export default function PrivacyPage() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div className="prose prose-lg max-w-none">
-          <h1 className="text-4xl font-bold text-[#003399] mb-8">Privacy Policy</h1>
-          <p className="text-gray-600 mb-8">This privacy policy defines the conditions for processing personal data by BAKCHICH.</p>
+          <h1 className="text-4xl font-bold text-[#003399] mb-4">Privacy Policy</h1>
+          <p className="text-gray-600 mb-8"><strong>Last updated:</strong> October 25, 2025</p>
 
-          <div className="bg-gray-50 p-6 rounded-lg mb-8">
-            <h2 className="text-2xl font-bold text-[#003399] mb-4">About Us</h2>
-            <p className="text-gray-700 mb-4">
-              This privacy policy (hereinafter the "Privacy Policy") defines the conditions for processing personal data by <strong>BAKCHICH</strong>, société par actions simplifiée, registered under number 942552274, with registered office at 60 RUE FRANCOIS IER, PARIS, 75008, France, concerning users browsing the Website and its Customers (hereinafter the "Users").
-            </p>
-            <p className="text-gray-700">
-              Personal data of the User are processed by Bakchich as data controller. Bakchich complies in all circumstances with the regulations applicable to it regarding the protection of personal data, in particular with the provisions of the French Data Protection Act No. 78-17 of January 6, 1978 as amended and EU Regulation 2016/679.
-            </p>
-          </div>
+          <p className="text-gray-700 mb-6">
+            This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of your information when you use the Service and informs you about your privacy rights and how the law protects you.
+          </p>
+
+          <p className="text-gray-700 mb-8">
+            We use your personal data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy.
+          </p>
+
+          <hr className="my-8 border-gray-300" />
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-[#003399] mb-4">1. Categories of Data Processed</h2>
-            <p className="text-gray-700 mb-4">The personal data concerned by the processing implemented within the framework of these provisions are:</p>
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Interpretation and Definitions</h2>
+
+            <h3 className="text-xl font-semibold text-[#003399] mb-3">Definitions</h3>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
-              <li>Identification data such as surname, first name, email, address, others</li>
-              <li>Data related to User interactions with the Website</li>
-              <li>Data related to purchasing behaviors</li>
-              <li>Location data</li>
+              <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our") refers to <strong>Bakchich SAS</strong>, 60 Rue François Ier, 75008 Paris, France.</li>
+              <li><strong>Website</strong> refers to <strong>CONTENTFORGE</strong>, accessible from <a href="https://contentforge.cc/" className="text-[#003399] hover:underline">https://contentforge.cc/</a></li>
+              <li><strong>Service</strong> refers to the Website.</li>
+              <li><strong>You</strong> means the individual accessing or using the Service, or the company or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
             </ul>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-[#003399] mb-4">2. Processing Purposes</h2>
-            <div className="space-y-6">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-[#003399] mb-3">Customer Account Management</h3>
-                <p className="text-gray-700 mb-3">
-                  Information relating to the Customer Account is processed to create and manage the Customer Account. The legal basis for this processing is consent, which can be withdrawn at any time.
-                </p>
-                <p className="text-gray-700">
-                  The communication of the User's personal data is essential for creating a Customer Account. Refusal to communicate this data results in the impossibility of creating the Customer Account.
-                </p>
-              </div>
-
-              <div className="bg-teal-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-[#003399] mb-3">Order Processing</h3>
-                <p className="text-gray-700 mb-3">
-                  Information relating to orders for Products and/or Services is collected for processing and order tracking purposes, as well as for fraud prevention, statistical analysis and customer knowledge.
-                </p>
-                <p className="text-gray-700">
-                  The legal basis for this processing is the terms of sale and use. Communication of the User's personal data is essential to place an order on the Website.
-                </p>
-              </div>
-
-              <div className="bg-yellow-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-[#003399] mb-3">Marketing and Advertising</h3>
-                <p className="text-gray-700 mb-3">
-                  Bakchich also uses certain personal data of Users for marketing and targeted advertising purposes (sending electronic communications, postal or telephone prospecting and advertising profiling by combining data).
-                </p>
-                <p className="text-gray-700">
-                  The legal basis for this processing is consent, which can be withdrawn at any time, in which case commercial communications directed towards the User will cease.
-                </p>
-              </div>
-            </div>
-          </section>
+          <hr className="my-8 border-gray-300" />
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-[#003399] mb-4">3. Data Recipients</h2>
-            <div className="space-y-4 text-gray-700">
-              <p>
-                Personal data are hosted by a service provider located in the European Union, whose identity and contact details are specified in the legal notices of the Website.
-              </p>
-              <p>
-                The User is informed that Bakchich may also share their personal data with public bodies or authorities making the request to comply with a legal obligation or protect rights and with potential future acquirers in compliance with Personal Data Regulations.
-              </p>
-              <p>
-                Certain personal data may be transmitted to Bakchich partners (the "Sub-processors"). Bakchich's Sub-processors have their own privacy policies to which the User is invited to refer.
-              </p>
-            </div>
-          </section>
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Collecting and Using Your Personal Data</h2>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-[#003399] mb-4">4. Data Retention Period</h2>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-4">
-                Users' personal data are retained only for the time necessary to achieve the purpose for which Bakchich collected this data, in order to meet the needs of Users or to fulfill its legal or regulatory archiving obligations.
-              </p>
-              <p className="text-gray-700 mb-4">
-                To establish the retention period for personal data, Bakchich applies the following criteria:
-              </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4">
-                <li>In case of ordering Products and/or Services: personal data are retained for the duration of the contractual relationship and three years after collection or the last contact with the User, for commercial prospecting purposes</li>
-                <li>Bakchich is likely to retain certain data in order to fulfill its legal or regulatory archiving obligations to enable it to exercise its rights and/or for statistical or historical purposes</li>
+            <h3 className="text-xl font-semibold text-[#003399] mb-3">Types of Data Collected</h3>
+
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Personal Data</h4>
+              <p className="text-gray-700 mb-3">While using our Service, we may ask you to provide us with certain personally identifiable information such as:</p>
+              <ul className="list-disc pl-6 text-gray-700 space-y-1">
+                <li>Email address</li>
+                <li>First and last name</li>
+                <li>Address, State, Province, ZIP/Postal code, City</li>
+                <li>Usage Data</li>
               </ul>
+            </div>
+
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Usage Data</h4>
               <p className="text-gray-700">
-                At the end of the periods mentioned above, personal data will be deleted or Bakchich will proceed with their anonymization.
+                Usage Data is collected automatically when using the Service, including IP address, browser type, version, pages visited, time spent, and similar diagnostic data.
               </p>
             </div>
           </section>
+
+          <hr className="my-8 border-gray-300" />
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-[#003399] mb-4">5. Rights of Data Subjects</h2>
-            <div className="bg-blue-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-4">
-                The User has the right to access, rectify, delete (erasure), portability of their personal data, limitation of processing as well as a right to object to the processing of their data collected and processed by Bakchich.
-              </p>
-              <p className="text-gray-700 mb-4">
-                To exercise these rights, contact Bakchich directly at the following email address: <strong>contact@bakchich.com</strong>
-              </p>
-              <p className="text-gray-700">
-                In case of complaint, the User can contact the CNIL, which is the competent authority for the protection of personal data, whose contact details are: 3 Place de Fontenoy, 75007 Paris, telephone: 01 53 73 22 22.
-              </p>
-            </div>
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Tracking Technologies and Cookies</h2>
+
+            <p className="text-gray-700 mb-4">
+              We use Cookies and similar tracking technologies to analyze and improve our Service.
+            </p>
+            <p className="text-gray-700 mb-4">Our tracking stack includes:</p>
+
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+              <li><strong>Google Analytics</strong> — for traffic and usage analytics</li>
+              <li><strong>Microsoft Clarity</strong> — for heatmaps and behavioral insights</li>
+              <li><strong>Google Tag Manager</strong> — for managing analytics and tracking tags</li>
+              <li><strong>Invisible reCAPTCHA</strong> — to protect our website from spam and abuse</li>
+            </ul>
+
+            <p className="text-gray-700">
+              You can manage your cookie preferences in your browser settings.
+            </p>
           </section>
+
+          <hr className="my-8 border-gray-300" />
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-[#003399] mb-4">6. Cookie Management</h2>
-            <div className="space-y-6">
-              <p className="text-gray-700">
-                Cookies are information placed by a website on a user's equipment when they visit the Website. A cookie does not necessarily contain the User's name or email address.
-              </p>
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Use of Your Personal Data</h2>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-[#003399] mb-4">Types of Cookies We Use</h3>
-                <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-100">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cookie Type</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Required/Optional</th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Functional</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Required</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Analytics</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Optional</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Personalized Content</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Optional</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Personalized Advertising</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Optional</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Product Development</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Optional</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div className="bg-yellow-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-[#003399] mb-3">Cookie Consent</h3>
-                <p className="text-gray-700 mb-3">
-                  The installation of certain cookies is subject to User consent, when they do not have the exclusive purpose of allowing or facilitating navigation on the Website or when they are not strictly necessary for the provision of Products and/or Services.
-                </p>
-                <p className="text-gray-700">
-                  During the first visit to the Website, the User is informed by a banner of the conditions for depositing cookies on their terminal, they can refuse or accept them freely.
-                </p>
-              </div>
-
-              <div className="bg-teal-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-[#003399] mb-3">Managing Your Cookie Preferences</h3>
-                <p className="text-gray-700 mb-3">
-                  The User can always refuse the storage of cookies by configuring their browser. Complete deactivation of essential cookies may prevent the use of all interactive features of the Website.
-                </p>
-                <p className="text-gray-700">
-                  For information on how to manage cookies in your specific browser, please refer to your browser's help documentation or settings menu.
-                </p>
-              </div>
-            </div>
+            <p className="text-gray-700 mb-3">We may use your personal data for the following purposes:</p>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2">
+              <li>To provide and maintain our Service</li>
+              <li>To manage your account and registration</li>
+              <li>To communicate with you via email, SMS, or notifications</li>
+              <li>To send you <strong>emails or newsletters if you opt-in</strong>, or when you have an existing relationship with us (Yes, we send emails to users or users can opt-in to receive emails from us.)</li>
+              <li>To improve our Service, features, and user experience</li>
+              <li>To comply with legal obligations and prevent fraud</li>
+            </ul>
           </section>
 
-          <div className="bg-gray-100 p-6 rounded-lg mt-12">
-            <h2 className="text-2xl font-bold text-[#003399] mb-4">Contact Information</h2>
-            <p className="text-gray-700 mb-2">
-              <strong>Data Controller:</strong> BAKCHICH SAS
+          <hr className="my-8 border-gray-300" />
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Retention of Your Data</h2>
+
+            <p className="text-gray-700">
+              We retain personal data only as long as necessary to fulfill the purposes outlined here, comply with legal obligations, resolve disputes, or enforce agreements.
             </p>
-            <p className="text-gray-700 mb-2">
-              <strong>Address:</strong> 60 RUE FRANCOIS IER, PARIS, 75008, France
-            </p>
-            <p className="text-gray-700 mb-2">
-              <strong>Email:</strong> contact@bakchich.com
+          </section>
+
+          <hr className="my-8 border-gray-300" />
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Data Transfer and Security</h2>
+
+            <p className="text-gray-700 mb-3">
+              Your information may be processed in locations outside your country. We ensure that appropriate safeguards are in place for data protection.
             </p>
             <p className="text-gray-700">
-              <strong>Registration:</strong> 942 552 274 R.C.S. Paris
+              While we use commercially reasonable measures, no method of transmission over the Internet or electronic storage is completely secure.
             </p>
-          </div>
+          </section>
+
+          <hr className="my-8 border-gray-300" />
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Your Data Rights</h2>
+
+            <p className="text-gray-700">
+              You have the right to access, correct, or delete your personal data. You may request this by <a href="/contact" className="text-[#003399] hover:underline font-semibold">contacting us</a>.
+            </p>
+          </section>
+
+          <hr className="my-8 border-gray-300" />
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Children's Privacy</h2>
+
+            <p className="text-gray-700">
+              Our Service does not address anyone under the age of 13. We do not knowingly collect personal information from children under 13.
+            </p>
+          </section>
+
+          <hr className="my-8 border-gray-300" />
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Links to Other Websites</h2>
+
+            <p className="text-gray-700">
+              Our Service may contain links to other websites not operated by us. We are not responsible for their content or privacy practices.
+            </p>
+          </section>
+
+          <hr className="my-8 border-gray-300" />
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Updates to This Privacy Policy</h2>
+
+            <p className="text-gray-700">
+              We may update this Privacy Policy periodically. Changes will be posted on this page and reflected in the "Last updated" date above.
+            </p>
+          </section>
+
+          <hr className="my-8 border-gray-300" />
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-[#003399] mb-4">Contact Us</h2>
+
+            <p className="text-gray-700 mb-4">
+              If you have any questions about this Privacy Policy, please <a href="/contact" className="text-[#003399] hover:underline font-semibold">contact us through our contact form</a>.
+            </p>
+          </section>
         </div>
       </div>
 
@@ -247,7 +220,7 @@ export default function PrivacyPage() {
                 <li><Link href="/" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
+                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
               </ul>
             </div>
@@ -266,7 +239,7 @@ export default function PrivacyPage() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
                 <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
+                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
               </ul>
             </div>
           </div>

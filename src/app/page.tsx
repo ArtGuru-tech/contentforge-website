@@ -1,7 +1,10 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
+import PricingSection from "@/components/PricingSection"
 
 export default function Home() {
   return (
@@ -23,12 +26,25 @@ export default function Home() {
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
+          <a
+            href="#pricing"
+            className="text-gray-600 hover:text-[#003399] transition-colors font-medium"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Pricing
+          </a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
+          <a href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
         </nav>
 
-        <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
-          Sign In
+        <Button
+          className="bg-[#003399] hover:bg-[#002266] text-white border-0"
+          onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          Subscribe
         </Button>
       </header>
 
@@ -47,9 +63,19 @@ export default function Home() {
           You can instantly have your own digital products. Rebrand, sell, or use in any way. Without high investments or months of creation.
         </p>
 
-        <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold mb-12">
-          ▶ Learn about Master Library
-        </Button>
+        <div className="flex flex-col items-center gap-4 mb-12">
+          <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold">
+            ▶ Learn about Master Library
+          </Button>
+
+          {/* 14-Day Money-Back Guarantee Badge */}
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-[#FFD700] rounded-full px-6 py-3">
+            <div className="w-8 h-8 bg-[#FFD700] rounded-full flex items-center justify-center">
+              <span className="text-[#003399] font-bold text-lg">✓</span>
+            </div>
+            <span className="text-white font-semibold">14-Day Money-Back Guarantee</span>
+          </div>
+        </div>
 
         {/* Animated Avatars Section */}
         <div className="flex justify-center items-center space-x-4 mb-4">
@@ -64,7 +90,7 @@ export default function Home() {
             <span>★★★★★</span>
           </div>
         </div>
-        <p className="text-blue-200 text-sm">Loved by 20 000+ entrepreneurs</p>
+        <p className="text-blue-200 text-sm">Trusted by early adopters</p>
 
         {/* Product Showcase */}
         <div className="mt-16 relative">
@@ -571,42 +597,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="bg-[#FFD700] text-[#003399] px-4 py-2 rounded-full inline-block text-sm mb-8 font-semibold">
-            Unlimited Business Library
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Discover done-for-you<br />
-            digital products you can<br />
-            <span className="text-[#FFD700]">sell or use in any way</span>
-          </h2>
-          <p className="text-blue-100 text-lg mb-12 max-w-2xl mx-auto">
-            Imagine you have more than 1000 business and marketing video courses, books, templates, audios,
-            and more. Your own digital library without limits.
-          </p>
-
-          <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold mb-12">
-            ▶ Learn about Master Library
-          </Button>
-
-          {/* Animated Avatars Section */}
-          <div className="flex justify-center items-center space-x-4 mb-4">
-            <div className="flex -space-x-2">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
-            </div>
-            <div className="flex items-center space-x-1 text-[#FFD700]">
-              <span>★★★★★</span>
-            </div>
-          </div>
-          <p className="text-blue-200 text-sm">Loved by 20 000+ entrepreneurs</p>
-        </div>
-      </section>
+      {/* Pricing Section */}
+      <PricingSection />
 
       {/* Footer */}
       <footer className="px-6 py-16 bg-gray-900 text-white border-t border-gray-800">
@@ -632,7 +624,7 @@ export default function Home() {
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Digital Tools Repository</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
+                <li><a href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
               </ul>
             </div>
@@ -652,13 +644,49 @@ export default function Home() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
                 <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
+                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Partner Terms</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
+          {/* Payment Methods */}
+          <div className="border-t border-gray-800 mt-12 pt-8">
+            <p className="text-gray-400 text-xs text-center mb-4 uppercase tracking-wide">Secure Payment Methods</p>
+            <div className="flex justify-center items-center gap-4 flex-wrap mb-8">
+              {/* Stripe */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#635BFF] font-bold text-sm">stripe</span>
+              </div>
+
+              {/* PayPal */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#0070BA] font-bold text-sm">Pay</span>
+                <span className="text-[#003087] font-bold text-sm">Pal</span>
+              </div>
+
+              {/* Visa */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#1434CB] font-bold text-sm">VISA</span>
+              </div>
+
+              {/* Mastercard */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 bg-[#EB001B] rounded-full opacity-80"></div>
+                  <div className="w-3 h-3 bg-[#FF5F00] rounded-full opacity-80 -ml-1.5"></div>
+                  <span className="text-gray-800 font-semibold text-xs ml-1">Mastercard</span>
+                </div>
+              </div>
+
+              {/* Amex */}
+              <div className="bg-[#006FCF] px-4 py-2 rounded shadow-sm">
+                <span className="text-white font-bold text-sm">AMEX</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center text-gray-400 text-sm">
             <p>© 2024 Made by ContentForge s.r.o.</p>
           </div>
         </div>
