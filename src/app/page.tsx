@@ -650,7 +650,43 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
+          {/* Payment Methods */}
+          <div className="border-t border-gray-800 mt-12 pt-8">
+            <p className="text-gray-400 text-xs text-center mb-4 uppercase tracking-wide">Secure Payment Methods</p>
+            <div className="flex justify-center items-center gap-4 flex-wrap mb-8">
+              {/* Stripe */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#635BFF] font-bold text-sm">stripe</span>
+              </div>
+
+              {/* PayPal */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#0070BA] font-bold text-sm">Pay</span>
+                <span className="text-[#003087] font-bold text-sm">Pal</span>
+              </div>
+
+              {/* Visa */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#1434CB] font-bold text-sm">VISA</span>
+              </div>
+
+              {/* Mastercard */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 bg-[#EB001B] rounded-full opacity-80"></div>
+                  <div className="w-3 h-3 bg-[#FF5F00] rounded-full opacity-80 -ml-1.5"></div>
+                  <span className="text-gray-800 font-semibold text-xs ml-1">Mastercard</span>
+                </div>
+              </div>
+
+              {/* Amex */}
+              <div className="bg-[#006FCF] px-4 py-2 rounded shadow-sm">
+                <span className="text-white font-bold text-sm">AMEX</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center text-gray-400 text-sm">
             <p>© 2024 Made by ContentForge s.r.o.</p>
           </div>
         </div>

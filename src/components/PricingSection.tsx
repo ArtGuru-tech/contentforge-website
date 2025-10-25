@@ -206,6 +206,42 @@ export default function PricingSection() {
             </div>
           </div>
 
+          {/* Payment Processors */}
+          <div className="mb-8">
+            <p className="text-blue-200 text-xs mb-4 uppercase tracking-wide">Secure Payment Methods</p>
+            <div className="flex justify-center items-center gap-6 flex-wrap">
+              {/* Stripe */}
+              <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <span className="text-[#635BFF] font-bold text-xl">stripe</span>
+              </div>
+
+              {/* PayPal */}
+              <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <span className="text-[#0070BA] font-bold text-xl">Pay</span>
+                <span className="text-[#003087] font-bold text-xl">Pal</span>
+              </div>
+
+              {/* Visa */}
+              <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <span className="text-[#1434CB] font-bold text-xl">VISA</span>
+              </div>
+
+              {/* Mastercard */}
+              <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-1">
+                  <div className="w-4 h-4 bg-[#EB001B] rounded-full opacity-80"></div>
+                  <div className="w-4 h-4 bg-[#FF5F00] rounded-full opacity-80 -ml-2"></div>
+                  <span className="text-gray-800 font-semibold text-sm ml-1">Mastercard</span>
+                </div>
+              </div>
+
+              {/* Amex */}
+              <div className="bg-[#006FCF] px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <span className="text-white font-bold text-lg">AMEX</span>
+              </div>
+            </div>
+          </div>
+
           <div className="flex justify-center items-center space-x-4">
             <div className="flex -space-x-2">
               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
