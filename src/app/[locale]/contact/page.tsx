@@ -1,11 +1,17 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
+import LanguageSwitcher from "@/components/LanguageSwitcher"
 
 export default function ContactPage() {
+  const t = useTranslations('contact')
+  const tNav = useTranslations('nav')
+  const tFooter = useTranslations('footer')
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,7 +43,7 @@ export default function ContactPage() {
       setFormData({ name: "", email: "", subject: "", message: "" })
     } catch (error) {
       setStatus("error")
-      setErrorMessage("Failed to send message. Please try again.")
+      setErrorMessage(t('errorMessage'))
     }
   }
 
@@ -64,23 +70,26 @@ export default function ContactPage() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</Link>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
+          <Link href="/" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('home')}</Link>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('resources')}</a>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('freeResources')}</a>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('blog')}</a>
+          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('contact')}</Link>
         </nav>
 
-        <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
-          Sign In
-        </Button>
+        <div className="flex items-center space-x-4">
+          <LanguageSwitcher />
+          <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
+            {tNav('signIn')}
+          </Button>
+        </div>
       </header>
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#003399] mb-4">Get in Touch</h1>
-          <p className="text-gray-600 text-lg">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#003399] mb-4">{t('headline')}</h1>
+          <p className="text-gray-600 text-lg">{t('description')}</p>
         </div>
 
         <Card className="border-0 shadow-lg">
@@ -90,13 +99,13 @@ export default function ContactPage() {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-green-600 text-3xl">✓</span>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h2>
-                <p className="text-gray-600 mb-6">Thank you for contacting us. We'll get back to you within 48 hours.</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('successTitle')}</h2>
+                <p className="text-gray-600 mb-6">{t('successMessage')}</p>
                 <Button
                   onClick={() => setStatus("idle")}
                   className="bg-[#003399] hover:bg-[#002266] text-white"
                 >
-                  Send Another Message
+                  {t('sendAnotherButton')}
                 </Button>
               </div>
             ) : (
@@ -105,7 +114,7 @@ export default function ContactPage() {
                   {/* Name */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Your Name *
+                      {t('nameLabel')}
                     </label>
                     <input
                       type="text"
@@ -115,14 +124,14 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003399] focus:border-transparent"
-                      placeholder="John Doe"
+                      placeholder={t('namePlaceholder')}
                     />
                   </div>
 
                   {/* Email */}
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
+                      {t('emailLabel')}
                     </label>
                     <input
                       type="email"
@@ -132,14 +141,14 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003399] focus:border-transparent"
-                      placeholder="john@example.com"
+                      placeholder={t('emailPlaceholder')}
                     />
                   </div>
 
                   {/* Subject */}
                   <div>
                     <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Subject *
+                      {t('subjectLabel')}
                     </label>
                     <select
                       id="subject"
@@ -150,19 +159,17 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003399] focus:border-transparent"
                     >
                       <option value="">Select a subject...</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="support">Technical Support</option>
-                      <option value="license">License Question</option>
-                      <option value="legal">Legal Inquiry</option>
-                      <option value="partnership">Partnership Opportunity</option>
-                      <option value="other">Other</option>
+                      <option value="general">{t('subjectGeneral')}</option>
+                      <option value="support">{t('subjectSupport')}</option>
+                      <option value="billing">{t('subjectBilling')}</option>
+                      <option value="partnership">{t('subjectPartnership')}</option>
                     </select>
                   </div>
 
                   {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Message *
+                      {t('messageLabel')}
                     </label>
                     <textarea
                       id="message"
@@ -172,7 +179,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       rows={6}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003399] focus:border-transparent resize-none"
-                      placeholder="Tell us more about your inquiry..."
+                      placeholder={t('messagePlaceholder')}
                     />
                   </div>
 
@@ -189,7 +196,7 @@ export default function ContactPage() {
                     disabled={status === "loading"}
                     className="w-full bg-[#003399] hover:bg-[#002266] text-white py-6 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {status === "loading" ? "Sending..." : "Send Message"}
+                    {status === "loading" ? t('submitting') : t('submitButton')}
                   </Button>
                 </div>
               </form>
@@ -243,37 +250,37 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Pages</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">{tFooter('pagesTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
-                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
+                <li><Link href="/" className="hover:text-[#FFD700] transition-colors">{tFooter('home')}</Link></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('resources')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('freeResources')}</a></li>
+                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">{tFooter('contact')}</Link></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('blog')}</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Products</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">{tFooter('productsTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Master Library</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Custom Digital Product</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">PLR Digital Products</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('masterLibrary')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('customDigitalProduct')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('plrProducts')}</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Legal</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">{tFooter('legalTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
-                <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
+                <li><a href="terms" className="hover:text-[#FFD700] transition-colors">{tFooter('terms')}</a></li>
+                <li><a href="privacy" className="hover:text-[#FFD700] transition-colors">{tFooter('privacy')}</a></li>
+                <li><a href="plr" className="hover:text-[#FFD700] transition-colors">{tFooter('plr')}</a></li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 Made by ContentForge s.r.o.</p>
+            <p>{tFooter('copyright')}</p>
           </div>
         </div>
       </footer>
