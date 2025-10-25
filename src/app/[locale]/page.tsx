@@ -649,6 +649,7 @@ export default function Home() {
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/terms" className="hover:text-[#FFD700] transition-colors">{t('footer.terms')}</Link></li>
                 <li><Link href="/privacy" className="hover:text-[#FFD700] transition-colors">{t('footer.privacy')}</Link></li>
+                <li><Link href="/refund" className="hover:text-[#FFD700] transition-colors">{t('footer.refund')}</Link></li>
                 <li><Link href="/plr" className="hover:text-[#FFD700] transition-colors">{t('footer.plr')}</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.partnerTerms')}</a></li>
               </ul>

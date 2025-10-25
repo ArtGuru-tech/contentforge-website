@@ -147,6 +147,7 @@
     "legalTitle": "Legal",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
+    "refund": "Refund Policy",
     "plr": "Private Label Rights",
     "partnerTerms": "Partner Terms",
     "paymentMethods": "Secure Payment Methods",
@@ -219,5 +220,131 @@
     "answer4": "Not at all! Our products are designed to be user-friendly and accessible to everyone, regardless of technical expertise. Most products come in standard formats like PDF, MP4, and editable document formats that you can customize using free tools like Google Docs, Canva, or any text editor. No coding, design skills, or expensive software required. If you can edit a Word document or create a simple presentation, you can work with our products. Plus, many items come ready to use immediately without any modifications needed.",
     "question5": "How is ContentForge different from competitors?",
     "answer5": "Unlike other PLR providers, we focus on quality over quantity. While others offer thousands of outdated or generic products, we curate only the most in-demand, up-to-date content that actually sells. Our products are created by experts, not AI or content mills. We constantly update our library with trending topics and modern strategies. You also get access to multiple formats (ebooks, videos, audio, templates, workbooks) in one place, saving you time and money. Plus, our pricing is transparent with no hidden fees, and we offer exceptional support to help you succeed."
+  },
+  "refundPolicy": {
+    "title": "Refund Policy",
+    "lastUpdated": "Last updated: October 25, 2025",
+    "nav": {
+      "home": "Home",
+      "resources": "Resources",
+      "freeResources": "Free Resources",
+      "blog": "Blog",
+      "contact": "Contact",
+      "signIn": "Sign In"
+    },
+    "guaranteeBadge": {
+      "title": "14-Day Money-Back Guarantee",
+      "description": "We stand behind the quality of our products with a no-questions-asked refund policy."
+    },
+    "introduction": "At ContentForge, your satisfaction is our top priority. We're confident in the quality and value of our digital products, which is why we offer a comprehensive 14-day money-back guarantee. If you're not completely satisfied with your purchase for any reason, we'll process a full refund—no questions asked.",
+    "ourGuarantee": {
+      "title": "Our 14-Day Money-Back Guarantee",
+      "description": "We offer a straightforward, hassle-free refund policy:",
+      "point1": "Full refund within 14 days of purchase",
+      "point2": "No questions asked - your satisfaction is all that matters",
+      "point3": "Quick processing - refunds typically processed within 3-5 business days",
+      "point4": "Refund to original payment method used for purchase"
+    },
+    "howToRequest": {
+      "title": "How to Request a Refund",
+      "description": "Requesting a refund is simple and straightforward. Just follow these steps:",
+      "stepsTitle": "Refund Request Process",
+      "step1": {
+        "title": "Contact Our Support Team",
+        "description": "Email us at support@contentforge.app or use our contact form within 14 days of your purchase date."
+      },
+      "step2": {
+        "title": "Provide Your Order Information",
+        "description": "Include your order number, email address used for purchase, and the name of the plan or product you purchased. This helps us locate your order quickly."
+      },
+      "step3": {
+        "title": "We Process Your Request",
+        "description": "Our team will review your refund request and send you a confirmation email within 24 hours. No lengthy explanations required—just let us know you'd like a refund."
+      },
+      "step4": {
+        "title": "Receive Your Refund",
+        "description": "Once approved, your refund will be processed back to your original payment method within 3-5 business days."
+      }
+    },
+    "processingTimeline": {
+      "title": "Refund Processing Timeline",
+      "description": "Here's what you can expect when requesting a refund:",
+      "item1": {
+        "label": "Request Acknowledgment:",
+        "value": "Within 24 hours of submitting your refund request"
+      },
+      "item2": {
+        "label": "Refund Processing:",
+        "value": "3-5 business days from approval"
+      },
+      "item3": {
+        "label": "Bank Processing Time:",
+        "value": "Depending on your bank or payment provider, it may take an additional 5-10 business days for the refund to appear in your account"
+      },
+      "note": "Note: The total time from request to seeing the refund in your account typically ranges from 7-15 business days."
+    },
+    "refundMethod": {
+      "title": "Refund Method",
+      "description": "All refunds are processed back to the original payment method used at the time of purchase.",
+      "supportedMethods": "Supported Payment Methods:",
+      "method1": "Credit/Debit Cards (Visa, Mastercard, American Express)",
+      "method2": "PayPal",
+      "method3": "Stripe payments"
+    },
+    "conditions": {
+      "title": "Important Conditions",
+      "condition1": "Refund requests must be submitted within 14 days of the original purchase date.",
+      "condition2": "You must provide a valid order number or sufficient information to locate your purchase in our system.",
+      "condition3": "After a refund is processed, your access to the digital products will be revoked.",
+      "condition4": "We reserve the right to deny refund requests if there's evidence of abuse (e.g., multiple refund requests, downloading and redistributing content).",
+      "condition5": "Custom digital product services may have different refund terms depending on the project stage—please refer to your custom project agreement."
+    },
+    "subscriptions": {
+      "title": "Subscription Cancellations",
+      "description": "For recurring subscription plans:",
+      "cancellationTitle": "How Cancellation Works:",
+      "point1": "You can cancel your subscription at any time from your account dashboard.",
+      "point2": "If you cancel within the first 14 days, you'll receive a full refund.",
+      "point3": "Cancellations made after 14 days will stop future billing, but no refund will be issued for the current billing period. You'll retain access until the end of your paid period."
+    },
+    "exceptions": {
+      "title": "Exceptions to Our Refund Policy",
+      "description": "While we strive to accommodate all reasonable refund requests, the following situations are not eligible for refunds:",
+      "exception1": "Refund requests submitted more than 14 days after purchase.",
+      "exception2": "Products that have been significantly used, redistributed, or resold commercially (though we understand you need to review the content—reasonable use is acceptable).",
+      "exception3": "Purchases made through third-party platforms or resellers not directly affiliated with ContentForge."
+    },
+    "contact": {
+      "title": "Questions About Refunds?",
+      "description": "If you have any questions about our refund policy or need assistance with a refund request, we're here to help:",
+      "emailLabel": "Email:",
+      "contactFormLabel": "Contact Form:",
+      "contactFormLink": "Visit our contact page",
+      "responseTimeLabel": "Response Time:",
+      "responseTime": "We typically respond within 24 hours on business days"
+    },
+    "finalStatement": {
+      "title": "Your Satisfaction is Our Priority",
+      "description": "We want you to feel confident in your purchase. If our products don't meet your expectations, we'll make it right.",
+      "contactButton": "Contact Support"
+    },
+    "footer": {
+      "pagesTitle": "Pages",
+      "home": "Home",
+      "resources": "Resources",
+      "freeResources": "Free Resources",
+      "contact": "Contact",
+      "blog": "Blog",
+      "productsTitle": "Products",
+      "masterLibrary": "Master Library",
+      "customDigitalProduct": "Custom Digital Product",
+      "plrProducts": "PLR Digital Products",
+      "legalTitle": "Legal",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "refund": "Refund Policy",
+      "plr": "Private Label Rights",
+      "copyright": "© 2024 Made by ContentForge s.r.o."
+    }
   }
 }

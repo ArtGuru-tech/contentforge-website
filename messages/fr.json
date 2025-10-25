@@ -147,6 +147,7 @@
     "legalTitle": "Légal",
     "terms": "Conditions Générales",
     "privacy": "Politique de Confidentialité",
+    "refund": "Politique de Remboursement",
     "plr": "Droits de Label Privé",
     "partnerTerms": "Conditions Partenaires",
     "paymentMethods": "Méthodes de Paiement Sécurisées",
@@ -219,5 +220,131 @@
     "answer4": "Pas du tout ! Nos produits sont conçus pour être conviviaux et accessibles à tous, quel que soit le niveau d'expertise technique. La plupart des produits sont livrés dans des formats standard comme PDF, MP4 et des formats de documents modifiables que vous pouvez personnaliser à l'aide d'outils gratuits comme Google Docs, Canva ou n'importe quel éditeur de texte. Aucune compétence en codage, en conception ou logiciel coûteux n'est requise. Si vous pouvez éditer un document Word ou créer une présentation simple, vous pouvez travailler avec nos produits. De plus, de nombreux articles sont prêts à être utilisés immédiatement sans aucune modification nécessaire.",
     "question5": "En quoi ContentForge est-il différent de la concurrence ?",
     "answer5": "Contrairement à d'autres fournisseurs de PLR, nous nous concentrons sur la qualité plutôt que sur la quantité. Alors que d'autres proposent des milliers de produits obsolètes ou génériques, nous ne sélectionnons que le contenu le plus demandé et à jour qui se vend réellement. Nos produits sont créés par des experts, pas par l'IA ou des usines à contenu. Nous mettons constamment à jour notre bibliothèque avec des sujets tendance et des stratégies modernes. Vous avez également accès à plusieurs formats (ebooks, vidéos, audio, modèles, cahiers d'exercices) en un seul endroit, ce qui vous fait gagner du temps et de l'argent. De plus, nos tarifs sont transparents sans frais cachés, et nous offrons un support exceptionnel pour vous aider à réussir."
+  },
+  "refundPolicy": {
+    "title": "Politique de Remboursement",
+    "lastUpdated": "Dernière mise à jour : 25 octobre 2025",
+    "nav": {
+      "home": "Accueil",
+      "resources": "Ressources",
+      "freeResources": "Ressources Gratuites",
+      "blog": "Blog",
+      "contact": "Contact",
+      "signIn": "Se Connecter"
+    },
+    "guaranteeBadge": {
+      "title": "Garantie de Remboursement de 14 Jours",
+      "description": "Nous soutenons la qualité de nos produits avec une politique de remboursement sans poser de questions."
+    },
+    "introduction": "Chez ContentForge, votre satisfaction est notre priorité absolue. Nous sommes confiants dans la qualité et la valeur de nos produits numériques, c'est pourquoi nous offrons une garantie de remboursement complète de 14 jours. Si vous n'êtes pas entièrement satisfait de votre achat pour quelque raison que ce soit, nous traiterons un remboursement complet—sans poser de questions.",
+    "ourGuarantee": {
+      "title": "Notre Garantie de Remboursement de 14 Jours",
+      "description": "Nous offrons une politique de remboursement simple et sans tracas :",
+      "point1": "Remboursement complet dans les 14 jours suivant l'achat",
+      "point2": "Sans poser de questions - votre satisfaction est tout ce qui compte",
+      "point3": "Traitement rapide - les remboursements sont généralement traités dans les 3 à 5 jours ouvrables",
+      "point4": "Remboursement vers le mode de paiement original utilisé pour l'achat"
+    },
+    "howToRequest": {
+      "title": "Comment Demander un Remboursement",
+      "description": "Demander un remboursement est simple et direct. Suivez simplement ces étapes :",
+      "stepsTitle": "Processus de Demande de Remboursement",
+      "step1": {
+        "title": "Contactez Notre Équipe d'Assistance",
+        "description": "Envoyez-nous un e-mail à support@contentforge.app ou utilisez notre formulaire de contact dans les 14 jours suivant la date de votre achat."
+      },
+      "step2": {
+        "title": "Fournissez Vos Informations de Commande",
+        "description": "Incluez votre numéro de commande, l'adresse e-mail utilisée pour l'achat et le nom du plan ou du produit que vous avez acheté. Cela nous aide à localiser votre commande rapidement."
+      },
+      "step3": {
+        "title": "Nous Traitons Votre Demande",
+        "description": "Notre équipe examinera votre demande de remboursement et vous enverra un e-mail de confirmation dans les 24 heures. Aucune explication longue n'est requise—indiquez-nous simplement que vous souhaitez un remboursement."
+      },
+      "step4": {
+        "title": "Recevez Votre Remboursement",
+        "description": "Une fois approuvé, votre remboursement sera traité vers votre mode de paiement original dans les 3 à 5 jours ouvrables."
+      }
+    },
+    "processingTimeline": {
+      "title": "Délai de Traitement du Remboursement",
+      "description": "Voici ce à quoi vous pouvez vous attendre lors de la demande d'un remboursement :",
+      "item1": {
+        "label": "Accusé de Réception de la Demande :",
+        "value": "Dans les 24 heures suivant la soumission de votre demande de remboursement"
+      },
+      "item2": {
+        "label": "Traitement du Remboursement :",
+        "value": "3 à 5 jours ouvrables à partir de l'approbation"
+      },
+      "item3": {
+        "label": "Délai de Traitement Bancaire :",
+        "value": "Selon votre banque ou votre fournisseur de paiement, il peut falloir 5 à 10 jours ouvrables supplémentaires pour que le remboursement apparaisse sur votre compte"
+      },
+      "note": "Note : Le délai total entre la demande et la réception du remboursement sur votre compte varie généralement de 7 à 15 jours ouvrables."
+    },
+    "refundMethod": {
+      "title": "Méthode de Remboursement",
+      "description": "Tous les remboursements sont traités vers le mode de paiement original utilisé au moment de l'achat.",
+      "supportedMethods": "Modes de Paiement Pris en Charge :",
+      "method1": "Cartes de Crédit/Débit (Visa, Mastercard, American Express)",
+      "method2": "PayPal",
+      "method3": "Paiements Stripe"
+    },
+    "conditions": {
+      "title": "Conditions Importantes",
+      "condition1": "Les demandes de remboursement doivent être soumises dans les 14 jours suivant la date d'achat originale.",
+      "condition2": "Vous devez fournir un numéro de commande valide ou suffisamment d'informations pour localiser votre achat dans notre système.",
+      "condition3": "Après le traitement d'un remboursement, votre accès aux produits numériques sera révoqué.",
+      "condition4": "Nous nous réservons le droit de refuser les demandes de remboursement s'il y a des preuves d'abus (par exemple, plusieurs demandes de remboursement, téléchargement et redistribution de contenu).",
+      "condition5": "Les services de produits numériques personnalisés peuvent avoir des conditions de remboursement différentes selon l'étape du projet—veuillez vous référer à votre accord de projet personnalisé."
+    },
+    "subscriptions": {
+      "title": "Annulations d'Abonnement",
+      "description": "Pour les plans d'abonnement récurrents :",
+      "cancellationTitle": "Comment Fonctionne l'Annulation :",
+      "point1": "Vous pouvez annuler votre abonnement à tout moment depuis le tableau de bord de votre compte.",
+      "point2": "Si vous annulez dans les 14 premiers jours, vous recevrez un remboursement complet.",
+      "point3": "Les annulations effectuées après 14 jours stopperont la facturation future, mais aucun remboursement ne sera émis pour la période de facturation en cours. Vous conserverez l'accès jusqu'à la fin de votre période payée."
+    },
+    "exceptions": {
+      "title": "Exceptions à Notre Politique de Remboursement",
+      "description": "Bien que nous nous efforcions de satisfaire toutes les demandes de remboursement raisonnables, les situations suivantes ne sont pas éligibles aux remboursements :",
+      "exception1": "Demandes de remboursement soumises plus de 14 jours après l'achat.",
+      "exception2": "Produits qui ont été largement utilisés, redistribués ou revendus commercialement (bien que nous comprenions que vous devez examiner le contenu—une utilisation raisonnable est acceptable).",
+      "exception3": "Achats effectués via des plateformes tierces ou des revendeurs non directement affiliés à ContentForge."
+    },
+    "contact": {
+      "title": "Des Questions sur les Remboursements ?",
+      "description": "Si vous avez des questions sur notre politique de remboursement ou si vous avez besoin d'aide pour une demande de remboursement, nous sommes là pour vous aider :",
+      "emailLabel": "E-mail :",
+      "contactFormLabel": "Formulaire de Contact :",
+      "contactFormLink": "Visitez notre page de contact",
+      "responseTimeLabel": "Temps de Réponse :",
+      "responseTime": "Nous répondons généralement dans les 24 heures les jours ouvrables"
+    },
+    "finalStatement": {
+      "title": "Votre Satisfaction est Notre Priorité",
+      "description": "Nous voulons que vous vous sentiez en confiance dans votre achat. Si nos produits ne répondent pas à vos attentes, nous arrangerons les choses.",
+      "contactButton": "Contacter le Support"
+    },
+    "footer": {
+      "pagesTitle": "Pages",
+      "home": "Accueil",
+      "resources": "Ressources",
+      "freeResources": "Ressources Gratuites",
+      "contact": "Contact",
+      "blog": "Blog",
+      "productsTitle": "Produits",
+      "masterLibrary": "Bibliothèque Maître",
+      "customDigitalProduct": "Produit Numérique Personnalisé",
+      "plrProducts": "Produits PLR Numériques",
+      "legalTitle": "Légal",
+      "terms": "Conditions Générales",
+      "privacy": "Politique de Confidentialité",
+      "refund": "Politique de Remboursement",
+      "plr": "Droits de Label Privé",
+      "copyright": "© 2024 Réalisé par ContentForge s.r.o."
+    }
   }
 }
