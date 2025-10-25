@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import LanguageSwitcher from "@/components/LanguageSwitcher"
 
 export default function ContactPage() {
@@ -74,7 +74,7 @@ export default function ContactPage() {
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('resources')}</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('freeResources')}</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('blog')}</a>
-          <Link href="contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('contact')}</Link>
+          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('contact')}</Link>
         </nav>
 
         <div className="flex items-center space-x-4">
@@ -255,7 +255,7 @@ export default function ContactPage() {
                 <li><Link href="/" className="hover:text-[#FFD700] transition-colors">{tFooter('home')}</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('resources')}</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('freeResources')}</a></li>
-                <li><Link href="contact" className="hover:text-[#FFD700] transition-colors">{tFooter('contact')}</Link></li>
+                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">{tFooter('contact')}</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('blog')}</a></li>
               </ul>
             </div>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 
 export default function TermsPage() {
   return (
@@ -22,7 +22,7 @@ export default function TermsPage() {
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <Link href="contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
+          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
         </nav>
 
         <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
@@ -203,7 +203,7 @@ export default function TermsPage() {
                 <li><Link href="" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
-                <li><Link href="contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
+                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
               </ul>
             </div>

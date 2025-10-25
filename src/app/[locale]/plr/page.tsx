@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 
 export default function PLRPage() {
   return (
@@ -426,7 +426,7 @@ export default function PLRPage() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
                 <li><a href="privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><Link href="plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</Link></li>
+                <li><Link href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</Link></li>
               </ul>
             </div>
           </div>
