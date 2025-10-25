@@ -324,12 +324,12 @@ export default function PLRPage() {
           <section className="mb-10">
             <h2 className="text-3xl font-bold text-[#003399] mb-6">13. CONTACT & SUPPORT</h2>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <ul className="list-none text-gray-700 space-y-2">
-                <li><strong>License Questions:</strong> support@contentforge.cc</li>
-                <li><strong>Technical Issues:</strong> Same email address</li>
-                <li><strong>Legal Inquiries:</strong> legal@contentforge.cc</li>
-                <li><strong>Response Time:</strong> We aim to respond within 48 business hours.</li>
-              </ul>
+              <p className="text-gray-700 mb-4">
+                For all inquiries including license questions, technical support, and legal matters, please <a href="/contact" className="text-[#003399] hover:underline font-semibold">contact us through our contact form</a>.
+              </p>
+              <p className="text-gray-700">
+                <strong>Response Time:</strong> We aim to respond within 48 business hours.
+              </p>
             </div>
           </section>
 
@@ -378,7 +378,7 @@ export default function PLRPage() {
           <div className="bg-yellow-50 border-2 border-yellow-400 p-6 rounded-lg">
             <p className="text-gray-800 font-semibold mb-2">IMPORTANT DISCLAIMER:</p>
             <p className="text-gray-700">
-              This license grants you broad commercial rights, but with responsibility. We trust you to use these products ethically and legally. When in doubt, reach out to <strong>support@contentforge.cc</strong> before taking action.
+              This license grants you broad commercial rights, but with responsibility. We trust you to use these products ethically and legally. When in doubt, <a href="/contact" className="text-[#003399] hover:underline font-semibold">contact us</a> before taking action.
             </p>
           </div>
         </div>

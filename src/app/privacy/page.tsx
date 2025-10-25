@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
+          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
         </nav>
 
         <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold text-[#003399] mb-4">Your Data Rights</h2>
 
             <p className="text-gray-700">
-              You have the right to access, correct, or delete your personal data. You may request this by contacting us at <strong>infos@bakchich.app</strong>.
+              You have the right to access, correct, or delete your personal data. You may request this by <a href="/contact" className="text-[#003399] hover:underline font-semibold">contacting us</a>.
             </p>
           </section>
 
@@ -190,11 +190,8 @@ export default function PrivacyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#003399] mb-4">Contact Us</h2>
 
-            <p className="text-gray-700 mb-2">
-              If you have any questions about this Privacy Policy, please contact us at:
-            </p>
-            <p className="text-gray-700">
-              📧 <strong>infos@bakchich.app</strong>
+            <p className="text-gray-700 mb-4">
+              If you have any questions about this Privacy Policy, please <a href="/contact" className="text-[#003399] hover:underline font-semibold">contact us through our contact form</a>.
             </p>
           </section>
         </div>
@@ -223,7 +220,7 @@ export default function PrivacyPage() {
                 <li><Link href="/" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
+                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
               </ul>
             </div>

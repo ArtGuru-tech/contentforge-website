@@ -37,7 +37,7 @@ export default function Home() {
             Pricing
           </a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
+          <a href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
         </nav>
 
         <Button
@@ -624,7 +624,7 @@ export default function Home() {
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Digital Tools Repository</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
+                <li><a href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
               </ul>
             </div>
