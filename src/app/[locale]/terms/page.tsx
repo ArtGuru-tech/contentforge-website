@@ -18,11 +18,11 @@ export default function TermsPage() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</Link>
+          <Link href="" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</Link>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
+          <Link href="contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
         </nav>
 
         <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
@@ -200,10 +200,10 @@ export default function TermsPage() {
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Pages</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
+                <li><Link href="" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
-                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
+                <li><Link href="contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
               </ul>
             </div>
@@ -220,9 +220,9 @@ export default function TermsPage() {
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Legal</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
-                <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
+                <li><a href="terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
+                <li><a href="privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
+                <li><a href="plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
               </ul>
             </div>
           </div>

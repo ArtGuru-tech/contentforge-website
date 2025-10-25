@@ -18,7 +18,7 @@ export default function PLRPage() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</Link>
+          <Link href="" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</Link>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
@@ -325,7 +325,7 @@ export default function PLRPage() {
             <h2 className="text-3xl font-bold text-[#003399] mb-6">13. CONTACT & SUPPORT</h2>
             <div className="bg-gray-50 p-6 rounded-lg">
               <p className="text-gray-700 mb-4">
-                For all inquiries including license questions, technical support, and legal matters, please <a href="/contact" className="text-[#003399] hover:underline font-semibold">contact us through our contact form</a>.
+                For all inquiries including license questions, technical support, and legal matters, please <a href="contact" className="text-[#003399] hover:underline font-semibold">contact us through our contact form</a>.
               </p>
               <p className="text-gray-700">
                 <strong>Response Time:</strong> We aim to respond within 48 business hours.
@@ -378,7 +378,7 @@ export default function PLRPage() {
           <div className="bg-yellow-50 border-2 border-yellow-400 p-6 rounded-lg">
             <p className="text-gray-800 font-semibold mb-2">IMPORTANT DISCLAIMER:</p>
             <p className="text-gray-700">
-              This license grants you broad commercial rights, but with responsibility. We trust you to use these products ethically and legally. When in doubt, <a href="/contact" className="text-[#003399] hover:underline font-semibold">contact us</a> before taking action.
+              This license grants you broad commercial rights, but with responsibility. We trust you to use these products ethically and legally. When in doubt, <a href="contact" className="text-[#003399] hover:underline font-semibold">contact us</a> before taking action.
             </p>
           </div>
         </div>
@@ -404,7 +404,7 @@ export default function PLRPage() {
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Pages</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
+                <li><Link href="" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
@@ -424,9 +424,9 @@ export default function PLRPage() {
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Legal</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
-                <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><Link href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</Link></li>
+                <li><a href="terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
+                <li><a href="privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
+                <li><Link href="plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</Link></li>
               </ul>
             </div>
           </div>

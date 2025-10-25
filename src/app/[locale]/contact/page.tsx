@@ -74,7 +74,7 @@ export default function ContactPage() {
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('resources')}</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('freeResources')}</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('blog')}</a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('contact')}</Link>
+          <Link href="contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('contact')}</Link>
         </nav>
 
         <div className="flex items-center space-x-4">
@@ -255,7 +255,7 @@ export default function ContactPage() {
                 <li><Link href="/" className="hover:text-[#FFD700] transition-colors">{tFooter('home')}</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('resources')}</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('freeResources')}</a></li>
-                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">{tFooter('contact')}</Link></li>
+                <li><Link href="contact" className="hover:text-[#FFD700] transition-colors">{tFooter('contact')}</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('blog')}</a></li>
               </ul>
             </div>
@@ -272,9 +272,9 @@ export default function ContactPage() {
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">{tFooter('legalTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">{tFooter('terms')}</a></li>
-                <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">{tFooter('privacy')}</a></li>
-                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">{tFooter('plr')}</a></li>
+                <li><a href="terms" className="hover:text-[#FFD700] transition-colors">{tFooter('terms')}</a></li>
+                <li><a href="privacy" className="hover:text-[#FFD700] transition-colors">{tFooter('privacy')}</a></li>
+                <li><a href="plr" className="hover:text-[#FFD700] transition-colors">{tFooter('plr')}</a></li>
               </ul>
             </div>
           </div>

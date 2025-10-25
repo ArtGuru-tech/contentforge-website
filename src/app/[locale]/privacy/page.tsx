@@ -18,11 +18,11 @@ export default function PrivacyPage() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</Link>
+          <Link href="" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</Link>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
+          <Link href="contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</Link>
         </nav>
 
         <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold text-[#003399] mb-4">Your Data Rights</h2>
 
             <p className="text-gray-700">
-              You have the right to access, correct, or delete your personal data. You may request this by <a href="/contact" className="text-[#003399] hover:underline font-semibold">contacting us</a>.
+              You have the right to access, correct, or delete your personal data. You may request this by <a href="contact" className="text-[#003399] hover:underline font-semibold">contacting us</a>.
             </p>
           </section>
 
@@ -191,7 +191,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold text-[#003399] mb-4">Contact Us</h2>
 
             <p className="text-gray-700 mb-4">
-              If you have any questions about this Privacy Policy, please <a href="/contact" className="text-[#003399] hover:underline font-semibold">contact us through our contact form</a>.
+              If you have any questions about this Privacy Policy, please <a href="contact" className="text-[#003399] hover:underline font-semibold">contact us through our contact form</a>.
             </p>
           </section>
         </div>
@@ -217,10 +217,10 @@ export default function PrivacyPage() {
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Pages</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
+                <li><Link href="" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
-                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
+                <li><Link href="contact" className="hover:text-[#FFD700] transition-colors">Contact</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
               </ul>
             </div>
@@ -237,9 +237,9 @@ export default function PrivacyPage() {
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Legal</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
-                <li><a href="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><a href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
+                <li><a href="terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
+                <li><a href="privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
+                <li><a href="plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</a></li>
               </ul>
             </div>
           </div>

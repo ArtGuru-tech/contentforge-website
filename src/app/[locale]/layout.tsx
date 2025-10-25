@@ -39,7 +39,7 @@ export default async function LocaleLayout({
   params
 }: Props) {
   const { locale } = await params;
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
@@ -50,7 +50,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body suppressHydrationWarning className="antialiased">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
           <ClientBody>{children}</ClientBody>
         </NextIntlClientProvider>
       </body>
