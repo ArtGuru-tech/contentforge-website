@@ -204,5 +204,20 @@
     "securePayment": "Paiement Sécurisé",
     "paymentMethods": "Méthodes de Paiement Sécurisées",
     "trustedBy": "Approuvé par les premiers utilisateurs"
+  },
+  "faq": {
+    "badge": "Questions Fréquemment Posées",
+    "headline": "Des Questions ? Nous Avons les Réponses",
+    "description": "Tout ce que vous devez savoir sur ContentForge et nos produits numériques",
+    "question1": "Comment puis-je faire confiance à la qualité de vos produits PLR ?",
+    "answer1": "Chaque produit numérique de notre bibliothèque est créé par des créateurs de contenu expérimentés et des experts en la matière. Nous n'acceptons pas de contenu de faible qualité ou générique. Chaque produit passe par un processus rigoureux d'examen de la qualité pour s'assurer qu'il répond aux normes professionnelles. Notre contenu s'inspire des produits les plus vendus et des meilleures marques, garantissant que vous recevez des matériaux premium que votre public appréciera. De plus, avec notre garantie de remboursement de 14 jours, vous pouvez essayer nos produits sans risque.",
+    "question2": "Que sont exactement les Droits de Label Privé ? Suis-je vraiment propriétaire du contenu ?",
+    "answer2": "Oui ! Les Droits de Label Privé (PLR) signifient que vous obtenez la pleine propriété pour utiliser, éditer, rebrandiser et vendre les produits comme les vôtres. Vous pouvez modifier le contenu, ajouter votre marque, changer le titre, combiner plusieurs produits ou les utiliser de la manière que vous choisissez. Il n'y a aucune restriction sur la façon dont vous les monétisez. La seule limitation est que vous ne pouvez pas revendre les droits PLR eux-mêmes - mais vous pouvez vendre les produits finis un nombre illimité de fois à vos clients.",
+    "question3": "Quelle est votre politique de remboursement ?",
+    "answer3": "Nous offrons une garantie de remboursement de 14 jours sans poser de questions sur tous nos plans. Si vous n'êtes pas complètement satisfait de la qualité de nos produits numériques ou si vous estimez qu'ils ne répondent pas à vos besoins, contactez simplement notre équipe d'assistance dans les 14 jours suivant l'achat pour un remboursement complet. Nous traitons les remboursements rapidement via le même mode de paiement que vous avez utilisé. Votre satisfaction est notre priorité et nous soutenons la qualité de nos produits.",
+    "question4": "Ai-je besoin de compétences techniques pour utiliser ces produits ?",
+    "answer4": "Pas du tout ! Nos produits sont conçus pour être conviviaux et accessibles à tous, quel que soit le niveau d'expertise technique. La plupart des produits sont livrés dans des formats standard comme PDF, MP4 et des formats de documents modifiables que vous pouvez personnaliser à l'aide d'outils gratuits comme Google Docs, Canva ou n'importe quel éditeur de texte. Aucune compétence en codage, en conception ou logiciel coûteux n'est requise. Si vous pouvez éditer un document Word ou créer une présentation simple, vous pouvez travailler avec nos produits. De plus, de nombreux articles sont prêts à être utilisés immédiatement sans aucune modification nécessaire.",
+    "question5": "En quoi ContentForge est-il différent de la concurrence ?",
+    "answer5": "Contrairement à d'autres fournisseurs de PLR, nous nous concentrons sur la qualité plutôt que sur la quantité. Alors que d'autres proposent des milliers de produits obsolètes ou génériques, nous ne sélectionnons que le contenu le plus demandé et à jour qui se vend réellement. Nos produits sont créés par des experts, pas par l'IA ou des usines à contenu. Nous mettons constamment à jour notre bibliothèque avec des sujets tendance et des stratégies modernes. Vous avez également accès à plusieurs formats (ebooks, vidéos, audio, modèles, cahiers d'exercices) en un seul endroit, ce qui vous fait gagner du temps et de l'argent. De plus, nos tarifs sont transparents sans frais cachés, et nous offrons un support exceptionnel pour vous aider à réussir."
   }
 }

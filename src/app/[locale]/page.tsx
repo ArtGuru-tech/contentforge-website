@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { Link } from "@/i18n/routing"
 import PricingSection from "@/components/PricingSection"
+import FAQSection from "@/components/FAQSection"
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from "@/components/LanguageSwitcher"
 
@@ -597,6 +598,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* Pricing Section */}
       <PricingSection />

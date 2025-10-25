@@ -204,5 +204,20 @@
     "securePayment": "Secure Payment",
     "paymentMethods": "Secure Payment Methods",
     "trustedBy": "Trusted by early adopters"
+  },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "headline": "Got Questions? We've Got Answers",
+    "description": "Everything you need to know about ContentForge and our digital products",
+    "question1": "How can I trust the quality of your PLR products?",
+    "answer1": "Every digital product in our library is created by experienced content creators and subject matter experts. We don't accept low-quality or generic content. Each product goes through a rigorous quality review process to ensure it meets professional standards. Our content is inspired by best-selling products and top brands, ensuring you receive premium materials that your audience will value. Plus, with our 14-day money-back guarantee, you can try our products risk-free.",
+    "question2": "What exactly are Private Label Rights? Do I really own the content?",
+    "answer2": "Yes! Private Label Rights (PLR) means you get full ownership to use, edit, rebrand, and sell the products as your own. You can modify the content, add your branding, change the title, combine multiple products, or use them in any way you choose. There are no restrictions on how you monetize them. The only limitation is that you cannot resell the PLR rights themselves - but you can sell the finished products unlimited times to your customers.",
+    "question3": "What is your refund policy?",
+    "answer3": "We offer a no-questions-asked 14-day money-back guarantee on all our plans. If you're not completely satisfied with the quality of our digital products or feel they don't meet your needs, simply contact our support team within 14 days of purchase for a full refund. We process refunds quickly through the same payment method you used. Your satisfaction is our priority, and we stand behind the quality of our products.",
+    "question4": "Do I need technical skills to use these products?",
+    "answer4": "Not at all! Our products are designed to be user-friendly and accessible to everyone, regardless of technical expertise. Most products come in standard formats like PDF, MP4, and editable document formats that you can customize using free tools like Google Docs, Canva, or any text editor. No coding, design skills, or expensive software required. If you can edit a Word document or create a simple presentation, you can work with our products. Plus, many items come ready to use immediately without any modifications needed.",
+    "question5": "How is ContentForge different from competitors?",
+    "answer5": "Unlike other PLR providers, we focus on quality over quantity. While others offer thousands of outdated or generic products, we curate only the most in-demand, up-to-date content that actually sells. Our products are created by experts, not AI or content mills. We constantly update our library with trending topics and modern strategies. You also get access to multiple formats (ebooks, videos, audio, templates, workbooks) in one place, saving you time and money. Plus, our pricing is transparent with no hidden fees, and we offer exceptional support to help you succeed."
   }
 }
