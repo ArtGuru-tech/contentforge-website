@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
@@ -23,12 +25,25 @@ export default function Home() {
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
+          <a
+            href="#pricing"
+            className="text-gray-600 hover:text-[#003399] transition-colors font-medium"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Pricing
+          </a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
           <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
         </nav>
 
-        <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
-          Sign In
+        <Button
+          className="bg-[#003399] hover:bg-[#002266] text-white border-0"
+          onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          Subscribe
         </Button>
       </header>
 
@@ -47,9 +62,19 @@ export default function Home() {
           You can instantly have your own digital products. Rebrand, sell, or use in any way. Without high investments or months of creation.
         </p>
 
-        <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold mb-12">
-          ▶ Learn about Master Library
-        </Button>
+        <div className="flex flex-col items-center gap-4 mb-12">
+          <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold">
+            ▶ Learn about Master Library
+          </Button>
+
+          {/* 14-Day Money-Back Guarantee Badge */}
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-[#FFD700] rounded-full px-6 py-3">
+            <div className="w-8 h-8 bg-[#FFD700] rounded-full flex items-center justify-center">
+              <span className="text-[#003399] font-bold text-lg">✓</span>
+            </div>
+            <span className="text-white font-semibold">14-Day Money-Back Guarantee</span>
+          </div>
+        </div>
 
         {/* Animated Avatars Section */}
         <div className="flex justify-center items-center space-x-4 mb-4">
@@ -64,7 +89,7 @@ export default function Home() {
             <span>★★★★★</span>
           </div>
         </div>
-        <p className="text-blue-200 text-sm">Loved by 20 000+ entrepreneurs</p>
+        <p className="text-blue-200 text-sm">Trusted by early adopters</p>
 
         {/* Product Showcase */}
         <div className="mt-16 relative">
@@ -572,7 +597,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
+      <section id="pricing" className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
         <div className="max-w-6xl mx-auto text-center">
           <div className="bg-[#FFD700] text-[#003399] px-4 py-2 rounded-full inline-block text-sm mb-8 font-semibold">
             Unlimited Business Library
@@ -604,7 +629,7 @@ export default function Home() {
               <span>★★★★★</span>
             </div>
           </div>
-          <p className="text-blue-200 text-sm">Loved by 20 000+ entrepreneurs</p>
+          <p className="text-blue-200 text-sm">Trusted by early adopters</p>
         </div>
       </section>
 
