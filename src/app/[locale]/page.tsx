@@ -16,16 +16,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 relative">
+      <header className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
+        <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
             <img
               src="/logo.svg"
               alt={t('hero.logoAlt')}
               className="w-full h-full object-contain"
             />
           </div>
-          <span className="text-[#003399] font-bold text-lg">CONTENTFORGE</span>
+          <span className="text-[#003399] font-bold text-base sm:text-lg">CONTENTFORGE</span>
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
@@ -46,10 +46,10 @@ export default function Home() {
           <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.contact')}</Link>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
           <LanguageSwitcher />
           <Button
-            className="bg-[#003399] hover:bg-[#002266] text-white border-0"
+            className="bg-[#003399] hover:bg-[#002266] text-white border-0 text-sm sm:text-base px-3 sm:px-4"
             onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('nav.subscribe')}
@@ -58,31 +58,45 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="px-6 py-20 max-w-7xl mx-auto text-center bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <div className="mb-6">
-          <span className="text-blue-200 text-sm">{t('hero.tagline')}</span>
-        </div>
-
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      <section className="px-4 sm:px-6 py-12 sm:py-16 md:py-20 max-w-7xl mx-auto text-center bg-gradient-to-br from-[#003399] to-[#001155] text-white">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
           {t('hero.headline1')}<br />
           <span className="text-[#FFD700]">{t('hero.headline2')}</span>
         </h1>
 
-        <p className="text-blue-100 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+        <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
           {t('hero.description')}
         </p>
 
-        <div className="flex flex-col items-center gap-4 mb-12">
-          <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold">
+        <div className="flex flex-col items-center gap-4 sm:gap-6 mb-8 sm:mb-12">
+          <Button
+            className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-sm"
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             {t('hero.ctaButton')}
           </Button>
 
-          {/* 14-Day Money-Back Guarantee Badge */}
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-[#FFD700] rounded-full px-6 py-3">
-            <div className="w-8 h-8 bg-[#FFD700] rounded-full flex items-center justify-center">
-              <span className="text-[#003399] font-bold text-lg">✓</span>
+          {/* Trust Bar */}
+          <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-white text-xs sm:text-sm md:text-base max-w-2xl">
+            <div className="flex items-center gap-2 justify-center">
+              <span className="text-[#FFD700] font-bold">✓</span>
+              <span className="whitespace-nowrap">{t('hero.trustBar1')}</span>
             </div>
-            <span className="text-white font-semibold">{t('hero.guarantee')}</span>
+            <div className="hidden md:block text-blue-300">|</div>
+            <div className="flex items-center gap-2 justify-center">
+              <span className="text-[#FFD700] font-bold">✓</span>
+              <span className="whitespace-nowrap">{t('hero.trustBar2')}</span>
+            </div>
+            <div className="hidden md:block text-blue-300">|</div>
+            <div className="flex items-center gap-2 justify-center">
+              <span className="text-[#FFD700] font-bold">✓</span>
+              <span className="whitespace-nowrap">{t('hero.trustBar3')}</span>
+            </div>
+            <div className="hidden md:block text-blue-300">|</div>
+            <div className="flex items-center gap-2 justify-center">
+              <span className="text-[#FFD700] font-bold">✓</span>
+              <span className="whitespace-nowrap">{t('hero.trustBar4')}</span>
+            </div>
           </div>
         </div>
 
@@ -366,11 +380,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="text-center">
-            <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold mb-8">
+          <div className="text-center flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
+            <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-md">
               {t('customProduct.ctaButton')}
             </Button>
-            <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-6 py-2 rounded-full text-sm font-semibold ml-4">
+            <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-6 py-2 rounded-full text-sm font-semibold w-full sm:w-auto max-w-xs">
               {t('customProduct.formatsBadge')}
             </Button>
           </div>
