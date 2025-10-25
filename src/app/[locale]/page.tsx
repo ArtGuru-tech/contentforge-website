@@ -16,16 +16,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 relative">
+      <header className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
+        <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
             <img
               src="/logo.svg"
               alt={t('hero.logoAlt')}
               className="w-full h-full object-contain"
             />
           </div>
-          <span className="text-[#003399] font-bold text-lg">CONTENTFORGE</span>
+          <span className="text-[#003399] font-bold text-base sm:text-lg">CONTENTFORGE</span>
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
@@ -46,10 +46,10 @@ export default function Home() {
           <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.contact')}</Link>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
           <LanguageSwitcher />
           <Button
-            className="bg-[#003399] hover:bg-[#002266] text-white border-0"
+            className="bg-[#003399] hover:bg-[#002266] text-white border-0 text-sm sm:text-base px-3 sm:px-4"
             onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('nav.subscribe')}
@@ -380,11 +380,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="text-center">
-            <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-8 py-3 rounded-full text-lg font-semibold mb-8">
+          <div className="text-center flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
+            <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-md">
               {t('customProduct.ctaButton')}
             </Button>
-            <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-6 py-2 rounded-full text-sm font-semibold ml-4">
+            <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-6 py-2 rounded-full text-sm font-semibold w-full sm:w-auto max-w-xs">
               {t('customProduct.formatsBadge')}
             </Button>
           </div>
