@@ -6,6 +6,7 @@ import Image from "next/image"
 import { Link } from "@/i18n/routing"
 import PricingSection from "@/components/PricingSection"
 import FAQSection from "@/components/FAQSection"
+import TrustpilotWidget from "@/components/TrustpilotWidget"
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from "@/components/LanguageSwitcher"
 
@@ -263,11 +264,16 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center">
+            <a
+              href="https://www.trustpilot.com/review/contentforge.cc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center hover:transform hover:scale-105 transition-transform cursor-pointer"
+            >
               <div className="text-[#FFD700] text-2xl mb-2">★</div>
               <div className="text-lg font-semibold">{t('testimonials.trustpilot')}</div>
               <div className="text-[#FFD700]">★★★★★</div>
-            </div>
+            </a>
             <div className="text-center">
               <div className="text-[#00CED1] text-2xl mb-2">f</div>
               <div className="text-lg font-semibold">{t('testimonials.facebook')}</div>
@@ -306,6 +312,11 @@ export default function Home() {
                 </div>
               </div>
             </Card>
+          </div>
+
+          {/* Trustpilot Widget */}
+          <div className="mt-12">
+            <TrustpilotWidget height="140px" />
           </div>
         </div>
       </section>
@@ -688,6 +699,13 @@ export default function Home() {
               {/* Amex */}
               <div className="bg-[#006FCF] px-4 py-2 rounded shadow-sm">
                 <span className="text-white font-bold text-sm">AMEX</span>
+              </div>
+            </div>
+
+            {/* Trustpilot Widget */}
+            <div className="mt-8 flex justify-center">
+              <div className="max-w-md w-full">
+                <TrustpilotWidget height="52px" theme="dark" />
               </div>
             </div>
           </div>
