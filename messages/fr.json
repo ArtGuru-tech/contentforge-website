@@ -251,7 +251,7 @@
       "stepsTitle": "Processus de Demande de Remboursement",
       "step1": {
         "title": "Contactez Notre Équipe d'Assistance",
-        "description": "Envoyez-nous un e-mail à support@contentforge.app ou utilisez notre formulaire de contact dans les 14 jours suivant la date de votre achat."
+        "description": "Utilisez notre formulaire de contact dans les 14 jours suivant la date de votre achat."
       },
       "step2": {
         "title": "Fournissez Vos Informations de Commande",
@@ -316,8 +316,7 @@
     },
     "contact": {
       "title": "Des Questions sur les Remboursements ?",
-      "description": "Si vous avez des questions sur notre politique de remboursement ou si vous avez besoin d'aide pour une demande de remboursement, nous sommes là pour vous aider :",
-      "emailLabel": "E-mail :",
+      "description": "Si vous avez des questions sur notre politique de remboursement ou si vous avez besoin d'aide pour une demande de remboursement, veuillez nous contacter via notre formulaire de contact :",
       "contactFormLabel": "Formulaire de Contact :",
       "contactFormLink": "Visitez notre page de contact",
       "responseTimeLabel": "Temps de Réponse :",

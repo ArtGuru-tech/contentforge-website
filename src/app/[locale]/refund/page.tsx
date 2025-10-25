@@ -223,16 +223,9 @@ export default function RefundPolicyPage() {
             <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-lg">
               <div className="space-y-3">
                 <p className="text-gray-700">
-                  <strong className="text-[#003399]">{t('contact.emailLabel')}</strong>
-                  <br />
-                  <a href="mailto:support@contentforge.app" className="text-[#00CED1] hover:underline">
-                    support@contentforge.app
-                  </a>
-                </p>
-                <p className="text-gray-700">
                   <strong className="text-[#003399]">{t('contact.contactFormLabel')}</strong>
                   <br />
-                  <Link href="/contact" className="text-[#00CED1] hover:underline">
+                  <Link href="/contact" className="text-[#00CED1] hover:underline text-lg">
                     {t('contact.contactFormLink')}
                   </Link>
                 </p>

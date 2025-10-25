@@ -251,7 +251,7 @@
       "stepsTitle": "Refund Request Process",
       "step1": {
         "title": "Contact Our Support Team",
-        "description": "Email us at support@contentforge.app or use our contact form within 14 days of your purchase date."
+        "description": "Use our contact form within 14 days of your purchase date."
       },
       "step2": {
         "title": "Provide Your Order Information",
@@ -316,8 +316,7 @@
     },
     "contact": {
       "title": "Questions About Refunds?",
-      "description": "If you have any questions about our refund policy or need assistance with a refund request, we're here to help:",
-      "emailLabel": "Email:",
+      "description": "If you have any questions about our refund policy or need assistance with a refund request, please reach out through our contact form:",
       "contactFormLabel": "Contact Form:",
       "contactFormLink": "Visit our contact page",
       "responseTimeLabel": "Response Time:",
