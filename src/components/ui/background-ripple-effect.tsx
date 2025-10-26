@@ -1,14 +1,10 @@
 "use client";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const BackgroundRippleEffect = ({
-  rows = 8,
-  cols = 27,
   cellSize = 56,
 }: {
-  rows?: number;
-  cols?: number;
   cellSize?: number;
 }) => {
   const [clickedCell, setClickedCell] = useState<{
@@ -16,7 +12,23 @@ export const BackgroundRippleEffect = ({
     col: number;
   } | null>(null);
   const [rippleKey, setRippleKey] = useState(0);
+  const [dimensions, setDimensions] = useState({ rows: 20, cols: 60 });
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (ref.current) {
+        const { clientWidth, clientHeight } = ref.current;
+        const cols = Math.ceil(clientWidth / cellSize) + 2; // +2 for buffer
+        const rows = Math.ceil(clientHeight / cellSize) + 2; // +2 for buffer
+        setDimensions({ rows, cols });
+      }
+    };
+
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, [cellSize]);
 
   return (
     <div
@@ -30,8 +42,8 @@ export const BackgroundRippleEffect = ({
       <DivGrid
         key={`base-${rippleKey}`}
         className="opacity-60"
-        rows={rows}
-        cols={cols}
+        rows={dimensions.rows}
+        cols={dimensions.cols}
         cellSize={cellSize}
         borderColor="var(--cell-border-color)"
         fillColor="var(--cell-fill-color)"
@@ -81,8 +93,8 @@ const DivGrid = ({
 
   const gridStyle: React.CSSProperties = {
     display: "grid",
-    gridTemplateColumns: `repeat(${cols}, ${cellSize}px)`,
-    gridTemplateRows: `repeat(${rows}, ${cellSize}px)`,
+    gridTemplateColumns: `repeat(${cols}, 1fr)`,
+    gridTemplateRows: `repeat(${rows}, 1fr)`,
     width: "100%",
     height: "100%",
   };
