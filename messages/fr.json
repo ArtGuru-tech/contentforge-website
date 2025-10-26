@@ -34,6 +34,45 @@
     "readyTemplates": "Modèles Prêts",
     "readyTemplatesDesc": "Designs professionnels"
   },
+  "heroCarousel": {
+    "heading": "Votre Bibliothèque Numérique Complète.",
+    "subheading": "Prête à utiliser aujourd'hui.",
+    "ebook": {
+      "category": "Ebooks PLR",
+      "title": "Guides d'Experts",
+      "description": "Ebooks approfondis sur les affaires, le marketing et le développement personnel"
+    },
+    "videoCourse": {
+      "category": "Cours Vidéo",
+      "title": "Apprenez Visuellement",
+      "description": "Formation vidéo étape par étape sur des sujets tendance"
+    },
+    "template": {
+      "category": "Modèles",
+      "title": "Prêt à l'Emploi",
+      "description": "Modèles professionnels pour les réseaux sociaux, emails et plus"
+    },
+    "workbook": {
+      "category": "Cahiers d'Exercices",
+      "title": "Plans d'Action",
+      "description": "Cahiers interactifs pour mettre en œuvre des stratégies"
+    },
+    "aiPrompts": {
+      "category": "Prompts IA",
+      "title": "ChatGPT Prêt",
+      "description": "Prompts pré-écrits pour la création de contenu et l'automatisation"
+    },
+    "miniCourse": {
+      "category": "Mini-Cours",
+      "title": "Gains Rapides",
+      "description": "Cours courts pour un apprentissage ciblé"
+    },
+    "checklist": {
+      "category": "Listes de Contrôle",
+      "title": "Restez Organisé",
+      "description": "Listes de contrôle étape par étape pour les processus courants"
+    }
+  },
   "trustedBySection": {
     "title": "APPROUVÉ PAR LES MEILLEURES MARQUES ET PARTICULIERS DANS LE MONDE"
   },
@@ -54,7 +93,8 @@
     "mediaFormatsTitle": "15 Formats Médias",
     "mediaFormatsDesc": "Affaires, Marketing, Médias Sociaux, E-commerce et Entrepreneuriat.",
     "premiumQualityTitle": "Qualité Premium",
-    "premiumQualityDesc": "Contenu intéressant inspiré des meilleures marques du monde."
+    "premiumQualityDesc": "Contenu intéressant inspiré des meilleures marques du monde.",
+    "ctaButton": "Explorer la Bibliothèque"
   },
   "unlimitedOptions": {
     "badge": "Vous avez une liberté totale",
@@ -120,7 +160,12 @@
     "resourcesFeature2": "Orienté solution et objectif",
     "resourcesFeature3": "Contenu de forme courte",
     "resourcesButton": "🔍 Aperçu des Ressources",
-    "ctaButton": "▶ Explorer Tous les Produits"
+    "ctaButton": "▶ Explorer Tous les Produits",
+    "showcasePrefix": "Découvrez notre gamme de",
+    "showcaseSuffix": "de haute qualité avec droits de revente.",
+    "packagesBadge": "Produits Numériques",
+    "packagesTitle": "Packages Complets",
+    "packagesDesc": "Des packages tout-en-un comprenant plusieurs formats de contenu pour maximiser votre offre. Ebooks, vidéos, templates et ressources combinés pour créer des produits à forte valeur ajoutée."
   },
   "freeResourcesSection": {
     "headline": "Ressources Gratuites",
