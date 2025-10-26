@@ -15,6 +15,7 @@ import CardCarousel from "@/components/CardCarousel"
 import FreeResourcesWobble from "@/components/FreeResourcesWobble"
 import UnlimitedOptionsStickyCards from "@/components/UnlimitedOptionsStickyCards"
 import StackedCardTestimonials from "@/components/TestimonialsStacked"
+import CustomProductBento from "@/components/CustomProductBento"
 
 export default function Home() {
   const t = useTranslations();
@@ -124,60 +125,7 @@ export default function Home() {
       <StackedCardTestimonials />
 
       {/* Custom Digital Product Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="bg-[#FFD700] text-[#003399] px-4 py-2 rounded-full inline-block text-sm mb-8 font-semibold">
-              {t('customProduct.badge')}
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              {t('customProduct.headline')}<br />
-              <span className="text-[#FFD700]">{t('customProduct.headlineEmphasis')}</span>
-            </h2>
-            <p className="text-blue-100 text-lg max-w-3xl mx-auto">
-              {t('customProduct.description')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-white text-gray-900 p-6 border-0">
-              <div className="w-full h-48 bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
-                <span className="text-gray-600 font-bold">EBOOK MOCKUP</span>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{t('customProduct.expertTitle')}</h3>
-              <p className="text-gray-600 text-sm">{t('customProduct.expertDesc')}</p>
-            </Card>
-
-            <Card className="bg-gray-800 border-gray-700 p-6 border-0">
-              <h3 className="text-white text-lg font-semibold mb-4">{t('customProduct.designTitle')}</h3>
-              <p className="text-gray-400 text-sm mb-6">{t('customProduct.designDesc')}</p>
-              <div className="w-full h-32 bg-[#003399] rounded-lg flex items-center justify-center">
-                <span className="text-[#FFD700]">3D MOCKUP</span>
-              </div>
-            </Card>
-
-            <div className="space-y-4">
-              <Card className="bg-white text-gray-900 p-6 border-0">
-                <h3 className="font-semibold mb-2">{t('customProduct.contentTitle')}</h3>
-                <p className="text-gray-600 text-sm">{t('customProduct.contentDesc')}</p>
-              </Card>
-              <Card className="bg-[#00CED1] text-white p-6 border-0">
-                <h3 className="font-semibold mb-2">{t('customProduct.ownershipTitle')}</h3>
-                <p className="text-sm">{t('customProduct.ownershipDesc')}</p>
-              </Card>
-            </div>
-          </div>
-
-          <div className="text-center flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
-            <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-md">
-              {t('customProduct.ctaButton')}
-            </Button>
-            <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-6 py-2 rounded-full text-sm font-semibold w-full sm:w-auto max-w-xs">
-              {t('customProduct.formatsBadge')}
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CustomProductBento />
 
       {/* Product Categories Section */}
       <section className="px-6 py-20 bg-white">
