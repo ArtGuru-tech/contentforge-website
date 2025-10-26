@@ -1,275 +1,297 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { useTranslations, useLocale } from 'next-intl'
-
-interface PricingConfig {
-  lite_price: number
-  pro_price: number
-  lite_renewal: boolean
-  pro_renewal: boolean
-  show_badge: boolean
-  badge_text: string
-  urgency_text: string
-  cta_text: string
-}
+import React from "react";
+import { motion } from "framer-motion";
+import { useTranslations } from 'next-intl';
 
 export default function PricingSection() {
-  const t = useTranslations('pricing')
-  const locale = useLocale()
-  const [config, setConfig] = useState<PricingConfig | null>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    // Try to load locale-specific config, fallback to default
-    const configPath = locale === 'en' ? '/pricing-config.json' : `/pricing-config-${locale}.json`
-
-    fetch(configPath)
-      .then(res => {
-        if (!res.ok && locale !== 'en') {
-          // Fallback to default config
-          return fetch('/pricing-config.json')
-        }
-        return res
-      })
-      .then(res => res.json())
-      .then(data => {
-        setConfig(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Failed to load pricing config:', err)
-        setLoading(false)
-      })
-  }, [locale])
-
-  if (loading) {
-    return (
-      <section id="pricing" className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-blue-200">{t('loading')}</p>
-        </div>
-      </section>
-    )
-  }
-
-  if (!config) {
-    return null
-  }
+  const t = useTranslations('pricing');
 
   return (
-    <section id="pricing" className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          {config.show_badge && (
-            <div className="bg-[#FFD700] text-[#003399] px-4 py-2 rounded-full inline-block text-sm mb-8 font-semibold">
-              {config.badge_text}
-            </div>
-          )}
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            {t('headline')}
-          </h2>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-4">
-            {t('description')}
-          </p>
-          {config.urgency_text && (
-            <p className="text-[#FFD700] text-sm font-semibold">
-              {config.urgency_text}
-            </p>
-          )}
+    <section id="pricing" className="w-full text-white bg-gradient-to-br from-[#003399] to-[#001155] px-4 lg:px-8 py-12 lg:py-24 relative overflow-hidden">
+      <Heading t={t} />
+      <PriceCards t={t} />
+      <TrustElements t={t} />
+      <TopLeftCircle />
+      <BottomRightCircle />
+    </section>
+  );
+}
+
+interface HeadingProps {
+  t: (key: string) => string;
+}
+
+const Heading = ({ t }: HeadingProps) => {
+  return (
+    <div className="mb-12 lg:mb-24 relative z-10">
+      <h3 className="font-semibold text-5xl lg:text-7xl text-center mb-6">
+        {t('headline')}
+      </h3>
+      <p className="text-center mx-auto max-w-lg mb-8 text-blue-100">
+        {t('description')}
+      </p>
+    </div>
+  );
+};
+
+interface PriceCardsProps {
+  t: (key: string) => string;
+}
+
+const PriceCards = ({ t }: PriceCardsProps) => (
+  <div className="flex flex-col lg:flex-row gap-8 lg:gap-8 w-full max-w-5xl mx-auto relative z-10">
+    {/* LITE PLAN */}
+    <div className="w-full bg-white text-black p-6 border-[1px] border-slate-300 rounded-xl shadow-xl">
+      <p className="text-2xl font-bold mb-2">{t('liteTitle')}</p>
+      <p className="text-lg mb-6 text-gray-600">{t('liteDesc')}</p>
+      <p className="text-6xl font-bold mb-2 text-[#003399]">
+        $97
+      </p>
+      <p className="text-sm mb-8 text-gray-600">{t('oneTime')}</p>
+
+      <div className="space-y-3 mb-8">
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('liteFeature1')}</span>
         </div>
-
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Lite Plan */}
-          <Card className="bg-white text-gray-900 border-0 shadow-xl">
-            <CardContent className="p-8">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">{t('liteTitle')}</h3>
-                <p className="text-gray-600 mb-6">{t('liteDesc')}</p>
-
-                <div className="mb-6">
-                  <div className="text-5xl font-bold text-[#003399] mb-2">
-                    ${config.lite_price}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    {config.lite_renewal ? t('perMonth') : t('oneTime')}
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-700">{t('liteFeature1')}</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-700">{t('liteFeature2')}</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-700">{t('liteFeature3')}</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-700">{t('liteFeature4')}</p>
-                </div>
-              </div>
-
-              <Button className="w-full bg-[#003399] hover:bg-[#002266] text-white py-6 text-lg font-semibold">
-                {config.cta_text}
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Pro Plan */}
-          <Card className="bg-gradient-to-br from-[#FFD700] to-[#FFA500] text-gray-900 border-0 shadow-xl relative overflow-hidden">
-            {/* Most Popular Badge */}
-            <div className="absolute top-4 right-4 bg-[#003399] text-white px-3 py-1 rounded-full text-xs font-semibold">
-              {t('mostPopular')}
-            </div>
-
-            <CardContent className="p-8">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">{t('proTitle')}</h3>
-                <p className="text-gray-800 mb-6">{t('proDesc')}</p>
-
-                <div className="mb-6">
-                  <div className="text-5xl font-bold text-[#003399] mb-2">
-                    ${config.pro_price}
-                  </div>
-                  <p className="text-gray-800 text-sm">
-                    {config.pro_renewal ? t('perMonth') : t('oneTime')}
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-900 font-semibold">{t('proFeature1')}</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-900">{t('proFeature2')}</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-900">{t('proFeature3')}</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-900">{t('proFeature4')}</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-900">{t('proFeature5')}</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-[#003399] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <p className="text-gray-900">{t('proFeature6')}</p>
-                </div>
-              </div>
-
-              <Button className="w-full bg-[#003399] hover:bg-[#002266] text-white py-6 text-lg font-semibold">
-                {config.cta_text}
-              </Button>
-            </CardContent>
-          </Card>
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('liteFeature2')}</span>
         </div>
-
-        {/* Trust Elements */}
-        <div className="mt-16 text-center">
-          <div className="flex justify-center items-center gap-8 mb-6">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center">
-                <span className="text-[#003399] font-bold text-lg">✓</span>
-              </div>
-              <span className="text-white font-semibold">{t('guarantee')}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center">
-                <span className="text-[#003399] font-bold text-lg">🔒</span>
-              </div>
-              <span className="text-white font-semibold">{t('securePayment')}</span>
-            </div>
-          </div>
-
-          {/* Payment Processors */}
-          <div className="mb-8">
-            <p className="text-blue-200 text-xs mb-4 uppercase tracking-wide">{t('paymentMethods')}</p>
-            <div className="flex justify-center items-center gap-6 flex-wrap">
-              {/* Stripe */}
-              <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <span className="text-[#635BFF] font-bold text-xl">stripe</span>
-              </div>
-
-              {/* PayPal */}
-              <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <span className="text-[#0070BA] font-bold text-xl">Pay</span>
-                <span className="text-[#003087] font-bold text-xl">Pal</span>
-              </div>
-
-              {/* Visa */}
-              <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <span className="text-[#1434CB] font-bold text-xl">VISA</span>
-              </div>
-
-              {/* Mastercard */}
-              <div className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-1">
-                  <div className="w-4 h-4 bg-[#EB001B] rounded-full opacity-80"></div>
-                  <div className="w-4 h-4 bg-[#FF5F00] rounded-full opacity-80 -ml-2"></div>
-                  <span className="text-gray-800 font-semibold text-sm ml-1">Mastercard</span>
-                </div>
-              </div>
-
-              {/* Amex */}
-              <div className="bg-[#006FCF] px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <span className="text-white font-bold text-lg">AMEX</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center items-center space-x-4">
-            <div className="flex -space-x-2">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
-            </div>
-            <div className="flex items-center space-x-1 text-[#FFD700]">
-              <span>★★★★★</span>
-            </div>
-          </div>
-          <p className="text-blue-200 text-sm mt-4">{t('trustedBy')}</p>
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('liteFeature3')}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('liteFeature4')}</span>
         </div>
       </div>
-    </section>
-  )
+
+      <motion.button
+        whileHover={{ scale: 1.015 }}
+        whileTap={{ scale: 0.985 }}
+        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors"
+      >
+        Get Started
+      </motion.button>
+    </div>
+
+    {/* PRO PLAN */}
+    <div className="w-full bg-gradient-to-br from-[#FFD700] to-[#FFA500] text-black p-6 border-[1px] border-slate-300 rounded-xl shadow-xl relative overflow-hidden">
+      {/* Most Popular Badge */}
+      <div className="absolute top-4 right-4 bg-[#003399] text-white px-3 py-1 rounded-full text-xs font-semibold">
+        {t('mostPopular')}
+      </div>
+
+      <p className="text-2xl font-bold mb-2">{t('proTitle')}</p>
+      <p className="text-lg mb-6 text-gray-800">{t('proDesc')}</p>
+      <p className="text-6xl font-bold mb-2 text-[#003399]">
+        $397
+      </p>
+      <p className="text-sm mb-8 text-gray-800">{t('oneTime')}</p>
+
+      <div className="space-y-3 mb-8">
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base font-semibold">{t('proFeature1')}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('proFeature2')}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('proFeature3')}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('proFeature4')}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('proFeature5')}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#003399"
+            />
+          </svg>
+          <span className="text-base">{t('proFeature6')}</span>
+        </div>
+      </div>
+
+      <motion.button
+        whileHover={{ scale: 1.015 }}
+        whileTap={{ scale: 0.985 }}
+        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors"
+      >
+        Get Started Pro
+      </motion.button>
+    </div>
+  </div>
+);
+
+interface TrustElementsProps {
+  t: (key: string) => string;
 }
+
+const TrustElements = ({ t }: TrustElementsProps) => (
+  <div className="mt-16 text-center relative z-10 max-w-6xl mx-auto">
+    {/* Trust Badges */}
+    <div className="flex justify-center items-center gap-8 flex-wrap">
+      <div className="flex items-center gap-2">
+        <div className="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center">
+          <span className="text-[#003399] font-bold text-lg">✓</span>
+        </div>
+        <span className="text-white font-semibold">{t('guarantee')}</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center">
+          <span className="text-[#003399] font-bold text-lg">🔒</span>
+        </div>
+        <span className="text-white font-semibold">{t('securePayment')}</span>
+      </div>
+    </div>
+  </div>
+);
+
+const TopLeftCircle = () => {
+  return (
+    <motion.div
+      initial={{ rotate: "0deg" }}
+      animate={{ rotate: "360deg" }}
+      transition={{ duration: 100, ease: "linear", repeat: Infinity }}
+      className="w-[450px] h-[450px] rounded-full border-2 border-blue-400 border-dotted absolute z-0 -left-[250px] -top-[200px] opacity-30"
+    />
+  );
+};
+
+const BottomRightCircle = () => {
+  return (
+    <motion.div
+      initial={{ rotate: "0deg" }}
+      animate={{ rotate: "-360deg" }}
+      transition={{ duration: 100, ease: "linear", repeat: Infinity }}
+      className="w-[450px] h-[450px] rounded-full border-2 border-blue-400 border-dotted absolute z-0 -right-[250px] -bottom-[200px] opacity-30"
+    />
+  );
+};
