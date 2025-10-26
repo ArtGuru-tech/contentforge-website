@@ -102,7 +102,11 @@ const DivGrid = ({
   };
 
   return (
-    <div className={cn("absolute inset-0 z-[3]", className)} style={gridStyle}>
+    <div
+      className={cn("absolute inset-0 z-[3]", className)}
+      style={gridStyle}
+      data-ripple-key={rippleKey}
+    >
       {cells.map((idx) => {
         const rowIdx = Math.floor(idx / cols);
         const colIdx = idx % cols;
@@ -124,7 +128,7 @@ const DivGrid = ({
             key={idx}
             className={cn(
               "cell relative border-[0.5px] opacity-40 transition-opacity duration-150 will-change-transform hover:opacity-80 dark:shadow-[0px_0px_40px_1px_var(--cell-shadow-color)_inset]",
-              clickedCell && "animate-cell-ripple [animation-fill-mode:none]",
+              clickedCell && "animate-cell-ripple",
               !interactive && "pointer-events-none",
             )}
             style={{
