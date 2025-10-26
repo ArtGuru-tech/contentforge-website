@@ -1,19 +1,41 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import useMeasure from "react-use-measure";
 import { useTranslations } from 'next-intl';
 
-const CARD_WIDTH = 350;
-const CARD_HEIGHT = 350;
-const MARGIN = 20;
-const CARD_SIZE = CARD_WIDTH + MARGIN;
-
 const BREAKPOINTS = {
+  xs: 480,
   sm: 640,
   lg: 1024,
+};
+
+const getResponsiveCardWidth = (containerWidth: number) => {
+  if (containerWidth < BREAKPOINTS.xs) {
+    // Very small screens: card takes most of the width with some padding
+    return Math.min(280, containerWidth - 40);
+  } else if (containerWidth < BREAKPOINTS.sm) {
+    // Small screens
+    return Math.min(320, containerWidth - 60);
+  } else if (containerWidth < BREAKPOINTS.lg) {
+    // Medium screens
+    return 350;
+  } else {
+    // Large screens
+    return 350;
+  }
+};
+
+const getResponsiveMargin = (containerWidth: number) => {
+  if (containerWidth < BREAKPOINTS.xs) {
+    return 12;
+  } else if (containerWidth < BREAKPOINTS.sm) {
+    return 16;
+  } else {
+    return 20;
+  }
 };
 
 const CardCarousel = () => {
@@ -73,6 +95,12 @@ const CardCarousel = () => {
     },
   ], [t]);
 
+  // Calculate responsive dimensions based on container width
+  const CARD_WIDTH = useMemo(() => getResponsiveCardWidth(width), [width]);
+  const CARD_HEIGHT = useMemo(() => CARD_WIDTH, [CARD_WIDTH]); // Keep cards square
+  const MARGIN = useMemo(() => getResponsiveMargin(width), [width]);
+  const CARD_SIZE = useMemo(() => CARD_WIDTH + MARGIN, [CARD_WIDTH, MARGIN]);
+
   const CARD_BUFFER =
     width > BREAKPOINTS.lg ? 3 : width > BREAKPOINTS.sm ? 2 : 1;
 
@@ -95,6 +123,11 @@ const CardCarousel = () => {
     setOffset((pv) => (pv -= CARD_SIZE));
   };
 
+  // Reset offset when container width changes to prevent cards from being off-screen
+  useEffect(() => {
+    setOffset(0);
+  }, [width]);
+
   return (
     <section className="bg-transparent" ref={ref}>
       <div className="relative overflow-hidden p-4">
@@ -110,7 +143,7 @@ const CardCarousel = () => {
             className="flex"
           >
             {items.map((item) => {
-              return <Card key={item.id} {...item} />;
+              return <Card key={item.id} {...item} cardWidth={CARD_WIDTH} cardHeight={CARD_HEIGHT} margin={MARGIN} />;
             })}
           </motion.div>
         </div>
@@ -143,27 +176,27 @@ const CardCarousel = () => {
   );
 };
 
-const Card = ({ imageUrl, category, title, description }: ItemType) => {
+const Card = ({ imageUrl, category, title, description, cardWidth, cardHeight, margin }: ItemType & { cardWidth: number; cardHeight: number; margin: number }) => {
   return (
     <div
       className="relative shrink-0 cursor-pointer rounded-2xl shadow-md transition-all hover:scale-[1.015] hover:shadow-xl"
       style={{
-        width: CARD_WIDTH,
-        height: CARD_HEIGHT,
-        marginRight: MARGIN,
+        width: cardWidth,
+        height: cardHeight,
+        marginRight: margin,
         backgroundImage: `url(${imageUrl})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
     >
-      <div className="absolute inset-0 z-20 rounded-2xl bg-gradient-to-b from-black/90 via-black/60 to-black/0 p-6 text-white transition-[backdrop-filter] hover:backdrop-blur-sm flex flex-col justify-between">
+      <div className="absolute inset-0 z-20 rounded-2xl bg-gradient-to-b from-black/90 via-black/60 to-black/0 p-4 sm:p-6 text-white transition-[backdrop-filter] hover:backdrop-blur-sm flex flex-col justify-between">
         <div>
           <span className="text-xs font-semibold uppercase text-[#FFD700]">
             {category}
           </span>
-          <p className="my-2 text-3xl font-bold">{title}</p>
+          <p className="my-2 text-xl sm:text-2xl md:text-3xl font-bold">{title}</p>
         </div>
-        <p className="text-sm sm:text-base text-slate-200">{description}</p>
+        <p className="text-xs sm:text-sm md:text-base text-slate-200">{description}</p>
       </div>
     </div>
   );
