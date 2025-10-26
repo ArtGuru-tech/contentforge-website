@@ -11,9 +11,6 @@ export const BouncyCardsFeatures = () => {
     <section className="mx-auto max-w-7xl px-4 py-12 sm:py-20 text-gray-900">
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
         <div>
-          <div className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 inline-block">
-            {t('badge')}
-          </div>
           <h2 className="max-w-lg text-4xl md:text-5xl font-bold">
             {t('headline').split('\n')[0]}
             <span className="text-gray-500"> {t('headline').split('\n')[1]}</span>

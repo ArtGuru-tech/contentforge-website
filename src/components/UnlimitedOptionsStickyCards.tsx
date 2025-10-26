@@ -19,25 +19,28 @@ export const UnlimitedOptionsStickyCards = () => {
       id: 1,
       Icon: FiBriefcase,
       title: t('option1'),
-      description: "Build a comprehensive product catalog with our ready-to-use digital products. Expand your offerings instantly and provide more value to your customers.",
+      description: t('option1Desc'),
       ctaClasses: "bg-[#003399]",
       routeTo: "#pricing",
+      ctaText: t('ctaButtonShort'),
     },
     {
       id: 2,
       Icon: FiGift,
       title: t('option2'),
-      description: "Convert visitors into subscribers by offering our high-quality digital products as free lead magnets. Build your email list with valuable content.",
+      description: t('option2Desc'),
       ctaClasses: "bg-[#00CED1]",
       routeTo: "#pricing",
+      ctaText: t('ctaButtonShort'),
     },
     {
       id: 3,
       Icon: FiBookOpen,
       title: t('option3'),
-      description: "Share knowledge and establish authority in your niche. Use our expertly crafted content to educate and engage your audience effectively.",
+      description: t('option3Desc'),
       ctaClasses: "bg-[#FFD700]",
       routeTo: "#pricing",
+      ctaText: t('ctaButtonShort'),
     },
   ];
 
@@ -115,7 +118,7 @@ const Card = ({ position, card, scrollYProgress, totalCards }: CardProps) => {
             : "shadow-[4px_4px_0px_black] hover:shadow-[8px_8px_0px_black]"
         }`}
       >
-        <span>Explore Library</span>
+        <span>{card.ctaText}</span>
         <FiArrowRight />
       </a>
     </motion.div>
@@ -131,6 +134,7 @@ type CardType = {
   description: string;
   ctaClasses: string;
   routeTo: string;
+  ctaText: string;
 };
 
 export default UnlimitedOptionsStickyCards;

@@ -3,37 +3,15 @@
 import { Button } from "@/components/ui/button"
 import { Link } from "@/i18n/routing"
 import { useTranslations } from 'next-intl'
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 export default function RefundPolicyPage() {
   const t = useTranslations('refundPolicy');
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 relative">
-            <img
-              src="/logo.svg"
-              alt="ContentForge Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="text-[#003399] font-bold text-lg">CONTENTFORGE</span>
-        </div>
-
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link href="" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.home')}</Link>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.resources')}</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.freeResources')}</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.blog')}</a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.contact')}</Link>
-        </nav>
-
-        <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
-          {t('nav.signIn')}
-        </Button>
-      </header>
+      <Navbar />
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
@@ -249,59 +227,7 @@ export default function RefundPolicyPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="px-6 py-16 bg-gray-900 text-white border-t border-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 relative">
-                  <img
-                    src="/logo.svg"
-                    alt="ContentForge Logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <span className="text-white font-bold text-lg">CONTENTFORGE</span>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">{t('footer.pagesTitle')}</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="" className="hover:text-[#FFD700] transition-colors">{t('footer.home')}</Link></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.resources')}</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.freeResources')}</a></li>
-                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">{t('footer.contact')}</Link></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.blog')}</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">{t('footer.productsTitle')}</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.masterLibrary')}</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.customDigitalProduct')}</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.plrProducts')}</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">{t('footer.legalTitle')}</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/terms" className="hover:text-[#FFD700] transition-colors">{t('footer.terms')}</Link></li>
-                <li><Link href="/privacy" className="hover:text-[#FFD700] transition-colors">{t('footer.privacy')}</Link></li>
-                <li><Link href="/refund" className="hover:text-[#FFD700] transition-colors">{t('footer.refund')}</Link></li>
-                <li><Link href="/plr" className="hover:text-[#FFD700] transition-colors">{t('footer.plr')}</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
-            <p>{t('footer.copyright')}</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
