@@ -8,7 +8,7 @@ import PricingSection from "@/components/PricingSection"
 import FAQSection from "@/components/FAQSection"
 import TrustpilotWidget from "@/components/TrustpilotWidget"
 import { useTranslations } from 'next-intl'
-import LanguageSwitcher from "@/components/LanguageSwitcher"
+import Navbar from "@/components/Navbar"
 import ProductShowcaseSection from "@/components/ProductShowcaseSection"
 import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
 import CardCarousel from "@/components/CardCarousel"
@@ -23,77 +23,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header */}
-      <header className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <Link href="/" className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 hover:opacity-80 transition-opacity">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
-            <img
-              src="/logo.svg"
-              alt={t('hero.logoAlt')}
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="text-[#003399] font-bold text-base sm:text-lg">CONTENTFORGE</span>
-        </Link>
-
-        <nav className="hidden md:flex items-center space-x-8">
-          <a
-            href="#pricing"
-            className="text-gray-600 hover:text-[#003399] transition-colors font-medium"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            {t('nav.pricing')}
-          </a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.contact')}</Link>
-
-          {/* Legal Dropdown */}
-          <div className="relative group">
-            <button className="text-gray-600 hover:text-[#003399] transition-colors font-medium flex items-center gap-1">
-              {t('nav.legal')}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <Link href="/terms" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors first:rounded-t-lg">
-                {t('footer.terms')}
-              </Link>
-              <Link href="/privacy" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors">
-                {t('footer.privacy')}
-              </Link>
-              <Link href="/refund" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors">
-                {t('footer.refund')}
-              </Link>
-              <Link href="/plr" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors">
-                {t('footer.plr')}
-              </Link>
-              <Link href="/earnings-disclaimer" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors last:rounded-b-lg">
-                Earnings Disclaimer
-              </Link>
-            </div>
-          </div>
-        </nav>
-
-        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-          <LanguageSwitcher />
-          <Button
-            variant="outline"
-            className="text-[#003399] border-[#003399] hover:bg-[#003399] hover:text-white text-sm sm:text-base px-3 sm:px-4"
-            onClick={() => window.location.href = process.env.NEXT_PUBLIC_APP_URL || 'https://app.contentforge.cc/'}
-          >
-            {t('nav.login')}
-          </Button>
-          <Button
-            className="bg-[#003399] hover:bg-[#002266] text-white border-0 text-sm sm:text-base px-3 sm:px-4"
-            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            {t('nav.subscribe')}
-          </Button>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#0033997a] to-[#0011557a] text-white overflow-hidden">

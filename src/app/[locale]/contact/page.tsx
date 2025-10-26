@@ -5,11 +5,10 @@ import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Link } from "@/i18n/routing"
-import LanguageSwitcher from "@/components/LanguageSwitcher"
+import Navbar from "@/components/Navbar"
 
 export default function ContactPage() {
   const t = useTranslations('contact')
-  const tNav = useTranslations('nav')
   const tFooter = useTranslations('footer')
 
   const [formData, setFormData] = useState({
@@ -56,34 +55,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 relative">
-            <img
-              src="/logo.svg"
-              alt="ContentForge Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="text-[#003399] font-bold text-lg">CONTENTFORGE</span>
-        </div>
-
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('home')}</Link>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('resources')}</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('freeResources')}</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('blog')}</a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('contact')}</Link>
-        </nav>
-
-        <div className="flex items-center space-x-4">
-          <LanguageSwitcher />
-          <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
-            {tNav('signIn')}
-          </Button>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
