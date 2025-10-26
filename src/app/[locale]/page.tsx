@@ -82,7 +82,7 @@ export default function Home() {
           <Button
             variant="outline"
             className="text-[#003399] border-[#003399] hover:bg-[#003399] hover:text-white text-sm sm:text-base px-3 sm:px-4"
-            onClick={() => window.location.href = 'https://app.contenforge.com/'}
+            onClick={() => window.location.href = process.env.NEXT_PUBLIC_APP_URL || 'https://app.contentforge.cc/'}
           >
             {t('nav.login')}
           </Button>
