@@ -123,12 +123,6 @@ export default function Home() {
       <section className="px-6 py-20 bg-gray-900 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="flex justify-center items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-[#FFD700] rounded-full flex items-center justify-center">
-                <span className="text-gray-900 text-sm">★</span>
-              </div>
-              <span className="text-sm text-gray-400">{t('testimonials.badge')}</span>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold">{t('testimonials.headline')}</h2>
           </div>
 
