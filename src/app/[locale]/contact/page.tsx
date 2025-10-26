@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Link } from "@/i18n/routing"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 export default function ContactPage() {
   const t = useTranslations('contact')
-  const tFooter = useTranslations('footer')
 
   const [formData, setFormData] = useState({
     name: "",
@@ -204,58 +204,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="px-6 py-16 bg-gray-900 text-white border-t border-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 relative">
-                  <img
-                    src="/logo.svg"
-                    alt="ContentForge Logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <span className="text-white font-bold text-lg">CONTENTFORGE</span>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">{tFooter('pagesTitle')}</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/" className="hover:text-[#FFD700] transition-colors">{tFooter('home')}</Link></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('resources')}</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('freeResources')}</a></li>
-                <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">{tFooter('contact')}</Link></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('blog')}</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">{tFooter('productsTitle')}</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('masterLibrary')}</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('customDigitalProduct')}</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('plrProducts')}</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">{tFooter('legalTitle')}</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="terms" className="hover:text-[#FFD700] transition-colors">{tFooter('terms')}</a></li>
-                <li><a href="privacy" className="hover:text-[#FFD700] transition-colors">{tFooter('privacy')}</a></li>
-                <li><a href="plr" className="hover:text-[#FFD700] transition-colors">{tFooter('plr')}</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
-            <p>{tFooter('copyright')}</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
