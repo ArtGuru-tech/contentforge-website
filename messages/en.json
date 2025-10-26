@@ -120,7 +120,12 @@
     "resourcesFeature2": "Solution and goal oriented",
     "resourcesFeature3": "Short-form content",
     "resourcesButton": "🔍 Preview Resources",
-    "ctaButton": "▶ Explore All Products"
+    "ctaButton": "▶ Explore All Products",
+    "showcasePrefix": "Discover our range of",
+    "showcaseSuffix": "with resale rights.",
+    "packagesBadge": "Digital Products",
+    "packagesTitle": "Complete Packages",
+    "packagesDesc": "All-in-one packages including multiple content formats to maximize your offering. Ebooks, videos, templates and resources combined to create high-value products."
   },
   "freeResourcesSection": {
     "headline": "Free Resources",

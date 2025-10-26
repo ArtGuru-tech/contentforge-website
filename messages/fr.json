@@ -120,7 +120,12 @@
     "resourcesFeature2": "Orienté solution et objectif",
     "resourcesFeature3": "Contenu de forme courte",
     "resourcesButton": "🔍 Aperçu des Ressources",
-    "ctaButton": "▶ Explorer Tous les Produits"
+    "ctaButton": "▶ Explorer Tous les Produits",
+    "showcasePrefix": "Découvrez notre gamme de",
+    "showcaseSuffix": "de haute qualité avec droits de revente.",
+    "packagesBadge": "Produits Numériques",
+    "packagesTitle": "Packages Complets",
+    "packagesDesc": "Des packages tout-en-un comprenant plusieurs formats de contenu pour maximiser votre offre. Ebooks, vidéos, templates et ressources combinés pour créer des produits à forte valeur ajoutée."
   },
   "freeResourcesSection": {
     "headline": "Ressources Gratuites",

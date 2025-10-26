@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState, useMemo } from "react";
 import { IconType } from "react-icons";
 import { FiBook, FiVideo, FiFileText, FiPackage } from "react-icons/fi";
 import { useTranslations } from 'next-intl';
@@ -15,6 +15,43 @@ const ProductShowcaseSection = () => {
 };
 
 const SwapColumnFeatures = () => {
+  const t = useTranslations('productCategories');
+
+  const features = useMemo<FeatureType[]>(() => [
+    {
+      id: 1,
+      callout: t('ebooksBadge'),
+      title: t('ebooksTitle'),
+      description: t('ebooksDesc'),
+      contentPosition: "r",
+      Icon: FiBook,
+    },
+    {
+      id: 2,
+      callout: t('videoBadge'),
+      title: t('videoTitle'),
+      description: t('videoDesc'),
+      contentPosition: "l",
+      Icon: FiVideo,
+    },
+    {
+      id: 3,
+      callout: t('resourcesBadge'),
+      title: t('resourcesTitle'),
+      description: t('resourcesDesc'),
+      contentPosition: "r",
+      Icon: FiFileText,
+    },
+    {
+      id: 4,
+      callout: t('packagesBadge'),
+      title: t('packagesTitle'),
+      description: t('packagesDesc'),
+      contentPosition: "l",
+      Icon: FiPackage,
+    },
+  ], [t]);
+
   const [featureInView, setFeatureInView] = useState<FeatureType>(features[0]);
 
   return (
@@ -117,6 +154,8 @@ const Content = ({
 };
 
 const ExampleFeature = ({ featureInView }: { featureInView: FeatureType }) => {
+  const t = useTranslations('productCategories');
+
   return (
     <div className="relative h-96 w-full rounded-xl bg-gray-900 shadow-xl">
       <div className="flex w-full gap-1.5 rounded-t-xl bg-gray-800 p-3">
@@ -126,11 +165,11 @@ const ExampleFeature = ({ featureInView }: { featureInView: FeatureType }) => {
       </div>
       <div className="p-2">
         <p className="font-mono text-sm text-gray-200">
-          <span className="text-green-300">~</span> Découvrez notre gamme de{" "}
+          <span className="text-green-300">~</span> {t('showcasePrefix')}{" "}
           <span className="inline-block rounded bg-[#003399] px-1 font-semibold text-white">
             "{featureInView.title}"
           </span>{" "}
-          de haute qualité avec droits de revente.
+          {t('showcaseSuffix')}
         </p>
       </div>
 
@@ -151,42 +190,3 @@ type FeatureType = {
   contentPosition: "l" | "r";
   Icon: IconType;
 };
-
-const features: FeatureType[] = [
-  {
-    id: 1,
-    callout: "200+ Ebooks PLR Premium",
-    title: "Ebooks et Guides",
-    description:
-      "Offrez à votre audience une lecture engageante et de qualité. Seulement des informations réelles et utiles. Des explications approfondies et directes sur les sujets que vos clients veulent consommer.",
-    contentPosition: "r",
-    Icon: FiBook,
-  },
-  {
-    id: 2,
-    callout: "200+ Vidéos et Audios PLR",
-    title: "Cours Vidéo et Audio",
-    description:
-      "Cours directs, pratiques et explicatifs. Forme visuelle de contenu très demandée et parfaite pour ceux qui préfèrent écouter des podcasts et apprendre en déplacement.",
-    contentPosition: "l",
-    Icon: FiVideo,
-  },
-  {
-    id: 3,
-    callout: "1000+ Formats Courts PLR",
-    title: "Ressources Actionnables",
-    description:
-      "Fournissez d'autres formats de contenu riches qui gagnent en popularité. Mini-cours, Cahiers d'exercices, Modèles Notion, Prompts IA, Modèles, Articles, Piles d'outils et plus encore.",
-    contentPosition: "r",
-    Icon: FiFileText,
-  },
-  {
-    id: 4,
-    callout: "Produits Numériques",
-    title: "Packages Complets",
-    description:
-      "Des packages tout-en-un comprenant plusieurs formats de contenu pour maximiser votre offre. Ebooks, vidéos, templates et ressources combinés pour créer des produits à forte valeur ajoutée.",
-    contentPosition: "l",
-    Icon: FiPackage,
-  },
-];
