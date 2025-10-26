@@ -16,6 +16,7 @@ import FreeResourcesWobble from "@/components/FreeResourcesWobble"
 import UnlimitedOptionsStickyCards from "@/components/UnlimitedOptionsStickyCards"
 import StackedCardTestimonials from "@/components/TestimonialsStacked"
 import CustomProductBento from "@/components/CustomProductBento"
+import { StaggerTestimonials } from "@/components/StaggerTestimonials"
 
 export default function Home() {
   const t = useTranslations();
@@ -126,6 +127,9 @@ export default function Home() {
 
       {/* Custom Digital Product Section */}
       <CustomProductBento />
+
+      {/* Stagger Testimonials Section */}
+      <StaggerTestimonials />
 
       {/* Product Categories Section */}
       <section className="px-6 py-20 bg-white">
