@@ -222,6 +222,16 @@ export default function Home() {
           <div className="mt-12">
             <TrustpilotWidget height="140px" />
           </div>
+
+          {/* Earnings Disclaimer */}
+          <div className="mt-8 pt-8 border-t border-gray-800">
+            <p className="text-gray-400 text-sm text-center italic">
+              *Results shown are not typical. Individual outcomes vary based on effort, experience, and market conditions. ContentForge provides done-for-you products but cannot guarantee your sales, income, or business success. The average purchaser may not generate any income.{' '}
+              <Link href="/earnings-disclaimer" className="text-[#FFD700] hover:underline">
+                See full earnings disclaimer
+              </Link>.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -363,6 +373,7 @@ export default function Home() {
                 <li><Link href="/privacy" className="hover:text-[#FFD700] transition-colors">{t('footer.privacy')}</Link></li>
                 <li><Link href="/refund" className="hover:text-[#FFD700] transition-colors">{t('footer.refund')}</Link></li>
                 <li><Link href="/plr" className="hover:text-[#FFD700] transition-colors">{t('footer.plr')}</Link></li>
+                <li><Link href="/earnings-disclaimer" className="hover:text-[#FFD700] transition-colors">Earnings Disclaimer</Link></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{t('footer.partnerTerms')}</a></li>
               </ul>
             </div>
@@ -409,6 +420,16 @@ export default function Home() {
                 <TrustpilotWidget height="52px" theme="dark" />
               </div>
             </div>
+          </div>
+
+          {/* Mini Disclaimer */}
+          <div className="border-t border-gray-800 mt-8 pt-8">
+            <p className="text-center text-gray-500 text-xs mb-4">
+              Results not typical. Individual outcomes vary. Earnings depend on effort and skill.{' '}
+              <Link href="/earnings-disclaimer" className="text-gray-400 hover:text-[#FFD700] underline">
+                See full disclaimer
+              </Link>.
+            </p>
           </div>
 
           <div className="text-center text-gray-400 text-sm">
