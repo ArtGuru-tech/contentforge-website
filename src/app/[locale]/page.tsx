@@ -15,7 +15,6 @@ import CardCarousel from "@/components/CardCarousel"
 import FreeResourcesWobble from "@/components/FreeResourcesWobble"
 import UnlimitedOptionsStickyCards from "@/components/UnlimitedOptionsStickyCards"
 import StackedCardTestimonials from "@/components/TestimonialsStacked"
-import CustomProductBento from "@/components/CustomProductBento"
 import { StaggerTestimonials } from "@/components/StaggerTestimonials"
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
 
@@ -126,9 +125,6 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <StackedCardTestimonials />
-
-      {/* Custom Digital Product Section */}
-      <CustomProductBento />
 
       {/* Stagger Testimonials Section */}
       <StaggerTestimonials />
