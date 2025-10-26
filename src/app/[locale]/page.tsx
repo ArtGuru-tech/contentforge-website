@@ -105,21 +105,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Animated Avatars Section */}
-          <div className="flex justify-center items-center space-x-4 mb-4">
-            <div className="flex -space-x-2">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
-            </div>
-            <div className="flex items-center space-x-1 text-[#FFD700]">
-              <span>★★★★★</span>
-            </div>
-          </div>
-          <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
-
           {/* Product Carousel */}
           <div className="mt-16 relative">
             <CardCarousel />
