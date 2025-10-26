@@ -13,6 +13,7 @@ import ProductShowcaseSection from "@/components/ProductShowcaseSection"
 import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
 import CardCarousel from "@/components/CardCarousel"
 import FreeResourcesWobble from "@/components/FreeResourcesWobble"
+import UnlimitedOptionsStickyCards from "@/components/UnlimitedOptionsStickyCards"
 
 export default function Home() {
   const t = useTranslations();
@@ -116,42 +117,7 @@ export default function Home() {
       <BouncyCardsFeatures />
 
       {/* Unlimited Options Section */}
-      <section className="px-6 py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gray-900 text-white px-4 py-2 rounded-full inline-block text-sm mb-8">
-            {t('unlimitedOptions.badge')}
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-gray-900">
-            {t('unlimitedOptions.headline').split('\n')[0]}<br />
-            {t('unlimitedOptions.headline').split('\n')[1]}
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#003399] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">💼</span>
-              </div>
-              <h3 className="font-semibold mb-2 text-gray-900">{t('unlimitedOptions.option1')}</h3>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#00CED1] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">🧲</span>
-              </div>
-              <h3 className="font-semibold mb-2 text-gray-900">{t('unlimitedOptions.option2')}</h3>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">🎓</span>
-              </div>
-              <h3 className="font-semibold mb-2 text-gray-900">{t('unlimitedOptions.option3')}</h3>
-            </div>
-          </div>
-
-          <Button className="bg-[#003399] hover:bg-[#002266] text-white px-8 py-3 rounded-full text-lg font-semibold mt-12">
-            {t('unlimitedOptions.ctaButton')}
-          </Button>
-        </div>
-      </section>
+      <UnlimitedOptionsStickyCards />
 
       {/* Testimonials Section */}
       <section className="px-6 py-20 bg-gray-900 text-white">
