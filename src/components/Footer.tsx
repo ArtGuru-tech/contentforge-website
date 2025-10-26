@@ -33,9 +33,12 @@ export default function Footer() {
                   href="/#pricing"
                   className="hover:text-[#FFD700] transition-colors"
                   onClick={(e) => {
-                    if (typeof window !== 'undefined' && window.location.pathname === '/') {
-                      e.preventDefault();
-                      document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                    if (typeof window !== 'undefined') {
+                      const path = window.location.pathname;
+                      if (path === '/' || path === '/en' || path === '/fr' || path.match(/^\/[a-z]{2}\/?$/)) {
+                        e.preventDefault();
+                        document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }
                   }}
                 >

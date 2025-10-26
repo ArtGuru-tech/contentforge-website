@@ -27,7 +27,8 @@ export default function Navbar() {
           href="/#pricing"
           className="text-gray-600 hover:text-[#003399] transition-colors font-medium"
           onClick={(e) => {
-            if (window.location.pathname === '/') {
+            const path = window.location.pathname;
+            if (path === '/' || path === '/en' || path === '/fr' || path.match(/^\/[a-z]{2}\/?$/)) {
               e.preventDefault();
               document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
             }
@@ -77,7 +78,8 @@ export default function Navbar() {
         <Button
           className="bg-[#003399] hover:bg-[#002266] text-white border-0 text-sm sm:text-base px-3 sm:px-4"
           onClick={() => {
-            if (window.location.pathname === '/') {
+            const path = window.location.pathname;
+            if (path === '/' || path === '/en' || path === '/fr' || path.match(/^\/[a-z]{2}\/?$/)) {
               document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
             } else {
               window.location.href = '/#pricing';
