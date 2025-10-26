@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Link } from "@/i18n/routing"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 export default function PLRPage() {
   return (
@@ -361,58 +362,7 @@ export default function PLRPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="px-6 py-16 bg-gray-900 text-white border-t border-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 relative">
-                  <img
-                    src="/logo.svg"
-                    alt="ContentForge Logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <span className="text-white font-bold text-lg">CONTENTFORGE</span>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Pages</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="" className="hover:text-[#FFD700] transition-colors">Home</Link></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Resources</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Free Resources</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Blog</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Products</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Master Library</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">Custom Digital Product</a></li>
-                <li><a href="#" className="hover:text-[#FFD700] transition-colors">PLR Digital Products</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Legal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="terms" className="hover:text-[#FFD700] transition-colors">Terms & Conditions</a></li>
-                <li><a href="privacy" className="hover:text-[#FFD700] transition-colors">Privacy Policy</a></li>
-                <li><Link href="/plr" className="hover:text-[#FFD700] transition-colors">Private Label Rights</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 Made by ContentForge s.r.o.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
