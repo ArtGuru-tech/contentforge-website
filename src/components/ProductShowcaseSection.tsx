@@ -25,6 +25,10 @@ const SwapColumnFeatures = () => {
       description: t('ebooksDesc'),
       contentPosition: "r",
       Icon: FiBook,
+      images: [
+        "https://entrepedia-products.com/product-mockups/The%20Ad%20Funnel%20Blueprint%20Strategies%20-%20Ebook1.jpg",
+        "https://entrepedia-products.com/product-mockups/Keep%20Them%20Coming%20Back%20-%20Book1.jpg"
+      ]
     },
     {
       id: 2,
@@ -33,6 +37,9 @@ const SwapColumnFeatures = () => {
       description: t('videoDesc'),
       contentPosition: "l",
       Icon: FiVideo,
+      images: [
+        "https://entrepedia-products.com/product-mockups/The%206-Day%20YouTube%20Accelerator%20-%20Mini-Course1.jpg"
+      ]
     },
     {
       id: 3,
@@ -41,6 +48,10 @@ const SwapColumnFeatures = () => {
       description: t('resourcesDesc'),
       contentPosition: "r",
       Icon: FiFileText,
+      images: [
+        "https://entrepedia-products.com/product-mockups/Headline%20Framework%20-%20Guide1.jpg",
+        "https://entrepedia-products.com/product-mockups/The%20Multi-Bucket%20Savings%20System%20-%20Guide1.jpg"
+      ]
     },
     {
       id: 4,
@@ -49,6 +60,10 @@ const SwapColumnFeatures = () => {
       description: t('packagesDesc'),
       contentPosition: "l",
       Icon: FiPackage,
+      images: [
+        "https://entrepedia-products.com/product-mockups/GetResponse%20Growth%20System1.jpg",
+        "https://entrepedia-products.com/product-mockups/Interview%20Success%20Blueprint%20-%20Book1.jpg"
+      ]
     },
   ], [t]);
 
@@ -157,25 +172,30 @@ const ExampleFeature = ({ featureInView }: { featureInView: FeatureType }) => {
   const t = useTranslations('productCategories');
 
   return (
-    <div className="relative h-96 w-full rounded-xl bg-gray-900 shadow-xl">
-      <div className="flex w-full gap-1.5 rounded-t-xl bg-gray-800 p-3">
+    <div className="relative h-96 w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 shadow-xl overflow-hidden">
+      <div className="flex w-full gap-1.5 bg-gray-800 p-3">
         <div className="h-3 w-3 rounded-full bg-red-500" />
         <div className="h-3 w-3 rounded-full bg-yellow-500" />
         <div className="h-3 w-3 rounded-full bg-green-500" />
       </div>
-      <div className="p-2">
-        <p className="font-mono text-sm text-gray-200">
-          <span className="text-green-300">~</span> {t('showcasePrefix')}{" "}
-          <span className="inline-block rounded bg-[#003399] px-1 font-semibold text-white">
-            "{featureInView.title}"
-          </span>{" "}
-          {t('showcaseSuffix')}
-        </p>
-      </div>
 
-      <span className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] text-9xl text-gray-700">
-        <featureInView.Icon />
-      </span>
+      {/* Images Display */}
+      {featureInView.images && featureInView.images.length > 0 && (
+        <div className="h-full p-6 flex items-center justify-center gap-4">
+          {featureInView.images.map((image, index) => (
+            <div
+              key={index}
+              className="relative flex-1 h-full rounded-lg overflow-hidden shadow-lg bg-white p-2"
+            >
+              <img
+                src={image}
+                alt={`${featureInView.title} ${index + 1}`}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -189,4 +209,5 @@ type FeatureType = {
   description: string;
   contentPosition: "l" | "r";
   Icon: IconType;
+  images?: string[];
 };

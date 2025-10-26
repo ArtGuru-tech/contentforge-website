@@ -12,6 +12,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher"
 import ProductShowcaseSection from "@/components/ProductShowcaseSection"
 import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
 import CardCarousel from "@/components/CardCarousel"
+import FreeResourcesWobble from "@/components/FreeResourcesWobble"
 
 export default function Home() {
   const t = useTranslations();
@@ -101,20 +102,6 @@ export default function Home() {
                 <span className="text-[#FFD700] font-bold">✓</span>
                 <span className="whitespace-nowrap">{t('hero.trustBar4')}</span>
               </div>
-            </div>
-          </div>
-
-          {/* Animated Avatars Section */}
-          <div className="flex justify-center items-center space-x-4 mb-4">
-            <div className="flex -space-x-2">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
-            </div>
-            <div className="flex items-center space-x-1 text-[#FFD700]">
-              <span>★★★★★</span>
             </div>
           </div>
           <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
@@ -322,57 +309,7 @@ export default function Home() {
       </section>
 
       {/* Free Resources Section */}
-      <section className="px-6 py-20 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('freeResourcesSection.headline')}</h2>
-            <p className="text-gray-400 text-lg">
-              {t('freeResourcesSection.description')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-gray-800 border-gray-700 p-8 text-center border-0">
-              <div className="w-full h-48 bg-[#003399] rounded-lg mb-6 flex items-center justify-center">
-                <span className="text-white font-bold">BUSINESS PLAN</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">{t('freeResourcesSection.masterPlanTitle')}</h3>
-              <p className="text-gray-400 mb-6">
-                {t('freeResourcesSection.masterPlanDesc')}
-              </p>
-              <Button className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 py-2 rounded-full font-semibold">
-                {t('freeResourcesSection.masterPlanButton')}
-              </Button>
-            </Card>
-
-            <Card className="bg-gray-800 border-gray-700 p-8 text-center border-0">
-              <div className="w-full h-48 bg-gray-600 rounded-lg mb-6 flex items-center justify-center">
-                <span className="text-white font-bold">TOOLS</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">{t('freeResourcesSection.toolsTitle')}</h3>
-              <p className="text-gray-400 mb-6">
-                {t('freeResourcesSection.toolsDesc')}
-              </p>
-              <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-6 py-2 rounded-full font-semibold">
-                {t('freeResourcesSection.toolsButton')}
-              </Button>
-            </Card>
-
-            <Card className="bg-gray-800 border-gray-700 p-8 text-center border-0">
-              <div className="w-full h-48 bg-[#FFD700] rounded-lg mb-6 flex items-center justify-center">
-                <span className="text-white font-bold">IDEAS</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">{t('freeResourcesSection.ideasTitle')}</h3>
-              <p className="text-gray-400 mb-6">
-                {t('freeResourcesSection.ideasDesc')}
-              </p>
-              <Button className="bg-[#003399] hover:bg-[#002266] text-white px-6 py-2 rounded-full font-semibold">
-                {t('freeResourcesSection.ideasButton')}
-              </Button>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <FreeResourcesWobble />
 
       {/* FAQ Section */}
       <FAQSection />
