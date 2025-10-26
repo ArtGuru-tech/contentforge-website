@@ -12,6 +12,8 @@ import LanguageSwitcher from "@/components/LanguageSwitcher"
 import ProductShowcaseSection from "@/components/ProductShowcaseSection"
 import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
 import CardCarousel from "@/components/CardCarousel"
+import { LampContainer } from "@/components/ui/lamp"
+import { motion } from "framer-motion"
 
 export default function Home() {
   const t = useTranslations();
@@ -61,69 +63,80 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <div className="px-4 sm:px-6 py-12 sm:py-16 md:py-20 max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
-            {t('hero.headline1')}<br />
-            <span className="text-[#FFD700]">{t('hero.headline2')}</span>
-          </h1>
+      <section className="relative">
+        <LampContainer className="min-h-screen bg-gradient-to-br from-[#003399] to-[#001155]">
+          <motion.div
+            initial={{ opacity: 0.5, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="px-4 sm:px-6 max-w-7xl mx-auto text-center"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2 bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent">
+              {t('hero.headline1')}<br />
+              <span className="bg-gradient-to-br from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">{t('hero.headline2')}</span>
+            </h1>
 
-          <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
-            {t('hero.description')}
-          </p>
+            <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
+              {t('hero.description')}
+            </p>
 
-          <div className="flex flex-col items-center gap-4 sm:gap-6 mb-8 sm:mb-12">
-            <Button
-              className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-sm"
-              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              {t('hero.ctaButton')}
-            </Button>
+            <div className="flex flex-col items-center gap-4 sm:gap-6 mb-8 sm:mb-12">
+              <Button
+                className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-sm"
+                onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                {t('hero.ctaButton')}
+              </Button>
 
-            {/* Trust Bar */}
-            <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-white text-xs sm:text-sm md:text-base max-w-2xl">
-              <div className="flex items-center gap-2 justify-center">
-                <span className="text-[#FFD700] font-bold">✓</span>
-                <span className="whitespace-nowrap">{t('hero.trustBar1')}</span>
-              </div>
-              <div className="hidden md:block text-blue-300">|</div>
-              <div className="flex items-center gap-2 justify-center">
-                <span className="text-[#FFD700] font-bold">✓</span>
-                <span className="whitespace-nowrap">{t('hero.trustBar2')}</span>
-              </div>
-              <div className="hidden md:block text-blue-300">|</div>
-              <div className="flex items-center gap-2 justify-center">
-                <span className="text-[#FFD700] font-bold">✓</span>
-                <span className="whitespace-nowrap">{t('hero.trustBar3')}</span>
-              </div>
-              <div className="hidden md:block text-blue-300">|</div>
-              <div className="flex items-center gap-2 justify-center">
-                <span className="text-[#FFD700] font-bold">✓</span>
-                <span className="whitespace-nowrap">{t('hero.trustBar4')}</span>
+              {/* Trust Bar */}
+              <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-white text-xs sm:text-sm md:text-base max-w-2xl">
+                <div className="flex items-center gap-2 justify-center">
+                  <span className="text-[#FFD700] font-bold">✓</span>
+                  <span className="whitespace-nowrap">{t('hero.trustBar1')}</span>
+                </div>
+                <div className="hidden md:block text-blue-300">|</div>
+                <div className="flex items-center gap-2 justify-center">
+                  <span className="text-[#FFD700] font-bold">✓</span>
+                  <span className="whitespace-nowrap">{t('hero.trustBar2')}</span>
+                </div>
+                <div className="hidden md:block text-blue-300">|</div>
+                <div className="flex items-center gap-2 justify-center">
+                  <span className="text-[#FFD700] font-bold">✓</span>
+                  <span className="whitespace-nowrap">{t('hero.trustBar3')}</span>
+                </div>
+                <div className="hidden md:block text-blue-300">|</div>
+                <div className="flex items-center gap-2 justify-center">
+                  <span className="text-[#FFD700] font-bold">✓</span>
+                  <span className="whitespace-nowrap">{t('hero.trustBar4')}</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Animated Avatars Section */}
-          <div className="flex justify-center items-center space-x-4 mb-4">
-            <div className="flex -space-x-2">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
+            {/* Animated Avatars Section */}
+            <div className="flex justify-center items-center space-x-4 mb-4">
+              <div className="flex -space-x-2">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
+              </div>
+              <div className="flex items-center space-x-1 text-[#FFD700]">
+                <span>★★★★★</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-1 text-[#FFD700]">
-              <span>★★★★★</span>
-            </div>
-          </div>
-          <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
+            <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
 
-          {/* Product Carousel */}
-          <div className="mt-16 relative">
-            <CardCarousel />
-          </div>
-        </div>
+            {/* Product Carousel */}
+            <div className="mt-16 relative">
+              <CardCarousel />
+            </div>
+          </motion.div>
+        </LampContainer>
       </section>
 
       {/* Sell Digital Products Section */}
