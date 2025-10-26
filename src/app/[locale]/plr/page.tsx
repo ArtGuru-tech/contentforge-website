@@ -1,34 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { Link } from "@/i18n/routing"
+import Navbar from "@/components/Navbar"
 
 export default function PLRPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 relative">
-            <img
-              src="/logo.svg"
-              alt="ContentForge Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="text-[#003399] font-bold text-lg">CONTENTFORGE</span>
-        </div>
-
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link href="" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Home</Link>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Resources</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Free Resources</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Blog</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">Contact</a>
-        </nav>
-
-        <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
-          Sign In
-        </Button>
-      </header>
+      <Navbar />
 
       {/* Main Content */}
       <div className="max-w-5xl mx-auto px-6 py-12">

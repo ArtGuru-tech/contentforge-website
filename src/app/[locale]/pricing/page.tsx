@@ -5,48 +5,17 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Link } from "@/i18n/routing"
-import LanguageSwitcher from "@/components/LanguageSwitcher"
+import Navbar from "@/components/Navbar"
 import TrustpilotWidget from "@/components/TrustpilotWidget"
 import { Check } from "lucide-react"
 
 export default function PricingPage() {
   const t = useTranslations('pricingPage')
-  const tNav = useTranslations('nav')
   const tFooter = useTranslations('footer')
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header */}
-      <header className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
-            <img
-              src="/logo.svg"
-              alt="ContentForge Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="text-[#003399] font-bold text-base sm:text-lg">CONTENTFORGE</span>
-        </div>
-
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('home')}</Link>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('resources')}</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('freeResources')}</a>
-          <Link href="/pricing" className="text-[#003399] font-semibold transition-colors">{tNav('pricing')}</Link>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('blog')}</a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('contact')}</Link>
-        </nav>
-
-        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-          <LanguageSwitcher />
-          <Link href="/pricing">
-            <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0 text-sm sm:text-base px-3 sm:px-4">
-              {tNav('subscribe')}
-            </Button>
-          </Link>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-[#003399] to-[#001155] text-white py-16 px-6">

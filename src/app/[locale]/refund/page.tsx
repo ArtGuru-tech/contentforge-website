@@ -3,37 +3,14 @@
 import { Button } from "@/components/ui/button"
 import { Link } from "@/i18n/routing"
 import { useTranslations } from 'next-intl'
+import Navbar from "@/components/Navbar"
 
 export default function RefundPolicyPage() {
   const t = useTranslations('refundPolicy');
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 relative">
-            <img
-              src="/logo.svg"
-              alt="ContentForge Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="text-[#003399] font-bold text-lg">CONTENTFORGE</span>
-        </div>
-
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link href="" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.home')}</Link>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.resources')}</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.freeResources')}</a>
-          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.blog')}</a>
-          <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('nav.contact')}</Link>
-        </nav>
-
-        <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
-          {t('nav.signIn')}
-        </Button>
-      </header>
+      <Navbar />
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
