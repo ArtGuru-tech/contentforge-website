@@ -14,6 +14,7 @@ import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
 import CardCarousel from "@/components/CardCarousel"
 import FreeResourcesWobble from "@/components/FreeResourcesWobble"
 import UnlimitedOptionsStickyCards from "@/components/UnlimitedOptionsStickyCards"
+import StackedCardTestimonials from "@/components/TestimonialsStacked"
 
 export default function Home() {
   const t = useTranslations();
@@ -120,70 +121,18 @@ export default function Home() {
       <UnlimitedOptionsStickyCards />
 
       {/* Testimonials Section */}
-      <section className="px-6 py-20 bg-gray-900 text-white">
+      <StackedCardTestimonials />
+
+      {/* Trustpilot and Disclaimer Section */}
+      <section className="px-6 py-12 bg-gray-900 text-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">{t('testimonials.headline')}</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <a
-              href="https://www.trustpilot.com/review/contentforge.cc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center hover:transform hover:scale-105 transition-transform cursor-pointer"
-            >
-              <div className="text-[#FFD700] text-2xl mb-2">★</div>
-              <div className="text-lg font-semibold">{t('testimonials.trustpilot')}</div>
-              <div className="text-[#FFD700]">★★★★★</div>
-            </a>
-            <div className="text-center">
-              <div className="text-[#00CED1] text-2xl mb-2">f</div>
-              <div className="text-lg font-semibold">{t('testimonials.facebook')}</div>
-              <div className="text-[#FFD700]">★★★★★</div>
-            </div>
-            <div className="text-center">
-              <div className="text-[#003399] text-2xl mb-2">G</div>
-              <div className="text-lg font-semibold">{t('testimonials.google')}</div>
-              <div className="text-[#FFD700]">★★★★★</div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-gray-800 border-gray-700 p-6 border-0">
-              <div className="text-[#FFD700] text-xl mb-4">"</div>
-              <p className="text-gray-300 mb-4">{t('testimonials.testimonial1Quote')}</p>
-              <p className="text-gray-400 text-sm mb-4">{t('testimonials.testimonial1Description')}</p>
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-[#003399] rounded-full"></div>
-                <div>
-                  <div className="font-semibold">{t('testimonials.testimonial1Name')}</div>
-                  <div className="text-gray-400 text-sm">{t('testimonials.testimonial1Location')}</div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="bg-gray-800 border-gray-700 p-6 border-0">
-              <div className="text-[#FFD700] text-xl mb-4">"</div>
-              <p className="text-gray-300 mb-4">{t('testimonials.testimonial2Quote')}</p>
-              <p className="text-gray-400 text-sm mb-4">{t('testimonials.testimonial2Description')}</p>
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-[#00CED1] rounded-full"></div>
-                <div>
-                  <div className="font-semibold">{t('testimonials.testimonial2Name')}</div>
-                  <div className="text-gray-400 text-sm">{t('testimonials.testimonial2Location')}</div>
-                </div>
-              </div>
-            </Card>
-          </div>
-
           {/* Trustpilot Widget */}
-          <div className="mt-12">
+          <div className="mb-8">
             <TrustpilotWidget height="140px" />
           </div>
 
           {/* Earnings Disclaimer */}
-          <div className="mt-8 pt-8 border-t border-gray-800">
+          <div className="pt-8 border-t border-gray-800">
             <p className="text-gray-400 text-sm text-center italic">
               *Results shown are not typical. Individual outcomes vary based on effort, experience, and market conditions. ContentForge provides done-for-you products but cannot guarantee your sales, income, or business success. The average purchaser may not generate any income.{' '}
               <Link href="/earnings-disclaimer" className="text-[#FFD700] hover:underline">
