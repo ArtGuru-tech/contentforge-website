@@ -10,6 +10,7 @@ import TrustpilotWidget from "@/components/TrustpilotWidget"
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from "@/components/LanguageSwitcher"
 import ProductShowcaseSection from "@/components/ProductShowcaseSection"
+import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
 
 export default function Home() {
   const t = useTranslations();
@@ -166,66 +167,7 @@ export default function Home() {
       </section>
 
       {/* Sell Digital Products Section */}
-      <section className="px-6 py-20 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              {t('sellDigitalProducts.badge')}
-            </Button>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-              {t('sellDigitalProducts.headline').split('\n')[0]}<br />
-              {t('sellDigitalProducts.headline').split('\n')[1]}
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              {t('sellDigitalProducts.description')} <strong className="text-[#003399]">{t('sellDigitalProducts.emphasisText')}</strong>.
-            </p>
-          </div>
-
-          {/* Product Preview */}
-          <div className="bg-gray-900 rounded-lg p-8 mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="space-y-6">
-                  <div className="bg-gray-800 rounded-lg p-6">
-                    <h3 className="text-white font-semibold mb-2">{t('sellDigitalProducts.demandedContentTitle')}</h3>
-                    <p className="text-gray-400 text-sm">{t('sellDigitalProducts.demandedContentDesc')}</p>
-                  </div>
-                  <div className="bg-gray-800 rounded-lg p-6">
-                    <h3 className="text-white font-semibold mb-2">{t('sellDigitalProducts.constantlyUpdatedTitle')}</h3>
-                    <p className="text-gray-400 text-sm">{t('sellDigitalProducts.constantlyUpdatedDesc')}</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <Card className="bg-[#003399] text-white p-8 border-0">
-                  <h3 className="text-2xl font-bold mb-4">{t('sellDigitalProducts.plrTitle')}</h3>
-                  <p className="mb-6">{t('sellDigitalProducts.plrDesc')}</p>
-                  <div className="bg-[#002266] rounded-lg p-4">
-                    <div className="text-3xl font-bold text-[#FFD700]">📋</div>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-gray-900 text-white p-8 border-0">
-              <div className="text-4xl font-bold text-[#FFD700] mb-2">{t('sellDigitalProducts.statsDigitalProducts')}</div>
-              <h3 className="text-xl font-semibold mb-4">{t('sellDigitalProducts.statsDigitalProductsTitle')}</h3>
-              <p className="text-gray-400">{t('sellDigitalProducts.statsDigitalProductsDesc')}</p>
-            </Card>
-            <Card className="bg-gray-100 p-8 border-0">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">{t('sellDigitalProducts.mediaFormatsTitle')}</h3>
-              <p className="text-gray-600 mb-4">{t('sellDigitalProducts.mediaFormatsDesc')}</p>
-              <div className="mt-6">
-                <h4 className="font-semibold mb-2 text-[#003399]">{t('sellDigitalProducts.premiumQualityTitle')}</h4>
-                <p className="text-gray-600 text-sm">{t('sellDigitalProducts.premiumQualityDesc')}</p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <BouncyCardsFeatures />
 
       {/* Unlimited Options Section */}
       <section className="px-6 py-20 bg-gray-50">
