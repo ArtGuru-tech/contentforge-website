@@ -13,6 +13,8 @@ import {
   FiBriefcase,
   FiAward,
 } from "react-icons/fi";
+import TrustpilotWidget from "@/components/TrustpilotWidget";
+import { Link } from "@/i18n/routing";
 
 type TestimonialType = {
   Icon: IconType;
@@ -160,6 +162,21 @@ const StackedCardTestimonials = () => {
             </motion.div>
           );
         })}
+      </div>
+
+      {/* Trustpilot Widget */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 mt-12">
+        <TrustpilotWidget height="140px" />
+      </div>
+
+      {/* Earnings Disclaimer */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 mt-8">
+        <p className="text-gray-600 text-sm text-center italic">
+          *Results shown are not typical. Individual outcomes vary based on effort, experience, and market conditions. ContentForge provides done-for-you products but cannot guarantee your sales, income, or business success. The average purchaser may not generate any income.{' '}
+          <Link href="/earnings-disclaimer" className="text-[#003399] hover:underline">
+            See full earnings disclaimer
+          </Link>.
+        </p>
       </div>
     </section>
   );

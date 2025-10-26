@@ -123,26 +123,6 @@ export default function Home() {
       {/* Testimonials Section */}
       <StackedCardTestimonials />
 
-      {/* Trustpilot and Disclaimer Section */}
-      <section className="px-6 py-12 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto">
-          {/* Trustpilot Widget */}
-          <div className="mb-8">
-            <TrustpilotWidget height="140px" />
-          </div>
-
-          {/* Earnings Disclaimer */}
-          <div className="pt-8 border-t border-gray-800">
-            <p className="text-gray-400 text-sm text-center italic">
-              *Results shown are not typical. Individual outcomes vary based on effort, experience, and market conditions. ContentForge provides done-for-you products but cannot guarantee your sales, income, or business success. The average purchaser may not generate any income.{' '}
-              <Link href="/earnings-disclaimer" className="text-[#FFD700] hover:underline">
-                See full earnings disclaimer
-              </Link>.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Custom Digital Product Section */}
       <section className="px-6 py-20 bg-gradient-to-br from-[#003399] to-[#001155] text-white">
         <div className="max-w-6xl mx-auto">
