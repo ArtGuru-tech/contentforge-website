@@ -9,6 +9,7 @@ import FAQSection from "@/components/FAQSection"
 import TrustpilotWidget from "@/components/TrustpilotWidget"
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from "@/components/LanguageSwitcher"
+import ProductCarousel from "@/components/ProductCarousel"
 
 export default function Home() {
   const t = useTranslations();
@@ -402,166 +403,23 @@ export default function Home() {
               {t('productCategories.headline').split('\n')[0]}<br />
               {t('productCategories.headline').split('\n')[1]}
             </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
               {t('productCategories.description')}
             </p>
           </div>
 
-          {/* Ebooks Section */}
-          <div className="bg-gray-50 rounded-lg p-8 mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="bg-gray-900 text-white px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  {t('productCategories.ebooksBadge')}
-                </div>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">{t('productCategories.ebooksTitle')}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t('productCategories.ebooksDesc')}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature1')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature2')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature3')}</span>
-                  </div>
-                </div>
-
-                <Button className="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-800">
-                  {t('productCategories.ebooksButton')}
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4">
-                <div className="w-full h-32 bg-gradient-to-br from-[#003399] to-[#0066CC] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">AI FOR PRODUCTIVITY</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#40E0D0] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">FUNNEL STRATEGIES</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#FFD700] to-[#FFA500] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">MONEY PSYCHOLOGY</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Video Courses Section */}
-          <div className="bg-gray-900 text-white rounded-lg p-8 mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="w-full h-32 bg-gradient-to-br from-[#8A2BE2] to-[#9370DB] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">PODCAST LAUNCH</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#4169E1] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">META ADS</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#FF4500] to-[#FF6347] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">AI FOR PRODUCTIVITY</span>
-                </div>
-              </div>
-
-              <div>
-                <div className="bg-white text-gray-900 px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  {t('productCategories.videoBadge')}
-                </div>
-                <h3 className="text-3xl font-bold mb-6">{t('productCategories.videoTitle')}</h3>
-                <p className="text-gray-300 mb-6">
-                  {t('productCategories.videoDesc')}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
-                      <span className="text-gray-900 text-xs">✓</span>
-                    </div>
-                    <span className="text-sm">{t('productCategories.videoFeature1')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
-                      <span className="text-gray-900 text-xs">✓</span>
-                    </div>
-                    <span className="text-sm">{t('productCategories.videoFeature2')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
-                      <span className="text-gray-900 text-xs">✓</span>
-                    </div>
-                    <span className="text-sm">{t('productCategories.videoFeature3')}</span>
-                  </div>
-                </div>
-
-                <Button className="bg-white text-gray-900 px-6 py-2 rounded-full hover:bg-gray-100">
-                  {t('productCategories.videoButton')}
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Resources Section */}
-          <div className="bg-gray-50 rounded-lg p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="bg-gray-900 text-white px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  {t('productCategories.resourcesBadge')}
-                </div>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">{t('productCategories.resourcesTitle')}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t('productCategories.resourcesDesc')}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature1')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature2')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature3')}</span>
-                  </div>
-                </div>
-
-                <Button className="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-800">
-                  {t('productCategories.resourcesButton')}
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4">
-                <div className="w-full h-32 bg-gradient-to-br from-[#FF4500] to-[#FF6347] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">6-FIGURE BUSINESS</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#20B2AA] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">TIME MANAGEMENT</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#DC143C] to-[#B22222] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">COLD CALLS</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Product Carousel */}
+          <ProductCarousel
+            images={[
+              "https://entrepedia-products.com/product-mockups/The%20Ad%20Funnel%20Blueprint%20Strategies%20-%20Ebook1.jpg",
+              "https://entrepedia-products.com/product-mockups/Keep%20Them%20Coming%20Back%20-%20Book1.jpg",
+              "https://entrepedia-products.com/product-mockups/Headline%20Framework%20-%20Guide1.jpg",
+              "https://entrepedia-products.com/product-mockups/GetResponse%20Growth%20System1.jpg",
+              "https://entrepedia-products.com/product-mockups/The%206-Day%20YouTube%20Accelerator%20-%20Mini-Course1.jpg",
+              "https://entrepedia-products.com/product-mockups/Interview%20Success%20Blueprint%20-%20Book1.jpg",
+              "https://entrepedia-products.com/product-mockups/The%20Multi-Bucket%20Savings%20System%20-%20Guide1.jpg"
+            ]}
+          />
 
           <div className="text-center mt-12">
             <Button className="bg-[#003399] hover:bg-[#002266] text-white px-8 py-3 rounded-full text-lg font-semibold">
