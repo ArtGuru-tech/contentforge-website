@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Link } from "@/i18n/routing"
 import LanguageSwitcher from "@/components/LanguageSwitcher"
+import TrustpilotWidget from "@/components/TrustpilotWidget"
 import { Check } from "lucide-react"
 
 export default function PricingPage() {
@@ -16,29 +17,34 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 relative">
+      <header className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
+        <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
             <img
               src="/logo.svg"
               alt="ContentForge Logo"
               className="w-full h-full object-contain"
             />
           </div>
-          <span className="text-[#003399] font-bold text-lg">CONTENTFORGE</span>
+          <span className="text-[#003399] font-bold text-base sm:text-lg">CONTENTFORGE</span>
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
           <Link href="/" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('home')}</Link>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('resources')}</a>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('freeResources')}</a>
           <Link href="/pricing" className="text-[#003399] font-semibold transition-colors">{tNav('pricing')}</Link>
+          <a href="#" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('blog')}</a>
           <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{tNav('contact')}</Link>
         </nav>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
           <LanguageSwitcher />
-          <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0">
-            {tNav('signIn')}
-          </Button>
+          <Link href="/pricing">
+            <Button className="bg-[#003399] hover:bg-[#002266] text-white border-0 text-sm sm:text-base px-3 sm:px-4">
+              {tNav('subscribe')}
+            </Button>
+          </Link>
         </div>
       </header>
 
@@ -329,8 +335,11 @@ export default function PricingPage() {
               <h4 className="font-semibold mb-4 text-gray-300">{tFooter('pagesTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/" className="hover:text-[#FFD700] transition-colors">{tFooter('home')}</Link></li>
-                <li><Link href="/pricing" className="hover:text-[#FFD700] transition-colors">{tNav('pricing')}</Link></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('resources')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('freeResources')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('toolsRepository')}</a></li>
                 <li><Link href="/contact" className="hover:text-[#FFD700] transition-colors">{tFooter('contact')}</Link></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('blog')}</a></li>
               </ul>
             </div>
 
@@ -338,6 +347,7 @@ export default function PricingPage() {
               <h4 className="font-semibold mb-4 text-gray-300">{tFooter('productsTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('masterLibrary')}</a></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('customBookService')}</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('customDigitalProduct')}</a></li>
                 <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('plrProducts')}</a></li>
               </ul>
@@ -348,12 +358,68 @@ export default function PricingPage() {
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/terms" className="hover:text-[#FFD700] transition-colors">{tFooter('terms')}</Link></li>
                 <li><Link href="/privacy" className="hover:text-[#FFD700] transition-colors">{tFooter('privacy')}</Link></li>
+                <li><Link href="/refund" className="hover:text-[#FFD700] transition-colors">{tFooter('refund')}</Link></li>
                 <li><Link href="/plr" className="hover:text-[#FFD700] transition-colors">{tFooter('plr')}</Link></li>
+                <li><Link href="/earnings-disclaimer" className="hover:text-[#FFD700] transition-colors">Earnings Disclaimer</Link></li>
+                <li><a href="#" className="hover:text-[#FFD700] transition-colors">{tFooter('partnerTerms')}</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
+          {/* Payment Methods */}
+          <div className="border-t border-gray-800 mt-12 pt-8">
+            <p className="text-gray-400 text-xs text-center mb-4 uppercase tracking-wide">{tFooter('paymentMethods')}</p>
+            <div className="flex justify-center items-center gap-4 flex-wrap mb-8">
+              {/* Stripe */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#635BFF] font-bold text-sm">stripe</span>
+              </div>
+
+              {/* PayPal */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#0070BA] font-bold text-sm">Pay</span>
+                <span className="text-[#003087] font-bold text-sm">Pal</span>
+              </div>
+
+              {/* Visa */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <span className="text-[#1434CB] font-bold text-sm">VISA</span>
+              </div>
+
+              {/* Mastercard */}
+              <div className="bg-white px-4 py-2 rounded shadow-sm">
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 bg-[#EB001B] rounded-full opacity-80"></div>
+                  <div className="w-3 h-3 bg-[#FF5F00] rounded-full opacity-80 -ml-1.5"></div>
+                  <span className="text-gray-800 font-semibold text-xs ml-1">Mastercard</span>
+                </div>
+              </div>
+
+              {/* Amex */}
+              <div className="bg-[#006FCF] px-4 py-2 rounded shadow-sm">
+                <span className="text-white font-bold text-sm">AMEX</span>
+              </div>
+            </div>
+
+            {/* Trustpilot Widget */}
+            <div className="mt-8 flex justify-center">
+              <div className="max-w-md w-full">
+                <TrustpilotWidget height="52px" theme="dark" />
+              </div>
+            </div>
+          </div>
+
+          {/* Mini Disclaimer */}
+          <div className="border-t border-gray-800 mt-8 pt-8">
+            <p className="text-center text-gray-500 text-xs mb-4">
+              Results not typical. Individual outcomes vary. Earnings depend on effort and skill.{' '}
+              <Link href="/earnings-disclaimer" className="text-gray-400 hover:text-[#FFD700] underline">
+                See full disclaimer
+              </Link>.
+            </p>
+          </div>
+
+          <div className="text-center text-gray-400 text-sm">
             <p>{tFooter('copyright')}</p>
           </div>
         </div>
