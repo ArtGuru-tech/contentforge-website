@@ -68,7 +68,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#003399] to-[#001155] text-white overflow-hidden">
-        <BackgroundRippleEffect rows={8} cols={27} cellSize={56} />
+        <BackgroundRippleEffect rows={20} cols={60} cellSize={40} />
         <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-16 md:py-20 max-w-7xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
             {t('hero.headline1')}<br />
