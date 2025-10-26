@@ -25,6 +25,7 @@ const SwapColumnFeatures = () => {
       description: t('ebooksDesc'),
       contentPosition: "r",
       Icon: FiBook,
+      imageUrl: "https://entrepedia-products.com/product-mockups/The%20Ad%20Funnel%20Blueprint%20Strategies%20-%20Ebook1.jpg",
     },
     {
       id: 2,
@@ -33,6 +34,7 @@ const SwapColumnFeatures = () => {
       description: t('videoDesc'),
       contentPosition: "l",
       Icon: FiVideo,
+      imageUrl: "https://entrepedia-products.com/product-mockups/The%206-Day%20YouTube%20Accelerator%20-%20Mini-Course1.jpg",
     },
     {
       id: 3,
@@ -41,6 +43,7 @@ const SwapColumnFeatures = () => {
       description: t('resourcesDesc'),
       contentPosition: "r",
       Icon: FiFileText,
+      imageUrl: "https://entrepedia-products.com/product-mockups/Headline%20Framework%20-%20Guide1.jpg",
     },
     {
       id: 4,
@@ -49,6 +52,7 @@ const SwapColumnFeatures = () => {
       description: t('packagesDesc'),
       contentPosition: "l",
       Icon: FiPackage,
+      imageUrl: "https://entrepedia-products.com/product-mockups/GetResponse%20Growth%20System1.jpg",
     },
   ], [t]);
 
@@ -157,13 +161,13 @@ const ExampleFeature = ({ featureInView }: { featureInView: FeatureType }) => {
   const t = useTranslations('productCategories');
 
   return (
-    <div className="relative h-96 w-full rounded-xl bg-gray-900 shadow-xl">
-      <div className="flex w-full gap-1.5 rounded-t-xl bg-gray-800 p-3">
+    <div className="relative h-96 w-full rounded-xl bg-gray-900 shadow-xl overflow-hidden">
+      <div className="flex w-full gap-1.5 rounded-t-xl bg-gray-800 p-3 relative z-10">
         <div className="h-3 w-3 rounded-full bg-red-500" />
         <div className="h-3 w-3 rounded-full bg-yellow-500" />
         <div className="h-3 w-3 rounded-full bg-green-500" />
       </div>
-      <div className="p-2">
+      <div className="p-2 relative z-10">
         <p className="font-mono text-sm text-gray-200">
           <span className="text-green-300">~</span> {t('showcasePrefix')}{" "}
           <span className="inline-block rounded bg-[#003399] px-1 font-semibold text-white">
@@ -173,9 +177,16 @@ const ExampleFeature = ({ featureInView }: { featureInView: FeatureType }) => {
         </p>
       </div>
 
-      <span className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] text-9xl text-gray-700">
-        <featureInView.Icon />
-      </span>
+      {/* Product Image */}
+      <div
+        className="absolute inset-0 top-16 flex items-center justify-center p-8"
+        style={{
+          backgroundImage: `url(${featureInView.imageUrl})`,
+          backgroundPosition: "center",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
     </div>
   );
 };
@@ -189,4 +200,5 @@ type FeatureType = {
   description: string;
   contentPosition: "l" | "r";
   Icon: IconType;
+  imageUrl: string;
 };
