@@ -40,7 +40,6 @@ export const BackgroundRippleEffect = ({
       )}
     >
       <DivGrid
-        key={`base-${rippleKey}`}
         className="opacity-60"
         rows={dimensions.rows}
         cols={dimensions.cols}
@@ -48,6 +47,7 @@ export const BackgroundRippleEffect = ({
         borderColor="var(--cell-border-color)"
         fillColor="var(--cell-fill-color)"
         clickedCell={clickedCell}
+        rippleKey={rippleKey}
         onCellClick={(row, col) => {
           setClickedCell({ row, col });
           setRippleKey((k) => k + 1);
@@ -68,6 +68,7 @@ type DivGridProps = {
   clickedCell: { row: number; col: number } | null;
   onCellClick?: (row: number, col: number) => void;
   interactive?: boolean;
+  rippleKey?: number;
 };
 
 type CellStyle = React.CSSProperties & {
@@ -85,6 +86,7 @@ const DivGrid = ({
   clickedCell = null,
   onCellClick = () => {},
   interactive = true,
+  rippleKey = 0,
 }: DivGridProps) => {
   const cells = useMemo(
     () => Array.from({ length: rows * cols }, (_, idx) => idx),
