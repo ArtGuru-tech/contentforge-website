@@ -7,7 +7,9 @@
     "blog": "Blog",
     "contact": "Contact",
     "subscribe": "S'abonner",
-    "signIn": "Se Connecter"
+    "signIn": "Se Connecter",
+    "login": "Connexion",
+    "legal": "Légal"
   },
   "hero": {
     "tagline": "Nous créons des infoproduits numériques pour vous",
@@ -100,9 +102,13 @@
     "badge": "Vous avez une liberté totale",
     "headline": "Options illimitées pour\nutiliser les produits",
     "option1": "Élargir le portefeuille de produits",
+    "option1Desc": "Créez un catalogue de produits complet avec nos produits numériques prêts à l'emploi. Élargissez instantanément votre offre et apportez plus de valeur à vos clients.",
     "option2": "Offrir comme aimant à prospects gratuit",
+    "option2Desc": "Convertissez les visiteurs en abonnés en offrant nos produits numériques de haute qualité comme aimants à prospects gratuits. Développez votre liste d'e-mails avec du contenu de valeur.",
     "option3": "Éduquer votre audience",
-    "ctaButton": "▶ Explorer la Bibliothèque Maître"
+    "option3Desc": "Partagez des connaissances et établissez votre autorité dans votre niche. Utilisez notre contenu créé par des experts pour éduquer et engager efficacement votre audience.",
+    "ctaButton": "▶ Explorer la Bibliothèque Maître",
+    "ctaButtonShort": "Explorer la Bibliothèque"
   },
   "testimonials": {
     "badge": "Noté 4,7/5 globalement par nos utilisateurs",

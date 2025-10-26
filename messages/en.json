@@ -7,7 +7,9 @@
     "blog": "Blog",
     "contact": "Contact",
     "subscribe": "Subscribe",
-    "signIn": "Sign In"
+    "signIn": "Sign In",
+    "login": "Login",
+    "legal": "Legal"
   },
   "hero": {
     "tagline": "We create digital infoproducts for you",
@@ -100,9 +102,13 @@
     "badge": "You have complete freedom",
     "headline": "Unlimited options to\nuse the products",
     "option1": "Expand product portfolio",
+    "option1Desc": "Build a comprehensive product catalog with our ready-to-use digital products. Expand your offerings instantly and provide more value to your customers.",
     "option2": "Offer as free leadmagnet",
+    "option2Desc": "Convert visitors into subscribers by offering our high-quality digital products as free lead magnets. Build your email list with valuable content.",
     "option3": "Educate your audience",
-    "ctaButton": "▶ Explore Master Library"
+    "option3Desc": "Share knowledge and establish authority in your niche. Use our expertly crafted content to educate and engage your audience effectively.",
+    "ctaButton": "▶ Explore Master Library",
+    "ctaButtonShort": "Explore Library"
   },
   "testimonials": {
     "badge": "Rated 4.7/5 overall by our users",
