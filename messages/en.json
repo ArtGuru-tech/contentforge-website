@@ -34,6 +34,45 @@
     "readyTemplates": "Ready Templates",
     "readyTemplatesDesc": "Professional designs"
   },
+  "heroCarousel": {
+    "heading": "Your Complete Digital Library.",
+    "subheading": "Ready to use today.",
+    "ebook": {
+      "category": "PLR Ebooks",
+      "title": "Expert Guides",
+      "description": "In-depth ebooks on business, marketing, and personal growth"
+    },
+    "videoCourse": {
+      "category": "Video Courses",
+      "title": "Learn Visually",
+      "description": "Step-by-step video training on trending topics"
+    },
+    "template": {
+      "category": "Templates",
+      "title": "Ready to Use",
+      "description": "Professional templates for social media, emails, and more"
+    },
+    "workbook": {
+      "category": "Workbooks",
+      "title": "Action Plans",
+      "description": "Interactive workbooks to implement strategies"
+    },
+    "aiPrompts": {
+      "category": "AI Prompts",
+      "title": "ChatGPT Ready",
+      "description": "Pre-written prompts for content creation and automation"
+    },
+    "miniCourse": {
+      "category": "Mini Courses",
+      "title": "Quick Wins",
+      "description": "Short-form courses for focused learning"
+    },
+    "checklist": {
+      "category": "Checklists",
+      "title": "Stay Organized",
+      "description": "Step-by-step checklists for common processes"
+    }
+  },
   "trustedBySection": {
     "title": "TRUSTED BY TOP BRANDS AND INDIVIDUALS WORLDWIDE"
   },

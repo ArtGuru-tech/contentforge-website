@@ -11,6 +11,7 @@ import { useTranslations } from 'next-intl'
 import LanguageSwitcher from "@/components/LanguageSwitcher"
 import ProductShowcaseSection from "@/components/ProductShowcaseSection"
 import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
+import CardCarousel from "@/components/CardCarousel"
 
 export default function Home() {
   const t = useTranslations();
@@ -118,41 +119,9 @@ export default function Home() {
           </div>
           <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
 
-          {/* Product Showcase */}
+          {/* Product Carousel */}
           <div className="mt-16 relative">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto border border-white/20">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="bg-white text-gray-900 border-0 shadow-lg">
-                  <CardContent className="p-4">
-                    <div className="w-full h-32 bg-gradient-to-br from-[#003399] to-[#0066CC] rounded mb-4 flex items-center justify-center">
-                      <span className="text-white font-bold">{t('productShowcase.ebook')}</span>
-                    </div>
-                    <h3 className="text-gray-900 font-semibold">{t('productShowcase.businessGuide')}</h3>
-                    <p className="text-gray-600 text-sm">{t('productShowcase.businessGuideDesc')}</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white text-gray-900 border-0 shadow-lg">
-                  <CardContent className="p-4">
-                    <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#40E0D0] rounded mb-4 flex items-center justify-center">
-                      <span className="text-white font-bold">{t('productShowcase.course')}</span>
-                    </div>
-                    <h3 className="text-gray-900 font-semibold">{t('productShowcase.videoTraining')}</h3>
-                    <p className="text-gray-600 text-sm">{t('productShowcase.videoTrainingDesc')}</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white text-gray-900 border-0 shadow-lg">
-                  <CardContent className="p-4">
-                    <div className="w-full h-32 bg-gradient-to-br from-[#FFD700] to-[#FFA500] rounded mb-4 flex items-center justify-center">
-                      <span className="text-white font-bold">{t('productShowcase.template')}</span>
-                    </div>
-                    <h3 className="text-gray-900 font-semibold">{t('productShowcase.readyTemplates')}</h3>
-                    <p className="text-gray-600 text-sm">{t('productShowcase.readyTemplatesDesc')}</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+            <CardCarousel />
           </div>
         </div>
       </section>
