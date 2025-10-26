@@ -52,10 +52,12 @@ export default function ProductCarousel({ images }: ProductCarouselProps) {
               }`}
             >
               <div className="relative w-full h-full flex items-center justify-center p-8">
-                <img
+                <Image
                   src={image}
                   alt={`Product ${index + 1}`}
-                  className="max-w-full max-h-full object-contain"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 90vw, 896px"
                 />
               </div>
             </div>
