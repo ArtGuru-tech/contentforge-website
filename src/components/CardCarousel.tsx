@@ -24,49 +24,49 @@ const CardCarousel = () => {
   const items = useMemo<ItemType[]>(() => [
     {
       id: 1,
-      gradient: "from-[#003399] to-[#0066CC]",
+      imageUrl: "https://entrepedia-products.com/product-mockups/The%20Ad%20Funnel%20Blueprint%20Strategies%20-%20Ebook1.jpg",
       category: t('ebook.category'),
       title: t('ebook.title'),
       description: t('ebook.description'),
     },
     {
       id: 2,
-      gradient: "from-[#00CED1] to-[#40E0D0]",
+      imageUrl: "https://entrepedia-products.com/product-mockups/Keep%20Them%20Coming%20Back%20-%20Book1.jpg",
       category: t('videoCourse.category'),
       title: t('videoCourse.title'),
       description: t('videoCourse.description'),
     },
     {
       id: 3,
-      gradient: "from-[#FFD700] to-[#FFA500]",
+      imageUrl: "https://entrepedia-products.com/product-mockups/Headline%20Framework%20-%20Guide1.jpg",
       category: t('template.category'),
       title: t('template.title'),
       description: t('template.description'),
     },
     {
       id: 4,
-      gradient: "from-[#8B5CF6] to-[#A78BFA]",
+      imageUrl: "https://entrepedia-products.com/product-mockups/GetResponse%20Growth%20System1.jpg",
       category: t('workbook.category'),
       title: t('workbook.title'),
       description: t('workbook.description'),
     },
     {
       id: 5,
-      gradient: "from-[#EC4899] to-[#F472B6]",
+      imageUrl: "https://entrepedia-products.com/product-mockups/The%206-Day%20YouTube%20Accelerator%20-%20Mini-Course1.jpg",
       category: t('aiPrompts.category'),
       title: t('aiPrompts.title'),
       description: t('aiPrompts.description'),
     },
     {
       id: 6,
-      gradient: "from-[#10B981] to-[#34D399]",
+      imageUrl: "https://entrepedia-products.com/product-mockups/Interview%20Success%20Blueprint%20-%20Book1.jpg",
       category: t('miniCourse.category'),
       title: t('miniCourse.title'),
       description: t('miniCourse.description'),
     },
     {
       id: 7,
-      gradient: "from-[#F59E0B] to-[#FBBF24]",
+      imageUrl: "https://entrepedia-products.com/product-mockups/The%20Multi-Bucket%20Savings%20System%20-%20Guide1.jpg",
       category: t('checklist.category'),
       title: t('checklist.title'),
       description: t('checklist.description'),
@@ -143,17 +143,20 @@ const CardCarousel = () => {
   );
 };
 
-const Card = ({ gradient, category, title, description }: ItemType) => {
+const Card = ({ imageUrl, category, title, description }: ItemType) => {
   return (
     <div
-      className={`relative shrink-0 cursor-pointer rounded-2xl shadow-md transition-all hover:scale-[1.015] hover:shadow-xl bg-gradient-to-br ${gradient}`}
+      className="relative shrink-0 cursor-pointer rounded-2xl shadow-md transition-all hover:scale-[1.015] hover:shadow-xl"
       style={{
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
         marginRight: MARGIN,
+        backgroundImage: `url(${imageUrl})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
       }}
     >
-      <div className="absolute inset-0 z-20 rounded-2xl bg-gradient-to-b from-black/70 via-black/40 to-black/10 p-6 text-white transition-[backdrop-filter] hover:backdrop-blur-sm flex flex-col justify-between">
+      <div className="absolute inset-0 z-20 rounded-2xl bg-gradient-to-b from-black/90 via-black/60 to-black/0 p-6 text-white transition-[backdrop-filter] hover:backdrop-blur-sm flex flex-col justify-between">
         <div>
           <span className="text-xs font-semibold uppercase text-[#FFD700]">
             {category}
@@ -170,7 +173,7 @@ export default CardCarousel;
 
 type ItemType = {
   id: number;
-  gradient: string;
+  imageUrl: string;
   category: string;
   title: string;
   description: string;
