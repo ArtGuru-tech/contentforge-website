@@ -104,7 +104,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
 
           {/* Product Carousel */}
           <div className="mt-16 relative">
