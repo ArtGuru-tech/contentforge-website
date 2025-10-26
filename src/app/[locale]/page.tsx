@@ -126,17 +126,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted By Section */}
-      <section className="px-6 py-12 max-w-7xl mx-auto text-center bg-gray-50">
-        <p className="text-gray-500 text-sm mb-8 font-medium">{t('trustedBySection.title')}</p>
-        <div className="flex justify-center items-center space-x-12 opacity-60">
-          <div className="text-gray-600 font-semibold">CPHERE</div>
-          <div className="text-gray-600 font-semibold">CEO MasterMind</div>
-          <div className="text-gray-600 font-semibold">Local Pulse</div>
-          <div className="text-gray-600 font-semibold">DevCo</div>
-        </div>
-      </section>
-
       {/* Sell Digital Products Section */}
       <BouncyCardsFeatures />
 
