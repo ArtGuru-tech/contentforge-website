@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export default function PricingSection() {
   const t = useTranslations('pricing');
@@ -28,9 +29,14 @@ const Heading = ({ t }: HeadingProps) => {
       <h3 className="font-semibold text-5xl lg:text-7xl text-center mb-6">
         {t('headline')}
       </h3>
-      <p className="text-center mx-auto max-w-lg mb-8 text-blue-100">
+      <p className="text-center mx-auto max-w-lg mb-4 text-blue-100">
         {t('description')}
       </p>
+      <div className="text-center">
+        <Link href="/pricing" className="text-[#FFD700] hover:text-[#FFF] font-semibold underline transition-colors">
+          View Full Pricing Details →
+        </Link>
+      </div>
     </div>
   );
 };
@@ -117,13 +123,15 @@ const PriceCards = ({ t }: PriceCardsProps) => (
         </div>
       </div>
 
-      <motion.button
-        whileHover={{ scale: 1.015 }}
-        whileTap={{ scale: 0.985 }}
-        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors"
-      >
-        Get Started
-      </motion.button>
+      <Link href="/pricing" className="block">
+        <motion.button
+          whileHover={{ scale: 1.015 }}
+          whileTap={{ scale: 0.985 }}
+          className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors"
+        >
+          Get Started
+        </motion.button>
+      </Link>
     </div>
 
     {/* PRO PLAN */}
@@ -239,13 +247,15 @@ const PriceCards = ({ t }: PriceCardsProps) => (
         </div>
       </div>
 
-      <motion.button
-        whileHover={{ scale: 1.015 }}
-        whileTap={{ scale: 0.985 }}
-        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors"
-      >
-        Get Started Pro
-      </motion.button>
+      <Link href="/pricing" className="block">
+        <motion.button
+          whileHover={{ scale: 1.015 }}
+          whileTap={{ scale: 0.985 }}
+          className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors"
+        >
+          Get Started Pro
+        </motion.button>
+      </Link>
     </div>
   </div>
 );
