@@ -74,7 +74,7 @@ export default function Home() {
             <span className="text-[#FFD700]">{t('hero.headline2')}</span>
           </h1>
 
-          <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
+          <p className="text-white text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
             {t('hero.description')}
           </p>
 

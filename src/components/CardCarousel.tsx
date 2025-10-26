@@ -156,7 +156,7 @@ const Card = ({ imageUrl, category, title, description }: ItemType) => {
         backgroundSize: "cover",
       }}
     >
-      <div className="absolute inset-0 z-20 rounded-2xl bg-gradient-to-b from-black/90 via-black/60 to-black/0 p-6 text-white transition-[backdrop-filter] hover:backdrop-blur-sm flex flex-col justify-between">
+      <div className="absolute inset-0 z-20 rounded-2xl bg-gradient-to-b from-black/50 via-black/30 to-black/0 p-6 text-white transition-[backdrop-filter] hover:backdrop-blur-sm flex flex-col justify-between">
         <div>
           <span className="text-xs font-semibold uppercase text-[#FFD700]">
             {category}
