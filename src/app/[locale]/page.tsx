@@ -9,6 +9,9 @@ import FAQSection from "@/components/FAQSection"
 import TrustpilotWidget from "@/components/TrustpilotWidget"
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from "@/components/LanguageSwitcher"
+import ProductShowcaseSection from "@/components/ProductShowcaseSection"
+import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
+import CardCarousel from "@/components/CardCarousel"
 
 export default function Home() {
   const t = useTranslations();
@@ -58,173 +61,73 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="px-4 sm:px-6 py-12 sm:py-16 md:py-20 max-w-7xl mx-auto text-center bg-gradient-to-br from-[#003399] to-[#001155] text-white">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
-          {t('hero.headline1')}<br />
-          <span className="text-[#FFD700]">{t('hero.headline2')}</span>
-        </h1>
+      <section className="bg-gradient-to-br from-[#003399] to-[#001155] text-white">
+        <div className="px-4 sm:px-6 py-12 sm:py-16 md:py-20 max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
+            {t('hero.headline1')}<br />
+            <span className="text-[#FFD700]">{t('hero.headline2')}</span>
+          </h1>
 
-        <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
-          {t('hero.description')}
-        </p>
+          <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
+            {t('hero.description')}
+          </p>
 
-        <div className="flex flex-col items-center gap-4 sm:gap-6 mb-8 sm:mb-12">
-          <Button
-            className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-sm"
-            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            {t('hero.ctaButton')}
-          </Button>
+          <div className="flex flex-col items-center gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <Button
+              className="bg-[#FFD700] hover:bg-[#E6C200] text-[#003399] px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold w-full sm:w-auto max-w-sm"
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              {t('hero.ctaButton')}
+            </Button>
 
-          {/* Trust Bar */}
-          <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-white text-xs sm:text-sm md:text-base max-w-2xl">
-            <div className="flex items-center gap-2 justify-center">
-              <span className="text-[#FFD700] font-bold">✓</span>
-              <span className="whitespace-nowrap">{t('hero.trustBar1')}</span>
-            </div>
-            <div className="hidden md:block text-blue-300">|</div>
-            <div className="flex items-center gap-2 justify-center">
-              <span className="text-[#FFD700] font-bold">✓</span>
-              <span className="whitespace-nowrap">{t('hero.trustBar2')}</span>
-            </div>
-            <div className="hidden md:block text-blue-300">|</div>
-            <div className="flex items-center gap-2 justify-center">
-              <span className="text-[#FFD700] font-bold">✓</span>
-              <span className="whitespace-nowrap">{t('hero.trustBar3')}</span>
-            </div>
-            <div className="hidden md:block text-blue-300">|</div>
-            <div className="flex items-center gap-2 justify-center">
-              <span className="text-[#FFD700] font-bold">✓</span>
-              <span className="whitespace-nowrap">{t('hero.trustBar4')}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Animated Avatars Section */}
-        <div className="flex justify-center items-center space-x-4 mb-4">
-          <div className="flex -space-x-2">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
-          </div>
-          <div className="flex items-center space-x-1 text-[#FFD700]">
-            <span>★★★★★</span>
-          </div>
-        </div>
-        <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
-
-        {/* Product Showcase */}
-        <div className="mt-16 relative">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto border border-white/20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-white text-gray-900 border-0 shadow-lg">
-                <CardContent className="p-4">
-                  <div className="w-full h-32 bg-gradient-to-br from-[#003399] to-[#0066CC] rounded mb-4 flex items-center justify-center">
-                    <span className="text-white font-bold">{t('productShowcase.ebook')}</span>
-                  </div>
-                  <h3 className="text-gray-900 font-semibold">{t('productShowcase.businessGuide')}</h3>
-                  <p className="text-gray-600 text-sm">{t('productShowcase.businessGuideDesc')}</p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white text-gray-900 border-0 shadow-lg">
-                <CardContent className="p-4">
-                  <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#40E0D0] rounded mb-4 flex items-center justify-center">
-                    <span className="text-white font-bold">{t('productShowcase.course')}</span>
-                  </div>
-                  <h3 className="text-gray-900 font-semibold">{t('productShowcase.videoTraining')}</h3>
-                  <p className="text-gray-600 text-sm">{t('productShowcase.videoTrainingDesc')}</p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white text-gray-900 border-0 shadow-lg">
-                <CardContent className="p-4">
-                  <div className="w-full h-32 bg-gradient-to-br from-[#FFD700] to-[#FFA500] rounded mb-4 flex items-center justify-center">
-                    <span className="text-white font-bold">{t('productShowcase.template')}</span>
-                  </div>
-                  <h3 className="text-gray-900 font-semibold">{t('productShowcase.readyTemplates')}</h3>
-                  <p className="text-gray-600 text-sm">{t('productShowcase.readyTemplatesDesc')}</p>
-                </CardContent>
-              </Card>
+            {/* Trust Bar */}
+            <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-white text-xs sm:text-sm md:text-base max-w-2xl">
+              <div className="flex items-center gap-2 justify-center">
+                <span className="text-[#FFD700] font-bold">✓</span>
+                <span className="whitespace-nowrap">{t('hero.trustBar1')}</span>
+              </div>
+              <div className="hidden md:block text-blue-300">|</div>
+              <div className="flex items-center gap-2 justify-center">
+                <span className="text-[#FFD700] font-bold">✓</span>
+                <span className="whitespace-nowrap">{t('hero.trustBar2')}</span>
+              </div>
+              <div className="hidden md:block text-blue-300">|</div>
+              <div className="flex items-center gap-2 justify-center">
+                <span className="text-[#FFD700] font-bold">✓</span>
+                <span className="whitespace-nowrap">{t('hero.trustBar3')}</span>
+              </div>
+              <div className="hidden md:block text-blue-300">|</div>
+              <div className="flex items-center gap-2 justify-center">
+                <span className="text-[#FFD700] font-bold">✓</span>
+                <span className="whitespace-nowrap">{t('hero.trustBar4')}</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Trusted By Section */}
-      <section className="px-6 py-12 max-w-7xl mx-auto text-center bg-gray-50">
-        <p className="text-gray-500 text-sm mb-8 font-medium">{t('trustedBySection.title')}</p>
-        <div className="flex justify-center items-center space-x-12 opacity-60">
-          <div className="text-gray-600 font-semibold">CPHERE</div>
-          <div className="text-gray-600 font-semibold">CEO MasterMind</div>
-          <div className="text-gray-600 font-semibold">Local Pulse</div>
-          <div className="text-gray-600 font-semibold">DevCo</div>
+          {/* Animated Avatars Section */}
+          <div className="flex justify-center items-center space-x-4 mb-4">
+            <div className="flex -space-x-2">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00CED1] to-[#40E0D0] border-2 border-white"></div>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFA500] border-2 border-white"></div>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#003399] to-[#0066CC] border-2 border-white"></div>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] border-2 border-white"></div>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#A8E6CF] to-[#DCEDC1] border-2 border-white"></div>
+            </div>
+            <div className="flex items-center space-x-1 text-[#FFD700]">
+              <span>★★★★★</span>
+            </div>
+          </div>
+          <p className="text-blue-200 text-sm">{t('hero.trustedBy')}</p>
+
+          {/* Product Carousel */}
+          <div className="mt-16 relative">
+            <CardCarousel />
+          </div>
         </div>
       </section>
 
       {/* Sell Digital Products Section */}
-      <section className="px-6 py-20 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Button className="bg-[#00CED1] hover:bg-[#00B8B8] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              {t('sellDigitalProducts.badge')}
-            </Button>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-              {t('sellDigitalProducts.headline').split('\n')[0]}<br />
-              {t('sellDigitalProducts.headline').split('\n')[1]}
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              {t('sellDigitalProducts.description')} <strong className="text-[#003399]">{t('sellDigitalProducts.emphasisText')}</strong>.
-            </p>
-          </div>
-
-          {/* Product Preview */}
-          <div className="bg-gray-900 rounded-lg p-8 mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="space-y-6">
-                  <div className="bg-gray-800 rounded-lg p-6">
-                    <h3 className="text-white font-semibold mb-2">{t('sellDigitalProducts.demandedContentTitle')}</h3>
-                    <p className="text-gray-400 text-sm">{t('sellDigitalProducts.demandedContentDesc')}</p>
-                  </div>
-                  <div className="bg-gray-800 rounded-lg p-6">
-                    <h3 className="text-white font-semibold mb-2">{t('sellDigitalProducts.constantlyUpdatedTitle')}</h3>
-                    <p className="text-gray-400 text-sm">{t('sellDigitalProducts.constantlyUpdatedDesc')}</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <Card className="bg-[#003399] text-white p-8 border-0">
-                  <h3 className="text-2xl font-bold mb-4">{t('sellDigitalProducts.plrTitle')}</h3>
-                  <p className="mb-6">{t('sellDigitalProducts.plrDesc')}</p>
-                  <div className="bg-[#002266] rounded-lg p-4">
-                    <div className="text-3xl font-bold text-[#FFD700]">📋</div>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-gray-900 text-white p-8 border-0">
-              <div className="text-4xl font-bold text-[#FFD700] mb-2">{t('sellDigitalProducts.statsDigitalProducts')}</div>
-              <h3 className="text-xl font-semibold mb-4">{t('sellDigitalProducts.statsDigitalProductsTitle')}</h3>
-              <p className="text-gray-400">{t('sellDigitalProducts.statsDigitalProductsDesc')}</p>
-            </Card>
-            <Card className="bg-gray-100 p-8 border-0">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">{t('sellDigitalProducts.mediaFormatsTitle')}</h3>
-              <p className="text-gray-600 mb-4">{t('sellDigitalProducts.mediaFormatsDesc')}</p>
-              <div className="mt-6">
-                <h4 className="font-semibold mb-2 text-[#003399]">{t('sellDigitalProducts.premiumQualityTitle')}</h4>
-                <p className="text-gray-600 text-sm">{t('sellDigitalProducts.premiumQualityDesc')}</p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <BouncyCardsFeatures />
 
       {/* Unlimited Options Section */}
       <section className="px-6 py-20 bg-gray-50">
@@ -407,161 +310,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Ebooks Section */}
-          <div className="bg-gray-50 rounded-lg p-8 mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="bg-gray-900 text-white px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  {t('productCategories.ebooksBadge')}
-                </div>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">{t('productCategories.ebooksTitle')}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t('productCategories.ebooksDesc')}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature1')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature2')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#003399] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.ebooksFeature3')}</span>
-                  </div>
-                </div>
-
-                <Button className="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-800">
-                  {t('productCategories.ebooksButton')}
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4">
-                <div className="w-full h-32 bg-gradient-to-br from-[#003399] to-[#0066CC] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">AI FOR PRODUCTIVITY</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#40E0D0] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">FUNNEL STRATEGIES</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#FFD700] to-[#FFA500] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">MONEY PSYCHOLOGY</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Video Courses Section */}
-          <div className="bg-gray-900 text-white rounded-lg p-8 mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="w-full h-32 bg-gradient-to-br from-[#8A2BE2] to-[#9370DB] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">PODCAST LAUNCH</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#4169E1] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">META ADS</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#FF4500] to-[#FF6347] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">AI FOR PRODUCTIVITY</span>
-                </div>
-              </div>
-
-              <div>
-                <div className="bg-white text-gray-900 px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  {t('productCategories.videoBadge')}
-                </div>
-                <h3 className="text-3xl font-bold mb-6">{t('productCategories.videoTitle')}</h3>
-                <p className="text-gray-300 mb-6">
-                  {t('productCategories.videoDesc')}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
-                      <span className="text-gray-900 text-xs">✓</span>
-                    </div>
-                    <span className="text-sm">{t('productCategories.videoFeature1')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
-                      <span className="text-gray-900 text-xs">✓</span>
-                    </div>
-                    <span className="text-sm">{t('productCategories.videoFeature2')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
-                      <span className="text-gray-900 text-xs">✓</span>
-                    </div>
-                    <span className="text-sm">{t('productCategories.videoFeature3')}</span>
-                  </div>
-                </div>
-
-                <Button className="bg-white text-gray-900 px-6 py-2 rounded-full hover:bg-gray-100">
-                  {t('productCategories.videoButton')}
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Resources Section */}
-          <div className="bg-gray-50 rounded-lg p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="bg-gray-900 text-white px-4 py-2 rounded-full inline-block text-sm mb-6 font-semibold">
-                  {t('productCategories.resourcesBadge')}
-                </div>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">{t('productCategories.resourcesTitle')}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t('productCategories.resourcesDesc')}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature1')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature2')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-[#00CED1] rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="text-sm text-gray-700">{t('productCategories.resourcesFeature3')}</span>
-                  </div>
-                </div>
-
-                <Button className="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-800">
-                  {t('productCategories.resourcesButton')}
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4">
-                <div className="w-full h-32 bg-gradient-to-br from-[#FF4500] to-[#FF6347] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">6-FIGURE BUSINESS</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#00CED1] to-[#20B2AA] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">TIME MANAGEMENT</span>
-                </div>
-                <div className="w-full h-32 bg-gradient-to-br from-[#DC143C] to-[#B22222] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm text-center">COLD CALLS</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Product Showcase with Scroll Animation */}
+          <ProductShowcaseSection />
 
           <div className="text-center mt-12">
             <Button className="bg-[#003399] hover:bg-[#002266] text-white px-8 py-3 rounded-full text-lg font-semibold">

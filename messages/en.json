@@ -34,6 +34,45 @@
     "readyTemplates": "Ready Templates",
     "readyTemplatesDesc": "Professional designs"
   },
+  "heroCarousel": {
+    "heading": "Your Complete Digital Library.",
+    "subheading": "Ready to use today.",
+    "ebook": {
+      "category": "PLR Ebooks",
+      "title": "Expert Guides",
+      "description": "In-depth ebooks on business, marketing, and personal growth"
+    },
+    "videoCourse": {
+      "category": "Video Courses",
+      "title": "Learn Visually",
+      "description": "Step-by-step video training on trending topics"
+    },
+    "template": {
+      "category": "Templates",
+      "title": "Ready to Use",
+      "description": "Professional templates for social media, emails, and more"
+    },
+    "workbook": {
+      "category": "Workbooks",
+      "title": "Action Plans",
+      "description": "Interactive workbooks to implement strategies"
+    },
+    "aiPrompts": {
+      "category": "AI Prompts",
+      "title": "ChatGPT Ready",
+      "description": "Pre-written prompts for content creation and automation"
+    },
+    "miniCourse": {
+      "category": "Mini Courses",
+      "title": "Quick Wins",
+      "description": "Short-form courses for focused learning"
+    },
+    "checklist": {
+      "category": "Checklists",
+      "title": "Stay Organized",
+      "description": "Step-by-step checklists for common processes"
+    }
+  },
   "trustedBySection": {
     "title": "TRUSTED BY TOP BRANDS AND INDIVIDUALS WORLDWIDE"
   },
@@ -54,7 +93,8 @@
     "mediaFormatsTitle": "15 Media Formats",
     "mediaFormatsDesc": "Business, Marketing, Social Media, E-commerce, and Entrepreneurship.",
     "premiumQualityTitle": "Premium Quality",
-    "premiumQualityDesc": "Interesting content that is inspired by the best brands in the world."
+    "premiumQualityDesc": "Interesting content that is inspired by the best brands in the world.",
+    "ctaButton": "Explore Library"
   },
   "unlimitedOptions": {
     "badge": "You have complete freedom",
@@ -120,7 +160,12 @@
     "resourcesFeature2": "Solution and goal oriented",
     "resourcesFeature3": "Short-form content",
     "resourcesButton": "🔍 Preview Resources",
-    "ctaButton": "▶ Explore All Products"
+    "ctaButton": "▶ Explore All Products",
+    "showcasePrefix": "Discover our range of",
+    "showcaseSuffix": "with resale rights.",
+    "packagesBadge": "Digital Products",
+    "packagesTitle": "Complete Packages",
+    "packagesDesc": "All-in-one packages including multiple content formats to maximize your offering. Ebooks, videos, templates and resources combined to create high-value products."
   },
   "freeResourcesSection": {
     "headline": "Free Resources",
