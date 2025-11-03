@@ -82,14 +82,6 @@ const StackedCardTestimonials = () => {
   return (
     <section className="bg-white py-24 px-4 lg:px-8 grid items-center grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 overflow-hidden max-w-7xl mx-auto">
       <div className="p-4">
-        <h3 className="text-5xl font-semibold text-gray-900">
-          {t("headline")}
-        </h3>
-        <p className="text-slate-500 my-4">
-          Join thousands of satisfied customers who have transformed their
-          business with our ready-to-use digital products.
-        </p>
-
         {/* Progress bars */}
         <div className="flex gap-1 mt-8">
           {Array.from(Array(numTracks).keys()).map((n) => (
@@ -114,6 +106,11 @@ const StackedCardTestimonials = () => {
               )}
             </button>
           ))}
+        </div>
+
+        {/* Trustpilot Widget */}
+        <div className="mt-8">
+          <TrustpilotWidget height="140px" />
         </div>
       </div>
 
@@ -162,11 +159,6 @@ const StackedCardTestimonials = () => {
             </motion.div>
           );
         })}
-      </div>
-
-      {/* Trustpilot Widget */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 mt-12">
-        <TrustpilotWidget height="140px" />
       </div>
 
       {/* Earnings Disclaimer */}

@@ -15,7 +15,6 @@ import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
 import CardCarousel from "@/components/CardCarousel"
 import FreeResourcesWobble from "@/components/FreeResourcesWobble"
 import UnlimitedOptionsStickyCards from "@/components/UnlimitedOptionsStickyCards"
-import StackedCardTestimonials from "@/components/TestimonialsStacked"
 import { StaggerTestimonials } from "@/components/StaggerTestimonials"
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
 
@@ -83,9 +82,6 @@ export default function Home() {
 
       {/* Unlimited Options Section */}
       <UnlimitedOptionsStickyCards />
-
-      {/* Testimonials Section */}
-      <StackedCardTestimonials />
 
       {/* Stagger Testimonials Section */}
       <StaggerTestimonials />
