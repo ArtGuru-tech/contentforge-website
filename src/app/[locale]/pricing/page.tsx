@@ -1,6 +1,6 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,9 +9,11 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import TrustpilotWidget from "@/components/TrustpilotWidget"
 import { Check } from "lucide-react"
+import { openCheckout } from "@/lib/paddle"
 
 export default function PricingPage() {
   const t = useTranslations('pricingPage')
+  const locale = useLocale()
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
@@ -55,7 +57,10 @@ export default function PricingPage() {
                   <p className="text-gray-600 mt-2">{t('oneTime')}</p>
                 </div>
 
-                <Button className="w-full bg-[#003399] hover:bg-[#002266] text-white py-6 text-lg font-semibold mb-8">
+                <Button
+                  className="w-full bg-[#003399] hover:bg-[#002266] text-white py-6 text-lg font-semibold mb-8 cursor-pointer"
+                  onClick={() => openCheckout('lite', locale)}
+                >
                   {t('getStarted')}
                 </Button>
 
@@ -116,7 +121,10 @@ export default function PricingPage() {
                   <p className="text-gray-700 mt-2">{t('oneTime')}</p>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-[#003399] to-[#0055CC] hover:from-[#002266] hover:to-[#003399] text-white py-6 text-lg font-semibold mb-8 shadow-lg">
+                <Button
+                  className="w-full bg-gradient-to-r from-[#003399] to-[#0055CC] hover:from-[#002266] hover:to-[#003399] text-white py-6 text-lg font-semibold mb-8 shadow-lg cursor-pointer"
+                  onClick={() => openCheckout('pro', locale)}
+                >
                   {t('getStartedPro')}
                 </Button>
 

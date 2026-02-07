@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import Script from "next/script";
 import ClientBody from "../ClientBody";
 import type { Metadata } from "next";
@@ -9,9 +9,6 @@ type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 };
-
-export const dynamic = 'force-static';
-export const dynamicParams = false;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -39,7 +36,11 @@ export default async function LocaleLayout({
   params
 }: Props) {
   const { locale } = await params;
-  const messages = await getMessages({ locale });
+
+  // Enable static rendering for this locale
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
@@ -47,6 +48,11 @@ export default async function LocaleLayout({
         <Script
           crossOrigin="anonymous"
           src="//unpkg.com/same-runtime/dist/index.global.js"
+        />
+        {/* Paddle.js SDK for checkout */}
+        <Script
+          src="https://cdn.paddle.com/paddle/v2/paddle.js"
+          strategy="afterInteractive"
         />
       </head>
       <body suppressHydrationWarning className="antialiased">

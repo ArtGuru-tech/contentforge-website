@@ -1,27 +1,20 @@
 "use client";
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/routing';
 import { locales } from '@/i18n';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-
-  const switchLocale = (newLocale: string) => {
-    // Remove the current locale from the pathname
-    const pathnameWithoutLocale = pathname.replace(`/${locale}`, '');
-    // Navigate to the new locale
-    router.push(`/${newLocale}${pathnameWithoutLocale}`);
-  };
 
   return (
     <div className="flex items-center space-x-2">
       {locales.map((loc) => (
-        <button
+        <Link
           key={loc}
-          onClick={() => switchLocale(loc)}
+          href={pathname}
+          locale={loc}
           className={`px-3 py-1 text-sm font-medium rounded-md transition-colors ${
             locale === loc
               ? 'bg-[#003399] text-white'
@@ -30,7 +23,7 @@ export default function LanguageSwitcher() {
           aria-label={`Switch to ${loc === 'en' ? 'English' : 'French'}`}
         >
           {loc.toUpperCase()}
-        </button>
+        </Link>
       ))}
     </div>
   );
