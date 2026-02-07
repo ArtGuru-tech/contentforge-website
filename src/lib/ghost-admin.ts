@@ -47,15 +47,16 @@ export async function findMemberByEmail(email: string): Promise<{ id: string; la
   // Escape single quotes in email to prevent query injection
   const safeEmail = email.replace(/'/g, "\\'");
 
-  const response = await fetch(
-    `${GHOST_ADMIN_API_URL}/ghost/api/admin/members/?filter=email:'${encodeURIComponent(safeEmail)}'`,
-    {
-      headers: {
-        Authorization: `Ghost ${token}`,
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  // Use URL API for proper query parameter encoding
+  const url = new URL('/ghost/api/admin/members/', GHOST_ADMIN_API_URL);
+  url.searchParams.set('filter', `email:'${safeEmail}'`);
+
+  const response = await fetch(url.toString(), {
+    headers: {
+      Authorization: `Ghost ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
 
   if (!response.ok) {
     console.error('Failed to search Ghost member:', await response.text());
@@ -183,7 +184,11 @@ export async function sendMagicLink(email: string): Promise<{ success: boolean; 
   // Escape single quotes in email to prevent query injection
   const safeEmail = email.replace(/'/g, "\\'");
 
-  const response = await fetch(`${GHOST_ADMIN_API_URL}/ghost/api/admin/members/?filter=email:'${encodeURIComponent(safeEmail)}'`, {
+  // Use URL API for proper query parameter encoding
+  const url = new URL('/ghost/api/admin/members/', GHOST_ADMIN_API_URL);
+  url.searchParams.set('filter', `email:'${safeEmail}'`);
+
+  const response = await fetch(url.toString(), {
     headers: {
       Authorization: `Ghost ${token}`,
     },

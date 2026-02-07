@@ -57,6 +57,7 @@ export default function ResourcesSection() {
         <div className="relative group">
           {/* Chevron Navigation Button */}
           <button
+            type="button"
             onClick={scrollNext}
             aria-label="Scroll to next resources"
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-xl hidden md:flex items-center justify-center text-white transition-all"

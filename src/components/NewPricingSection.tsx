@@ -6,8 +6,15 @@ export default function NewPricingSection() {
   const t = useTranslations("newPricing");
 
   const scrollToPurchase = () => {
-    // Placeholder for Paddle checkout
-    window.open("https://app.contentforge.cc", "_blank", "noopener,noreferrer");
+    if (typeof window === "undefined") return;
+
+    const url = "https://app.contentforge.cc";
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+
+    // Fallback when popups are blocked
+    if (!newWindow) {
+      window.location.assign(url);
+    }
   };
 
   return (
@@ -62,6 +69,7 @@ export default function NewPricingSection() {
               </ul>
 
               <button
+                type="button"
                 onClick={scrollToPurchase}
                 className="block w-full py-5 md:py-6 rounded-xl md:rounded-2xl border-2 border-white/10 text-center text-lg md:text-xl font-black uppercase tracking-widest hover:bg-white/5 transition-all"
               >
@@ -107,6 +115,7 @@ export default function NewPricingSection() {
               </ul>
 
               <button
+                type="button"
                 onClick={scrollToPurchase}
                 className="block w-full py-6 md:py-8 gold-gradient text-black text-center text-xl md:text-2xl font-black uppercase tracking-widest rounded-2xl md:rounded-3xl shadow-2xl shadow-[#ffd700]/30 hover:scale-105 active:scale-95 transition-all italic"
               >
