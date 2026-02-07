@@ -17,7 +17,9 @@ export default function ValueProposition() {
           <div className="space-y-6 md:space-y-8 text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
             <p>{t("paragraph1")}</p>
             <p>
-              {t("paragraph2Start")} <span className="text-white font-black border-b-2 border-[#ffd700] pb-1">ContentForge</span>{t("paragraph2End")}
+              {t("paragraph2Start")}{" "}
+              <span className="text-white font-black border-b-2 border-[#ffd700] pb-1">ContentForge</span>{" "}
+              {t("paragraph2End")}
             </p>
           </div>
           <div className="mt-10 md:mt-12 flex gap-6">

@@ -8,7 +8,7 @@ const MAX_RETRIES = 50; // Max 5 seconds (50 * 100ms)
 export default function PaddleInitializer() {
   useEffect(() => {
     let retryCount = 0;
-    let timeoutId: NodeJS.Timeout | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
     // Wait for Paddle script to load
     const checkPaddle = () => {

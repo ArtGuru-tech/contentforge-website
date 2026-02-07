@@ -16,8 +16,10 @@ export default function Navbar() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Fallback: navigate to homepage with anchor if element not found (e.g., on other pages)
-      window.location.assign(`/#${id}`);
+      // Fallback: preserve locale when navigating to homepage anchor from other pages
+      const localeMatch = window.location.pathname.match(/^\/(en|fr)(?:\/|$)/);
+      const localePrefix = localeMatch?.[1] ? `/${localeMatch[1]}` : "";
+      window.location.assign(`${localePrefix}/#${id}`);
     }
   };
 
@@ -34,24 +36,28 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <button
+              type="button"
               onClick={() => scrollToSection("concept")}
               className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
             >
               {t("concept")}
             </button>
             <button
+              type="button"
               onClick={() => scrollToSection("use-cases")}
               className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
             >
               {t("usages")}
             </button>
             <button
+              type="button"
               onClick={() => scrollToSection("resources")}
               className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
             >
               {t("samples")}
             </button>
             <button
+              type="button"
               onClick={() => scrollToSection("pricing")}
               className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
             >
@@ -69,6 +75,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
             <button
+              type="button"
               onClick={() => scrollToSection("pricing")}
               className="gold-gradient text-[#0a0e27] px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:scale-105 transition-transform"
             >
@@ -78,6 +85,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(true)}
             className="md:hidden text-white p-2"
           >
@@ -103,6 +111,7 @@ export default function Navbar() {
         >
           <div className="p-6">
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(false)}
               className="absolute top-4 right-4 text-white p-2"
             >
@@ -111,24 +120,28 @@ export default function Navbar() {
 
             <nav className="mt-12 flex flex-col gap-6">
               <button
+                type="button"
                 onClick={() => scrollToSection("concept")}
                 className="text-white text-lg font-medium text-left hover:text-[#ffd700] transition-colors"
               >
                 {t("concept")}
               </button>
               <button
+                type="button"
                 onClick={() => scrollToSection("use-cases")}
                 className="text-white text-lg font-medium text-left hover:text-[#ffd700] transition-colors"
               >
                 {t("usages")}
               </button>
               <button
+                type="button"
                 onClick={() => scrollToSection("resources")}
                 className="text-white text-lg font-medium text-left hover:text-[#ffd700] transition-colors"
               >
                 {t("samples")}
               </button>
               <button
+                type="button"
                 onClick={() => scrollToSection("pricing")}
                 className="text-white text-lg font-medium text-left hover:text-[#ffd700] transition-colors"
               >
@@ -147,6 +160,7 @@ export default function Navbar() {
               </div>
 
               <button
+                type="button"
                 onClick={() => scrollToSection("pricing")}
                 className="gold-gradient text-[#0a0e27] px-6 py-3 rounded-full font-bold text-center uppercase tracking-wide mt-4"
               >

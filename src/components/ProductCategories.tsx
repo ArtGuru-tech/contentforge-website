@@ -29,7 +29,7 @@ export default function ProductCategories() {
   const t = useTranslations("productCategories");
 
   return (
-    <section id="resources" className="py-32 md:py-48 px-6 md:px-12 blueprint-bg">
+    <section id="product-categories" className="py-32 md:py-48 px-6 md:px-12 blueprint-bg">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 md:mb-24 gap-8">

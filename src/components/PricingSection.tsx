@@ -127,10 +127,14 @@ const PriceCards = ({ t, locale }: PriceCardsProps) => (
       </div>
 
       <motion.button
+        type="button"
         whileHover={{ scale: 1.015 }}
         whileTap={{ scale: 0.985 }}
-        onClick={() => openCheckout('lite', locale)}
-        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors cursor-pointer"
+        onClick={() => {
+          if (typeof window === "undefined" || !window.Paddle) return;
+          openCheckout("lite", locale);
+        }}
+        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Get Started
       </motion.button>
@@ -250,10 +254,14 @@ const PriceCards = ({ t, locale }: PriceCardsProps) => (
       </div>
 
       <motion.button
+        type="button"
         whileHover={{ scale: 1.015 }}
         whileTap={{ scale: 0.985 }}
-        onClick={() => openCheckout('pro', locale)}
-        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors cursor-pointer"
+        onClick={() => {
+          if (typeof window === "undefined" || !window.Paddle) return;
+          openCheckout("pro", locale);
+        }}
+        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Get Started Pro
       </motion.button>
