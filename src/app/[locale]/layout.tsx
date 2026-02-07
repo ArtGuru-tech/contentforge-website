@@ -5,6 +5,9 @@ import ClientBody from "../ClientBody";
 import type { Metadata } from "next";
 import { locales } from '@/i18n';
 
+// Enable dynamic rendering for pages using next-intl server functions
+export const dynamic = 'force-dynamic';
+
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
