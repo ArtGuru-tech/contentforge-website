@@ -1,12 +1,9 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import Script from "next/script";
 import ClientBody from "../ClientBody";
 import type { Metadata } from "next";
 import { locales } from '@/i18n';
-
-// Enable dynamic rendering for pages using next-intl server functions
-export const dynamic = 'force-dynamic';
 
 type Props = {
   children: React.ReactNode;
@@ -39,7 +36,11 @@ export default async function LocaleLayout({
   params
 }: Props) {
   const { locale } = await params;
-  const messages = await getMessages({ locale });
+
+  // Enable static rendering for this locale
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
