@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { ChevronRight } from "lucide-react";
 
 const resources = [
@@ -34,8 +35,11 @@ export default function ResourcesSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollNext = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 420, behavior: "smooth" });
+    if (carouselRef.current && carouselRef.current.children.length > 1) {
+      const firstChild = carouselRef.current.children[0] as HTMLElement;
+      const secondChild = carouselRef.current.children[1] as HTMLElement;
+      const scrollAmount = secondChild.offsetLeft - firstChild.offsetLeft;
+      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
@@ -54,6 +58,7 @@ export default function ResourcesSection() {
           {/* Chevron Navigation Button */}
           <button
             onClick={scrollNext}
+            aria-label="Scroll to next resources"
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-xl hidden md:flex items-center justify-center text-white transition-all"
           >
             <ChevronRight className="w-6 h-6" />
@@ -62,7 +67,7 @@ export default function ResourcesSection() {
           {/* Horizontal Carousel */}
           <div
             ref={carouselRef}
-            className="flex overflow-x-auto gap-8 pb-12 no-scrollbar scroll-smooth snap-x"
+            className="flex overflow-x-auto gap-8 pb-12 no-scrollbar scroll-smooth snap-x snap-mandatory"
           >
             {resources.map((resource) => (
               <ResourceCard
@@ -91,7 +96,8 @@ interface ResourceCardProps {
 
 function ResourceCard({ resourceKey, image, rotation, isLast, t }: ResourceCardProps) {
   return (
-    <div
+    <Link
+      href="/#pricing"
       className={`snap-center flex-shrink-0 w-[85vw] md:w-[400px] bg-gradient-to-b from-[#2a2a2a] to-[#121212] rounded-[3rem] p-10 flex flex-col items-center text-center shadow-2xl relative overflow-hidden group/card border border-white/5 hover:border-white/10 transition-all ${
         isLast ? "opacity-60 hover:opacity-100" : ""
       }`}
@@ -114,7 +120,6 @@ function ResourceCard({ resourceKey, image, rotation, isLast, t }: ResourceCardP
           width={192}
           height={256}
           className={`w-48 h-64 object-cover rounded shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${rotation}`}
-          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded" />
       </div>
@@ -123,6 +128,6 @@ function ResourceCard({ resourceKey, image, rotation, isLast, t }: ResourceCardP
       <p className="text-gray-400 text-sm font-medium">
         {t(`categories.${resourceKey}.desc`)}
       </p>
-    </div>
+    </Link>
   );
 }

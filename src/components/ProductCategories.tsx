@@ -54,8 +54,9 @@ export default function ProductCategories() {
         {/* Product Cards */}
         <div className="grid lg:grid-cols-3 gap-8 md:gap-10">
           {categories.map((category, index) => (
-            <div
+            <Link
               key={category.key}
+              href="/#pricing"
               className="group/card snap-center bg-gradient-to-b from-[#1a1a1a] to-[#0a0e27] rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-12 flex flex-col items-center text-center shadow-3xl border border-white/10 hover:border-[#ffd700]/30 transition-all duration-500"
             >
               <span className="text-[#ffd700] text-xs uppercase font-black tracking-[0.2em] md:tracking-[0.3em] mb-6 md:mb-8 bg-[#ffd700]/5 px-4 py-1 rounded-full">
@@ -72,14 +73,13 @@ export default function ProductCategories() {
                     alt={t(`${category.key}.title`)}
                     fill
                     className={`object-cover rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.6)] ${category.rotation} relative z-10`}
-                    unoptimized
                   />
                 </div>
               </div>
               <p className="text-gray-400 text-base md:text-lg font-medium leading-relaxed">
                 {t(`${category.key}.description`)}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 
