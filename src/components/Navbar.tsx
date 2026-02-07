@@ -1,94 +1,199 @@
-"use client"
+"use client";
 
-import { useTranslations } from 'next-intl'
-import { Link } from "@/i18n/routing"
-import { Button } from "@/components/ui/button"
-import LanguageSwitcher from "@/components/LanguageSwitcher"
+import { useState, useEffect, useCallback } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const t = useTranslations('nav')
-  const tFooter = useTranslations('footer')
+  const t = useTranslations("nav");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Close mobile menu on Escape key
+  const handleEscape = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape" && mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [handleEscape]);
+
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Fallback: preserve locale when navigating to homepage anchor from other pages
+      const localeMatch = window.location.pathname.match(/^\/(en|fr)(?:\/|$)/);
+      const localePrefix = localeMatch?.[1] ? `/${localeMatch[1]}` : "";
+      window.location.assign(`${localePrefix}/#${id}`);
+    }
+  };
 
   return (
-    <header className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto bg-white border-b border-gray-100">
-      <Link href="/" className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 hover:opacity-80 transition-opacity">
-        <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
-          <img
-            src="/logo.svg"
-            alt="ContentForge Logo"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <span className="text-[#003399] font-bold text-base sm:text-lg">CONTENTFORGE</span>
-      </Link>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0e27]/80 backdrop-blur-md border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <img src="/logo.svg" alt="ContentForge" className="w-8 h-8" />
+            <span className="text-white font-bold text-lg tracking-tight">CONTENTFORGE</span>
+          </Link>
 
-      <nav className="hidden md:flex items-center space-x-8">
-        <a
-          href="/#pricing"
-          className="text-gray-600 hover:text-[#003399] transition-colors font-medium"
-          onClick={(e) => {
-            const path = window.location.pathname;
-            if (path === '/' || path === '/en' || path === '/fr' || path.match(/^\/[a-z]{2}\/?$/)) {
-              e.preventDefault();
-              document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-        >
-          {t('pricing')}
-        </a>
-        <Link href="/contact" className="text-gray-600 hover:text-[#003399] transition-colors font-medium">{t('contact')}</Link>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            <button
+              type="button"
+              onClick={() => scrollToSection("concept")}
+              className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
+            >
+              {t("concept")}
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection("use-cases")}
+              className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
+            >
+              {t("usages")}
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection("resources")}
+              className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
+            >
+              {t("samples")}
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection("pricing")}
+              className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
+            >
+              {t("pricing")}
+            </button>
+            <Link
+              href="/contact"
+              className="text-gray-300 hover:text-[#ffd700] transition-colors font-medium"
+            >
+              {t("contact")}
+            </Link>
+          </nav>
 
-        {/* Legal Dropdown */}
-        <div className="relative group">
-          <button className="text-gray-600 hover:text-[#003399] transition-colors font-medium flex items-center gap-1">
-            {t('legal')}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              onClick={() => scrollToSection("pricing")}
+              className="gold-gradient text-[#0a0e27] px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:scale-105 transition-transform"
+            >
+              {t("buyNow")}
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            className="md:hidden text-white p-2"
+            aria-label="Open menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu-drawer"
+          >
+            <Menu className="w-6 h-6" />
           </button>
-          <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <Link href="/terms" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors first:rounded-t-lg">
-              {tFooter('terms')}
-            </Link>
-            <Link href="/privacy" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors">
-              {tFooter('privacy')}
-            </Link>
-            <Link href="/refund" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors">
-              {tFooter('refund')}
-            </Link>
-            <Link href="/plr" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors">
-              {tFooter('plr')}
-            </Link>
-            <Link href="/earnings-disclaimer" className="block px-4 py-3 text-gray-600 hover:text-[#003399] hover:bg-gray-50 transition-colors last:rounded-b-lg">
-              Earnings Disclaimer
-            </Link>
+        </div>
+      </header>
+
+      {/* Mobile Drawer */}
+      <div
+        id="mobile-menu-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation menu"
+        className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
+          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+        <div
+          className={`absolute right-0 top-0 h-full w-80 bg-[#0a0e27] border-l border-white/10 transform transition-transform duration-300 ${
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="p-6">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-4 right-4 text-white p-2"
+              aria-label="Close menu"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <nav className="mt-12 flex flex-col gap-6">
+              <button
+                type="button"
+                onClick={() => scrollToSection("concept")}
+                className="text-white text-lg font-medium text-left hover:text-[#ffd700] transition-colors"
+              >
+                {t("concept")}
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection("use-cases")}
+                className="text-white text-lg font-medium text-left hover:text-[#ffd700] transition-colors"
+              >
+                {t("usages")}
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection("resources")}
+                className="text-white text-lg font-medium text-left hover:text-[#ffd700] transition-colors"
+              >
+                {t("samples")}
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection("pricing")}
+                className="text-white text-lg font-medium text-left hover:text-[#ffd700] transition-colors"
+              >
+                {t("pricing")}
+              </button>
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-white text-lg font-medium hover:text-[#ffd700] transition-colors"
+              >
+                {t("contact")}
+              </Link>
+
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <LanguageSwitcher />
+              </div>
+
+              <button
+                type="button"
+                onClick={() => scrollToSection("pricing")}
+                className="gold-gradient text-[#0a0e27] px-6 py-3 rounded-full font-bold text-center uppercase tracking-wide mt-4"
+              >
+                {t("buyNow")}
+              </button>
+            </nav>
           </div>
         </div>
-      </nav>
-
-      <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-        <LanguageSwitcher />
-        <Button
-          variant="outline"
-          className="text-[#003399] border-[#003399] hover:bg-[#003399] hover:text-white text-sm sm:text-base px-3 sm:px-4"
-          onClick={() => window.location.href = process.env.NEXT_PUBLIC_APP_URL || 'https://app.contentforge.cc/'}
-        >
-          {t('login')}
-        </Button>
-        <Button
-          className="bg-[#003399] hover:bg-[#002266] text-white border-0 text-sm sm:text-base px-3 sm:px-4"
-          onClick={() => {
-            const path = window.location.pathname;
-            if (path === '/' || path === '/en' || path === '/fr' || path.match(/^\/[a-z]{2}\/?$/)) {
-              document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
-            } else {
-              window.location.href = '/#pricing';
-            }
-          }}
-        >
-          {t('subscribe')}
-        </Button>
       </div>
-    </header>
-  )
+
+      {/* Spacer for fixed header */}
+      <div className="h-[72px]" />
+    </>
+  );
 }

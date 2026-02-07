@@ -9,13 +9,23 @@
     "subscribe": "S'abonner",
     "signIn": "Se Connecter",
     "login": "Connexion",
-    "legal": "Légal"
+    "legal": "Légal",
+    "concept": "Concept",
+    "usages": "Usages",
+    "samples": "Échantillons",
+    "buyNow": "ACHETER MAINTENANT"
   },
   "hero": {
     "tagline": "Nous créons des infoproduits numériques pour vous",
-    "headline1": "Votre Bibliothèque Complète de Produits Numériques",
-    "headline2": "à Personnaliser",
-    "description": "Plus de 1 000 ebooks, formations, templates et outils professionnels prêts à l'emploi. Personnalisez-les à votre marque et vendez-les en conservant 100% des bénéfices. Un seul paiement pour un accès illimité à vie.",
+    "limitedOffer": "-50% OFFRE LIMITÉE",
+    "headline1": "+1 000 Produits Digitaux",
+    "headline2": "Prêts à Utiliser",
+    "description": "Arrêtez de créer du contenu à partir de zéro. Accédez instantanément à une bibliothèque complète d'ebooks, cours, templates et prompts IA. Payez une fois, possédez pour toujours.",
+    "ctaPrimary": "Profiter des -50%",
+    "ctaSecondary": "Voir les Produits",
+    "trust1": "Garantie 30 Jours",
+    "trust2": "Accès Immédiat",
+    "trust3": "100% Droits de Revente",
     "ctaButton": "Accéder à la Bibliothèque →",
     "guarantee": "Garantie 30 Jours",
     "trustBar1": "Garantie 30 Jours",
@@ -24,6 +34,105 @@
     "trustBar4": "Sans Engagement",
     "trustedBy": "Approuvé par les premiers utilisateurs",
     "logoAlt": "Logo ContentForge"
+  },
+  "valueProposition": {
+    "headlineStart": "Le temps est votre",
+    "headlineHighlight": "atout",
+    "headlineEnd": "le plus précieux.",
+    "paragraph1": "Créer des produits digitaux de qualité prend des mois de recherche, de rédaction et de design. Nous avons supprimé cet obstacle.",
+    "paragraph2Start": "Avec ",
+    "paragraph2End": ", vous obtenez 99% du travail déjà fait par des experts. Vous personnalisez en 5 minutes et lancez votre business immédiatement.",
+    "cta": "Explorer la collection",
+    "quote": "Ne passez plus votre vie à créer. Passez-la à vendre et à croître. Nous forgeons les outils, vous construisez l'empire.",
+    "author": "Fondateur",
+    "role": "ContentForge Global"
+  },
+  "useCases": {
+    "headline": "Dominez votre Marché",
+    "subheadline": "Découvrez comment nos membres utilisent ces actifs pour générer des revenus immédiats.",
+    "viral": {
+      "title": "Stratégie Virale \"Comment & Get\"",
+      "subtitle": "Le hack ultime pour l'engagement.",
+      "description": "Proposez un guide exclusif en bonus. Forcez l'algorithme à vous propulser grâce aux centaines de commentaires générés en quelques heures.",
+      "badge": "Content Creators"
+    },
+    "shopify": {
+      "title": "L'Empire Passif Shopify",
+      "subtitle": "Vendez pendant que vous dormez.",
+      "description": "Listez nos templates et prompts premium. Encaissez 100% des bénéfices sans jamais avoir à gérer de stock physique.",
+      "badge": "E-commerçants"
+    },
+    "leads": {
+      "title": "Lead Magnets High-End",
+      "subtitle": "Convertissez vos visiteurs en fans.",
+      "description": "Capturez des milliers d'emails en offrant une valeur perçue massive que vos concurrents vendent normalement au prix fort.",
+      "badge": "Growth Marketers"
+    },
+    "coaching": {
+      "title": "Coaching High-Ticket",
+      "description": "Offrez des bonus exclusifs (templates Notion, workbooks) pour justifier des tarifs premium et fidéliser vos clients élites."
+    },
+    "social": {
+      "title": "Social Content Scale",
+      "description": "Recyclez nos ebooks en scripts TikTok ou carrousels LinkedIn pour une présence quotidienne sans effort créatif."
+    }
+  },
+  "comparison": {
+    "headline": "L'Inévitable Comparaison",
+    "subheadline": "Le fossé entre l'amateurisme et l'élite industrielle.",
+    "classic": {
+      "badge": "L'approche Classique",
+      "time": "+60 Heures",
+      "timeDesc": "Temps de recherche et rédaction par produit",
+      "cost": "+1 500€",
+      "costDesc": "Coût minimum d'un copywriter & designer pro",
+      "risk": "Risque : Produit qui ne se vend pas après des semaines de travail."
+    },
+    "contentforge": {
+      "badge": "L'avantage ContentForge",
+      "time": "5 Minutes",
+      "timeDesc": "Du téléchargement à la première mise en vente",
+      "cost": "Paiement Fixe",
+      "costDesc": "Accès illimité à toute la bibliothèque à vie",
+      "benefit": "Zéro risque : Testez 10 marchés en une journée."
+    }
+  },
+  "newPricing": {
+    "headline": "Un Seul Investissement.",
+    "headlineHighlight": "Revenus Illimités.",
+    "limitedStart": "Limitée aux",
+    "limitedHighlight": "100 prochaines places",
+    "limitedEnd": "à ce prix.",
+    "tooltip": "Nous limitons drastiquement l'accès pour éviter que nos produits ne saturent le marché. Seuls les entrepreneurs sérieux pourront exploiter cette mine d'or.",
+    "guarantee": "Garantie 30 Jours",
+    "secure": "SSL Sécurisé",
+    "lite": {
+      "name": "Pack Lite",
+      "originalPrice": "97€",
+      "price": "47€",
+      "access": "Accès à vie",
+      "feature1": "500+ Produits Digitaux Essentiels",
+      "feature2": "Ebooks, Templates & Guides",
+      "feature3": "Droits de Revente (PLR) Inclus",
+      "cta": "Choisir l'Option Lite"
+    },
+    "pro": {
+      "badge": "Recommandé par l'élite",
+      "name": "Pack Pro",
+      "originalPrice": "397€",
+      "price": "197€",
+      "access": "Paiement Unique - Accès Illimité",
+      "feature1": "TOUT le Pack Lite Inclus",
+      "feature2": "1000+ Produits Premium & Exclusifs",
+      "feature3": "Cours Vidéo & Audio Inédits",
+      "feature4": "Mises à jour Mensuelles Gratuites",
+      "cta": "Prendre le Contrôle Total"
+    }
+  },
+  "socialProof": {
+    "headline": "Rejoignez",
+    "count": "12 000+",
+    "suffix": "entrepreneurs visionnaires"
   },
   "productShowcase": {
     "ebook": "EBOOK",
@@ -141,9 +250,25 @@
     "formatsBadge": "Jusqu'à 6 Formats"
   },
   "productCategories": {
-    "badge": "Faites passer votre entreprise au niveau supérieur",
-    "headline": "Quels produits numériques\npouvez-vous obtenir ?",
-    "description": "Arrêtez de perdre du temps à chercher du contenu de qualité ou à créer des produits à partir de zéro. Éliminez la barrière des investissements initiaux énormes et du manque d'idées de produits.",
+    "headline": "Votre Arsenal",
+    "headlineHighlight": "Digitale.",
+    "subheadline": "Chaque pièce est une opportunité de revenus.",
+    "viewCatalog": "Voir tout le catalogue",
+    "ebooks": {
+      "tag": "EBOOKS PLR",
+      "title": "Guides Experts",
+      "description": "Ebooks approfondis sur le business, le marketing et le mindset."
+    },
+    "masterclass": {
+      "tag": "MASTERCLASS",
+      "title": "Vision Stratégique",
+      "description": "Formations condensées sur les tunnels de vente et la monétisation."
+    },
+    "templates": {
+      "tag": "TEMPLATES PRO",
+      "title": "Design Pack",
+      "description": "Systèmes Notion, Canva et scripts de vente ultra-performants."
+    },
     "ebooksBadge": "200+ Ebooks PLR Premium",
     "ebooksTitle": "Ebooks et Guides",
     "ebooksDesc": "Offrez à votre audience une lecture engageante et de qualité. Seulement des informations réelles et utiles. Des explications approfondies et directes sur les sujets que vos clients veulent consommer.",
@@ -185,10 +310,53 @@
     "ideasDesc": "Inspirez-vous de plus de 100 idées de produits numériques que vous pouvez créer et offrir à votre audience.",
     "ideasButton": "Explorer les idées"
   },
+  "resourcesSection": {
+    "headline": "Votre Bibliothèque Digitale.",
+    "subheadline": "Prête à l'emploi.",
+    "categories": {
+      "ebooks": {
+        "tag": "EBOOKS PLR",
+        "title": "Guides Experts",
+        "desc": "Ebooks approfondis sur le business, le marketing et le développement personnel."
+      },
+      "courses": {
+        "tag": "COURS VIDÉO",
+        "title": "Vision Stratégique",
+        "desc": "Formations vidéo étape par étape sur les tendances actuelles les plus rentables."
+      },
+      "templates": {
+        "tag": "TEMPLATES",
+        "title": "Prêt à l'Usage",
+        "desc": "Templates professionnels pour réseaux sociaux, emails et tunnels de vente."
+      },
+      "prompts": {
+        "tag": "IA PROMPTS",
+        "title": "Automatisation",
+        "desc": "Des centaines de prompts optimisés pour multiplier votre productivité par 10."
+      }
+    }
+  },
   "footer": {
+    "tagline": "Votre bibliothèque complète de produits digitaux. Prête à personnaliser et vendre.",
+    "platformTitle": "Plateforme",
+    "concept": "Concept",
+    "useCases": "Cas d'Usage",
+    "resources": "Ressources",
+    "pricing": "Tarifs",
+    "legalTitle": "Légal",
+    "terms": "Conditions Générales",
+    "privacy": "Politique de Confidentialité",
+    "refund": "Politique de Remboursement",
+    "plr": "Droits de Label Privé",
+    "earnings": "Avertissement sur les Gains",
+    "contactTitle": "Contact",
+    "support": "Support",
+    "paymentMethods": "Méthodes de Paiement Sécurisées",
+    "disclaimer": "Résultats non typiques. Les résultats individuels varient.",
+    "seeDisclaimer": "Voir l'avertissement complet",
+    "copyright": "© 2024 ContentForge s.r.o. Tous droits réservés.",
     "pagesTitle": "Pages",
     "home": "Accueil",
-    "resources": "Ressources",
     "freeResources": "Ressources Gratuites",
     "toolsRepository": "Référentiel d'Outils Numériques",
     "contact": "Contact",
@@ -198,14 +366,7 @@
     "customBookService": "Service de Livre Personnalisé",
     "customDigitalProduct": "Produit Numérique Personnalisé",
     "plrProducts": "Produits PLR Numériques",
-    "legalTitle": "Légal",
-    "terms": "Conditions Générales",
-    "privacy": "Politique de Confidentialité",
-    "refund": "Politique de Remboursement",
-    "plr": "Droits de Label Privé",
-    "partnerTerms": "Conditions Partenaires",
-    "paymentMethods": "Méthodes de Paiement Sécurisées",
-    "copyright": "© 2024 Réalisé par ContentForge s.r.o."
+    "partnerTerms": "Conditions Partenaires"
   },
   "contact": {
     "headline": "Entrer en Contact",
