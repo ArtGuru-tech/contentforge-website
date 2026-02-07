@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import CookieConsent from "@/components/CookieConsent";
+import PaddleInitializer from "@/components/PaddleInitializer";
 
 export default function ClientBody({
   children,
@@ -16,6 +17,7 @@ export default function ClientBody({
 
   return (
     <>
+      <PaddleInitializer />
       <CookieConsent />
       <div className="antialiased">{children}</div>
     </>

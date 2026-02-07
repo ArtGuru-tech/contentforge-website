@@ -9,13 +9,23 @@
     "subscribe": "Subscribe",
     "signIn": "Sign In",
     "login": "Login",
-    "legal": "Legal"
+    "legal": "Legal",
+    "concept": "Concept",
+    "usages": "Use Cases",
+    "samples": "Samples",
+    "buyNow": "BUY NOW"
   },
   "hero": {
     "tagline": "We create digital infoproducts for you",
-    "headline1": "1,000+ Done-For-You Digital Products",
-    "headline2": "Ready to Rebrand & Sell Today",
-    "description": "Stop spending weeks creating content from scratch. Get instant access to a complete library of professional ebooks, courses, templates, and AI prompts—all with 100% resale rights. Pay once, own forever.",
+    "limitedOffer": "-50% LIMITED OFFER",
+    "headline1": "+1,000 Digital Products",
+    "headline2": "Ready to Use",
+    "description": "Stop creating content from scratch. Get instant access to a complete library of professional ebooks, courses, templates, and AI prompts. Pay once, own forever.",
+    "ctaPrimary": "Get -50% Now",
+    "ctaSecondary": "View Products",
+    "trust1": "30-Day Guarantee",
+    "trust2": "Instant Access",
+    "trust3": "100% Resale Rights",
     "ctaButton": "Get Lifetime Access Now →",
     "guarantee": "30-Day Money-Back Guarantee",
     "trustBar1": "30-Day Money-Back Guarantee",
@@ -24,6 +34,105 @@
     "trustBar4": "No Subscription Required",
     "trustedBy": "Trusted by early adopters",
     "logoAlt": "ContentForge Logo"
+  },
+  "valueProposition": {
+    "headlineStart": "Time is your most",
+    "headlineHighlight": "valuable",
+    "headlineEnd": "asset.",
+    "paragraph1": "Creating quality digital products takes months of research, writing, and design. We've eliminated that obstacle.",
+    "paragraph2Start": "With ",
+    "paragraph2End": ", you get 99% of the work already done by experts. Customize in 5 minutes and launch your business immediately.",
+    "cta": "Explore the collection",
+    "quote": "Stop spending your life creating. Spend it selling and growing. We forge the tools, you build the empire.",
+    "author": "Founder",
+    "role": "ContentForge Global"
+  },
+  "useCases": {
+    "headline": "Dominate Your Market",
+    "subheadline": "Discover how our members use these assets to generate immediate revenue.",
+    "viral": {
+      "title": "\"Comment & Get\" Viral Strategy",
+      "subtitle": "The ultimate engagement hack.",
+      "description": "Offer an exclusive guide as a bonus. Force the algorithm to propel you with hundreds of comments generated in just hours.",
+      "badge": "Content Creators"
+    },
+    "shopify": {
+      "title": "Passive Shopify Empire",
+      "subtitle": "Sell while you sleep.",
+      "description": "List our premium templates and prompts. Collect 100% of the profits without ever managing physical inventory.",
+      "badge": "E-commerce"
+    },
+    "leads": {
+      "title": "High-End Lead Magnets",
+      "subtitle": "Convert visitors into fans.",
+      "description": "Capture thousands of emails by offering massive perceived value that your competitors normally sell at full price.",
+      "badge": "Growth Marketers"
+    },
+    "coaching": {
+      "title": "High-Ticket Coaching",
+      "description": "Offer exclusive bonuses (Notion templates, workbooks) to justify premium rates and retain elite clients."
+    },
+    "social": {
+      "title": "Social Content Scale",
+      "description": "Recycle our ebooks into TikTok scripts or LinkedIn carousels for a daily presence without creative effort."
+    }
+  },
+  "comparison": {
+    "headline": "The Inevitable Comparison",
+    "subheadline": "The gap between amateurism and industrial elite.",
+    "classic": {
+      "badge": "The Classic Approach",
+      "time": "+60 Hours",
+      "timeDesc": "Research and writing time per product",
+      "cost": "+$1,500",
+      "costDesc": "Minimum cost of a pro copywriter & designer",
+      "risk": "Risk: Product that doesn't sell after weeks of work."
+    },
+    "contentforge": {
+      "badge": "The ContentForge Advantage",
+      "time": "5 Minutes",
+      "timeDesc": "From download to first sale listing",
+      "cost": "Fixed Payment",
+      "costDesc": "Unlimited lifetime access to entire library",
+      "benefit": "Zero risk: Test 10 markets in one day."
+    }
+  },
+  "newPricing": {
+    "headline": "One Single Investment.",
+    "headlineHighlight": "Unlimited Revenue.",
+    "limitedStart": "Limited to the",
+    "limitedHighlight": "next 100 spots",
+    "limitedEnd": "at this price.",
+    "tooltip": "We drastically limit access to prevent our products from saturating the market. Only serious entrepreneurs will be able to exploit this goldmine.",
+    "guarantee": "30-Day Guarantee",
+    "secure": "SSL Secured",
+    "lite": {
+      "name": "Pack Lite",
+      "originalPrice": "$97",
+      "price": "$47",
+      "access": "Lifetime access",
+      "feature1": "500+ Essential Digital Products",
+      "feature2": "Ebooks, Templates & Guides",
+      "feature3": "Resale Rights (PLR) Included",
+      "cta": "Choose the Lite Option"
+    },
+    "pro": {
+      "badge": "Recommended by the elite",
+      "name": "Pack Pro",
+      "originalPrice": "$397",
+      "price": "$197",
+      "access": "One-Time Payment - Unlimited Access",
+      "feature1": "ALL of Pack Lite Included",
+      "feature2": "1000+ Premium & Exclusive Products",
+      "feature3": "Unreleased Video & Audio Courses",
+      "feature4": "Free Monthly Updates",
+      "cta": "Take Total Control"
+    }
+  },
+  "socialProof": {
+    "headline": "Join",
+    "count": "12,000+",
+    "suffix": "visionary entrepreneurs"
   },
   "productShowcase": {
     "ebook": "EBOOK",
@@ -141,9 +250,25 @@
     "formatsBadge": "Up to 6 Formats"
   },
   "productCategories": {
-    "badge": "Grow your business to the next level",
-    "headline": "What digital products\nyou can get?",
-    "description": "Stop wasting time searching for quality content or creating products from scratch. Eliminate the barrier of huge initial investments and no product ideas.",
+    "headline": "Your Digital",
+    "headlineHighlight": "Arsenal.",
+    "subheadline": "Every piece is a revenue opportunity.",
+    "viewCatalog": "View the full catalog",
+    "ebooks": {
+      "tag": "EBOOKS PLR",
+      "title": "Expert Guides",
+      "description": "In-depth ebooks on business, marketing and mindset."
+    },
+    "masterclass": {
+      "tag": "MASTERCLASS",
+      "title": "Strategic Vision",
+      "description": "Condensed training on sales funnels and monetization."
+    },
+    "templates": {
+      "tag": "TEMPLATES PRO",
+      "title": "Design Pack",
+      "description": "Notion systems, Canva and ultra-performant sales scripts."
+    },
     "ebooksBadge": "200+ Premium PLR Ebooks",
     "ebooksTitle": "Ebooks and Guidebooks",
     "ebooksDesc": "Give your audience engaging, quality reading. Only real and useful information. Both, in-depth and straightforward explanations on topics your customers want to consume.",
@@ -212,9 +337,26 @@
     }
   },
   "footer": {
+    "tagline": "Your complete digital product library. Ready to rebrand and sell.",
+    "platformTitle": "Platform",
+    "concept": "Concept",
+    "useCases": "Use Cases",
+    "resources": "Resources",
+    "pricing": "Pricing",
+    "legalTitle": "Legal",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "refund": "Refund Policy",
+    "plr": "Private Label Rights",
+    "earnings": "Earnings Disclaimer",
+    "contactTitle": "Contact",
+    "support": "Support",
+    "paymentMethods": "Secure Payment Methods",
+    "disclaimer": "Results not typical. Individual outcomes vary.",
+    "seeDisclaimer": "See full disclaimer",
+    "copyright": "© 2024 ContentForge s.r.o. All rights reserved.",
     "pagesTitle": "Pages",
     "home": "Home",
-    "resources": "Resources",
     "freeResources": "Free Resources",
     "toolsRepository": "Digital Tools Repository",
     "contact": "Contact",
@@ -224,14 +366,7 @@
     "customBookService": "Custom Book Service",
     "customDigitalProduct": "Custom Digital Product",
     "plrProducts": "PLR Digital Products",
-    "legalTitle": "Legal",
-    "terms": "Terms & Conditions",
-    "privacy": "Privacy Policy",
-    "refund": "Refund Policy",
-    "plr": "Private Label Rights",
-    "partnerTerms": "Partner Terms",
-    "paymentMethods": "Secure Payment Methods",
-    "copyright": "© 2024 Made by ContentForge s.r.o."
+    "partnerTerms": "Partner Terms"
   },
   "contact": {
     "headline": "Get in Touch",

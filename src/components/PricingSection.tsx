@@ -2,16 +2,18 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { openCheckout } from '@/lib/paddle';
 
 export default function PricingSection() {
   const t = useTranslations('pricing');
+  const locale = useLocale();
 
   return (
     <section id="pricing" className="w-full text-white bg-gradient-to-br from-[#003399] to-[#001155] px-4 lg:px-8 py-12 lg:py-24 relative overflow-hidden">
       <Heading t={t} />
-      <PriceCards t={t} />
+      <PriceCards t={t} locale={locale} />
       <TrustElements t={t} />
       <TopLeftCircle />
       <BottomRightCircle />
@@ -43,9 +45,10 @@ const Heading = ({ t }: HeadingProps) => {
 
 interface PriceCardsProps {
   t: (key: string) => string;
+  locale: string;
 }
 
-const PriceCards = ({ t }: PriceCardsProps) => (
+const PriceCards = ({ t, locale }: PriceCardsProps) => (
   <div className="flex flex-col lg:flex-row gap-8 lg:gap-8 w-full max-w-5xl mx-auto relative z-10">
     {/* LITE PLAN */}
     <div className="w-full bg-white text-black p-6 border-[1px] border-slate-300 rounded-xl shadow-xl">
@@ -123,15 +126,14 @@ const PriceCards = ({ t }: PriceCardsProps) => (
         </div>
       </div>
 
-      <Link href="/pricing" className="block">
-        <motion.button
-          whileHover={{ scale: 1.015 }}
-          whileTap={{ scale: 0.985 }}
-          className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors"
-        >
-          Get Started
-        </motion.button>
-      </Link>
+      <motion.button
+        whileHover={{ scale: 1.015 }}
+        whileTap={{ scale: 0.985 }}
+        onClick={() => openCheckout('lite', locale)}
+        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors cursor-pointer"
+      >
+        Get Started
+      </motion.button>
     </div>
 
     {/* PRO PLAN */}
@@ -247,15 +249,14 @@ const PriceCards = ({ t }: PriceCardsProps) => (
         </div>
       </div>
 
-      <Link href="/pricing" className="block">
-        <motion.button
-          whileHover={{ scale: 1.015 }}
-          whileTap={{ scale: 0.985 }}
-          className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors"
-        >
-          Get Started Pro
-        </motion.button>
-      </Link>
+      <motion.button
+        whileHover={{ scale: 1.015 }}
+        whileTap={{ scale: 0.985 }}
+        onClick={() => openCheckout('pro', locale)}
+        className="w-full py-4 mt-8 font-semibold bg-[#003399] hover:bg-[#002266] text-white rounded-lg uppercase transition-colors cursor-pointer"
+      >
+        Get Started Pro
+      </motion.button>
     </div>
   </div>
 );

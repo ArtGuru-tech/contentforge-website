@@ -12,6 +12,9 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/playwright/.cache/
 
 # next.js
 /.next/
@@ -35,8 +38,10 @@ yarn-error.log*
 .env*
 !.env.example
 
-# vercel
-.vercel
+# local docs (not committed)
+*.local.md
+SETUP-*.md
+!SETUP-EXAMPLE.md
 
 # typescript
 *.tsbuildinfo
