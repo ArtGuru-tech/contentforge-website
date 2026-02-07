@@ -403,11 +403,11 @@ export default function PLRPage() {
               <p className="text-gray-300 mb-4">
                 {isFrench ? (
                   <>
-                    Pour toute demande incluant des questions sur les licences, le support technique et les questions juridiques, veuillez <a href="contact" className="text-[#ffd700] hover:underline font-semibold">nous contacter via notre formulaire de contact</a>.
+                    Pour toute demande incluant des questions sur les licences, le support technique et les questions juridiques, veuillez <Link href="/contact" className="text-[#ffd700] hover:underline font-semibold">nous contacter via notre formulaire de contact</Link>.
                   </>
                 ) : (
                   <>
-                    For all inquiries including license questions, technical support, and legal matters, please <a href="contact" className="text-[#ffd700] hover:underline font-semibold">contact us through our contact form</a>.
+                    For all inquiries including license questions, technical support, and legal matters, please <Link href="/contact" className="text-[#ffd700] hover:underline font-semibold">contact us through our contact form</Link>.
                   </>
                 )}
               </p>
@@ -480,11 +480,11 @@ export default function PLRPage() {
             <p className="text-gray-300">
               {isFrench ? (
                 <>
-                  Cette licence vous accorde de larges droits commerciaux, mais avec responsabilité. Nous vous faisons confiance pour utiliser ces produits de manière éthique et légale. En cas de doute, <a href="contact" className="text-[#ffd700] hover:underline font-semibold">contactez-nous</a> avant d'agir.
+                  Cette licence vous accorde de larges droits commerciaux, mais avec responsabilité. Nous vous faisons confiance pour utiliser ces produits de manière éthique et légale. En cas de doute, <Link href="/contact" className="text-[#ffd700] hover:underline font-semibold">contactez-nous</Link> avant d'agir.
                 </>
               ) : (
                 <>
-                  This license grants you broad commercial rights, but with responsibility. We trust you to use these products ethically and legally. When in doubt, <a href="contact" className="text-[#ffd700] hover:underline font-semibold">contact us</a> before taking action.
+                  This license grants you broad commercial rights, but with responsibility. We trust you to use these products ethically and legally. When in doubt, <Link href="/contact" className="text-[#ffd700] hover:underline font-semibold">contact us</Link> before taking action.
                 </>
               )}
             </p>

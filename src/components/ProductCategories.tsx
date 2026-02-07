@@ -8,19 +8,19 @@ const categories = [
   {
     key: "ebooks",
     image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80",
-    glowColor: "gold",
+    glowClass: "bg-yellow-500/20",
     rotation: "rotate-[-6deg]",
   },
   {
     key: "masterclass",
     image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80",
-    glowColor: "blue-500",
+    glowClass: "bg-blue-500/20",
     rotation: "",
   },
   {
     key: "templates",
     image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80",
-    glowColor: "purple-500",
+    glowClass: "bg-purple-500/20",
     rotation: "",
   },
 ];
@@ -66,7 +66,7 @@ export default function ProductCategories() {
                 {t(`${category.key}.title`)}
               </h3>
               <div className={`relative mb-8 md:mb-12 transform group-hover/card:scale-110 ${index === 2 ? 'group-hover/card:-rotate-2' : index === 0 ? 'group-hover/card:rotate-2' : ''} transition-all duration-700`}>
-                <div className={`absolute -inset-4 bg-${category.glowColor}/20 blur-2xl rounded-full opacity-0 group-hover/card:opacity-100 transition-opacity duration-500`}></div>
+                <div className={`absolute -inset-4 ${category.glowClass} blur-2xl rounded-full opacity-0 group-hover/card:opacity-100 transition-opacity duration-500`}></div>
                 <div className="relative w-48 h-64 md:w-56 md:h-72">
                   <Image
                     src={category.image}

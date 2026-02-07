@@ -44,8 +44,11 @@ function generateGhostAdminToken(): string {
 export async function findMemberByEmail(email: string): Promise<{ id: string; labels: Array<{ id: string; name: string }> } | null> {
   const token = generateGhostAdminToken();
 
+  // Escape single quotes in email to prevent query injection
+  const safeEmail = email.replace(/'/g, "\\'");
+
   const response = await fetch(
-    `${GHOST_ADMIN_API_URL}/ghost/api/admin/members/?filter=email:'${encodeURIComponent(email)}'`,
+    `${GHOST_ADMIN_API_URL}/ghost/api/admin/members/?filter=email:'${encodeURIComponent(safeEmail)}'`,
     {
       headers: {
         Authorization: `Ghost ${token}`,
@@ -140,10 +143,10 @@ async function updateMemberTier(
   // Build new labels array
   const newLabels = [...existingLabels];
 
-  // Add the new tier label
+  // Add the new tier label (omit id to let Ghost generate it)
   const tierLabel = tier === 'pro' ? 'Pro' : 'Lite';
   if (!newLabels.some(l => l.name.toLowerCase() === tierLabel.toLowerCase())) {
-    newLabels.push({ id: '', name: tierLabel } as { id: string; name: string });
+    newLabels.push({ name: tierLabel } as { id: string; name: string });
   }
 
   // If upgrading to Pro, remove Lite label
@@ -177,7 +180,10 @@ async function updateMemberTier(
 export async function sendMagicLink(email: string): Promise<{ success: boolean; error?: string }> {
   const token = generateGhostAdminToken();
 
-  const response = await fetch(`${GHOST_ADMIN_API_URL}/ghost/api/admin/members/?filter=email:'${encodeURIComponent(email)}'`, {
+  // Escape single quotes in email to prevent query injection
+  const safeEmail = email.replace(/'/g, "\\'");
+
+  const response = await fetch(`${GHOST_ADMIN_API_URL}/ghost/api/admin/members/?filter=email:'${encodeURIComponent(safeEmail)}'`, {
     headers: {
       Authorization: `Ghost ${token}`,
     },

@@ -208,11 +208,11 @@ export default function PrivacyPage() {
             <p className="text-gray-300">
               {isFrench ? (
                 <>
-                  Vous avez le droit d'accéder, de corriger ou de supprimer vos données personnelles. Vous pouvez en faire la demande en <a href="contact" className="text-[#ffd700] hover:underline font-semibold">nous contactant</a>.
+                  Vous avez le droit d'accéder, de corriger ou de supprimer vos données personnelles. Vous pouvez en faire la demande en <Link href="/contact" className="text-[#ffd700] hover:underline font-semibold">nous contactant</Link>.
                 </>
               ) : (
                 <>
-                  You have the right to access, correct, or delete your personal data. You may request this by <a href="contact" className="text-[#ffd700] hover:underline font-semibold">contacting us</a>.
+                  You have the right to access, correct, or delete your personal data. You may request this by <Link href="/contact" className="text-[#ffd700] hover:underline font-semibold">contacting us</Link>.
                 </>
               )}
             </p>
@@ -270,11 +270,11 @@ export default function PrivacyPage() {
             <p className="text-gray-300 mb-4">
               {isFrench ? (
                 <>
-                  Si vous avez des questions concernant cette Politique de Confidentialité, veuillez <a href="contact" className="text-[#ffd700] hover:underline font-semibold">nous contacter via notre formulaire de contact</a>.
+                  Si vous avez des questions concernant cette Politique de Confidentialité, veuillez <Link href="/contact" className="text-[#ffd700] hover:underline font-semibold">nous contacter via notre formulaire de contact</Link>.
                 </>
               ) : (
                 <>
-                  If you have any questions about this Privacy Policy, please <a href="contact" className="text-[#ffd700] hover:underline font-semibold">contact us through our contact form</a>.
+                  If you have any questions about this Privacy Policy, please <Link href="/contact" className="text-[#ffd700] hover:underline font-semibold">contact us through our contact form</Link>.
                 </>
               )}
             </p>

@@ -15,6 +15,9 @@ export default function Navbar() {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Fallback: navigate to homepage with anchor if element not found (e.g., on other pages)
+      window.location.assign(`/#${id}`);
     }
   };
 

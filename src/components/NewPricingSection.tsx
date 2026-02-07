@@ -7,7 +7,7 @@ export default function NewPricingSection() {
 
   const scrollToPurchase = () => {
     // Placeholder for Paddle checkout
-    window.open("https://app.contentforge.cc", "_blank");
+    window.open("https://app.contentforge.cc", "_blank", "noopener,noreferrer");
   };
 
   return (
