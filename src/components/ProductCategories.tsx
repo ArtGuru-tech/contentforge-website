@@ -72,6 +72,7 @@ export default function ProductCategories() {
                     src={category.image}
                     alt={t(`${category.key}.title`)}
                     fill
+                    unoptimized
                     className={`object-cover rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.6)] ${category.rotation} relative z-10`}
                   />
                 </div>

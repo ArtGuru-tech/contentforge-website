@@ -120,6 +120,7 @@ function ResourceCard({ resourceKey, image, rotation, isLast, t }: ResourceCardP
           alt={t(`categories.${resourceKey}.title`)}
           width={192}
           height={256}
+          unoptimized
           className={`w-48 h-64 object-cover rounded shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${rotation}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded" />

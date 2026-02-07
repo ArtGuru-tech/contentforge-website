@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -9,6 +9,18 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const t = useTranslations("nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Close mobile menu on Escape key
+  const handleEscape = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape" && mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [handleEscape]);
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
@@ -88,6 +100,9 @@ export default function Navbar() {
             type="button"
             onClick={() => setMobileMenuOpen(true)}
             className="md:hidden text-white p-2"
+            aria-label="Open menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu-drawer"
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -96,6 +111,10 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
+        id="mobile-menu-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation menu"
         className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
           mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
@@ -103,6 +122,7 @@ export default function Navbar() {
         <div
           className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
         />
         <div
           className={`absolute right-0 top-0 h-full w-80 bg-[#0a0e27] border-l border-white/10 transform transition-transform duration-300 ${
@@ -114,6 +134,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               className="absolute top-4 right-4 text-white p-2"
+              aria-label="Close menu"
             >
               <X className="w-6 h-6" />
             </button>
