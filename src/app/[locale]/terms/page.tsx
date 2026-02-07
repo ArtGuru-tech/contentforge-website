@@ -32,7 +32,7 @@ export default function TermsPage() {
                 <strong className="text-[#ffd700]">{isFrench ? "Site Web :" : "Website:"}</strong> {isFrench ? "contentforge.app (le « Site ») est publié par :" : 'contentforge.app (the "Website") is published by:'}
               </p>
               <p>
-                <strong className="text-white">BAKCHICH</strong>, société par actions simplifiée {isFrench ? "au capital de 100 €, immatriculée sous le numéro 942552274, dont le siège social est situé au 60 RUE FRANCOIS IER, PARIS, 75008, France." : "with share capital of €100, registered under number 942552274, with registered office at 60 RUE FRANCOIS IER, PARIS, 75008, France."}
+                <strong className="text-white">BAKCHICH</strong>, société par actions simplifiée {isFrench ? "immatriculée sous le numéro 942552274, dont le siège social est situé au 60 RUE FRANCOIS IER, PARIS, 75008, France." : "registered under number 942552274, with registered office at 60 RUE FRANCOIS IER, PARIS, 75008, France."}
               </p>
               <p>
                 <strong className="text-[#ffd700]">{isFrench ? "Hébergeur du Site :" : "Website Host:"}</strong> Cloudflare, Paris<br />
