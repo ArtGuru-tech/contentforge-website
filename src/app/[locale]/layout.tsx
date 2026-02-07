@@ -5,9 +5,6 @@ import ClientBody from "../ClientBody";
 import type { Metadata } from "next";
 import { locales } from '@/i18n';
 
-// Allow dynamic rendering since middleware uses headers() for locale detection
-export const dynamic = 'force-dynamic';
-
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;

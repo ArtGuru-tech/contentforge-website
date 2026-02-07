@@ -4,8 +4,8 @@ import { createNavigation } from 'next-intl/navigation';
 export const routing = defineRouting({
   locales: ['en', 'fr'],
   defaultLocale: 'en',
-  // Automatically detect locale from browser Accept-Language header
-  localeDetection: true,
+  // Browser language detection is handled client-side in the root page
+  localeDetection: false,
   // Prefix the default locale as well for consistency
   localePrefix: 'always'
 });
