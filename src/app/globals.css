@@ -10,6 +10,9 @@
   --accent-blue: #0055ff;
   --glass-bg: rgba(255, 255, 255, 0.02);
   --glass-border: rgba(255, 255, 255, 0.08);
+  /* Tailwind token variables used by utilities like border-border */
+  --border: 0 0% 100% / 0.08;
+  --ring: 0 0% 100% / 0.15;
 }
 
 @layer base {

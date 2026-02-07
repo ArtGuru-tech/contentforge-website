@@ -44,7 +44,10 @@ export function initializePaddle(): void {
   if (typeof window === 'undefined' || isInitialized) return;
 
   const vendorId = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN;
-  const environment = process.env.NEXT_PUBLIC_PADDLE_ENVIRONMENT as 'sandbox' | 'production' || 'sandbox';
+
+  const rawEnv = process.env.NEXT_PUBLIC_PADDLE_ENVIRONMENT;
+  const environment: 'sandbox' | 'production' =
+    rawEnv === 'production' || rawEnv === 'sandbox' ? rawEnv : 'sandbox';
 
   if (!vendorId) {
     if (process.env.NODE_ENV === 'development') {
@@ -61,7 +64,12 @@ export function initializePaddle(): void {
 }
 
 export function openCheckout(plan: PlanType, locale?: string): void {
-  if (typeof window === 'undefined' || !window.Paddle) {
+  if (typeof window === 'undefined') return;
+
+  // Ensure Paddle is initialized before opening checkout
+  initializePaddle();
+
+  if (!window.Paddle) {
     console.error('Paddle not loaded');
     return;
   }

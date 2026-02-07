@@ -71,8 +71,9 @@ export async function findMemberByEmail(email: string): Promise<{ id: string; la
   });
 
   if (!response.ok) {
-    console.error('Failed to search Ghost member:', await response.text());
-    return null;
+    const errorText = await response.text();
+    console.error('Failed to search Ghost member:', errorText);
+    throw new Error(`Ghost member search failed (${response.status})`);
   }
 
   const data: GhostMemberSearchResponse = await response.json();
@@ -117,7 +118,9 @@ export async function createGhostMember(
     ],
   };
 
-  const response = await fetch(`${GHOST_ADMIN_API_URL}/ghost/api/admin/members/`, {
+  const url = new URL('/ghost/api/admin/members/', GHOST_ADMIN_API_URL);
+
+  const response = await fetch(url.toString(), {
     method: 'POST',
     headers: {
       Authorization: `Ghost ${token}`,
@@ -156,13 +159,13 @@ async function updateMemberTier(
     return { success: true, memberId };
   }
 
-  // Build new labels array
-  const newLabels = [...existingLabels];
+  // Build new labels array with union type to allow labels with or without id
+  const newLabels: Array<{ id: string; name: string } | { name: string }> = [...existingLabels];
 
   // Add the new tier label (omit id to let Ghost generate it)
   const tierLabel = tier === 'pro' ? 'Pro' : 'Lite';
   if (!newLabels.some(l => l.name.toLowerCase() === tierLabel.toLowerCase())) {
-    newLabels.push({ name: tierLabel } as { id: string; name: string });
+    newLabels.push({ name: tierLabel });
   }
 
   // If upgrading to Pro, remove Lite label
@@ -213,6 +216,13 @@ export async function sendMagicLink(email: string): Promise<{ success: boolean; 
   });
 
   if (!response.ok) {
+    const errorText = await response.text();
+    console.error('Failed to send magic link:', errorText);
+    return { success: false, error: `Failed to send magic link: ${response.status}` };
+  }
+
+  const data: GhostMemberSearchResponse = await response.json();
+  if (!data.members || data.members.length === 0) {
     return { success: false, error: 'Member not found' };
   }
 
