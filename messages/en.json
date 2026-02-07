@@ -185,6 +185,32 @@
     "ideasDesc": "Get inspired by 100+ digital product ideas that you can create and offer to your audience.",
     "ideasButton": "Explore ideas"
   },
+  "resourcesSection": {
+    "headline": "Your Digital Library.",
+    "subheadline": "Ready to use.",
+    "categories": {
+      "ebooks": {
+        "tag": "EBOOKS PLR",
+        "title": "Expert Guides",
+        "desc": "In-depth ebooks on business, marketing and personal development."
+      },
+      "courses": {
+        "tag": "VIDEO COURSES",
+        "title": "Strategic Vision",
+        "desc": "Step-by-step video training on the most profitable current trends."
+      },
+      "templates": {
+        "tag": "TEMPLATES",
+        "title": "Ready to Use",
+        "desc": "Professional templates for social media, emails and sales funnels."
+      },
+      "prompts": {
+        "tag": "AI PROMPTS",
+        "title": "Automation",
+        "desc": "Hundreds of optimized prompts to multiply your productivity by 10."
+      }
+    }
+  },
   "footer": {
     "pagesTitle": "Pages",
     "home": "Home",

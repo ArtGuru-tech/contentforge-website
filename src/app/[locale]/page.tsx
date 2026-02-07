@@ -13,7 +13,7 @@ import Footer from "@/components/Footer"
 import ProductShowcaseSection from "@/components/ProductShowcaseSection"
 import BouncyCardsFeatures from "@/components/BouncyCardsFeatures"
 import CardCarousel from "@/components/CardCarousel"
-import FreeResourcesWobble from "@/components/FreeResourcesWobble"
+import ResourcesSection from "@/components/ResourcesSection"
 import UnlimitedOptionsStickyCards from "@/components/UnlimitedOptionsStickyCards"
 import { StaggerTestimonials } from "@/components/StaggerTestimonials"
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
@@ -113,8 +113,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Free Resources Section */}
-      <FreeResourcesWobble />
+      {/* Resources Section */}
+      <ResourcesSection />
 
       {/* FAQ Section */}
       <FAQSection />

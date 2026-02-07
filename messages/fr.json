@@ -185,6 +185,32 @@
     "ideasDesc": "Inspirez-vous de plus de 100 idées de produits numériques que vous pouvez créer et offrir à votre audience.",
     "ideasButton": "Explorer les idées"
   },
+  "resourcesSection": {
+    "headline": "Votre Bibliothèque Digitale.",
+    "subheadline": "Prête à l'emploi.",
+    "categories": {
+      "ebooks": {
+        "tag": "EBOOKS PLR",
+        "title": "Guides Experts",
+        "desc": "Ebooks approfondis sur le business, le marketing et le développement personnel."
+      },
+      "courses": {
+        "tag": "COURS VIDÉO",
+        "title": "Vision Stratégique",
+        "desc": "Formations vidéo étape par étape sur les tendances actuelles les plus rentables."
+      },
+      "templates": {
+        "tag": "TEMPLATES",
+        "title": "Prêt à l'Usage",
+        "desc": "Templates professionnels pour réseaux sociaux, emails et tunnels de vente."
+      },
+      "prompts": {
+        "tag": "IA PROMPTS",
+        "title": "Automatisation",
+        "desc": "Des centaines de prompts optimisés pour multiplier votre productivité par 10."
+      }
+    }
+  },
   "footer": {
     "pagesTitle": "Pages",
     "home": "Accueil",
