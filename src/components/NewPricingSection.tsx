@@ -9,12 +9,20 @@ export default function NewPricingSection() {
     if (typeof window === "undefined") return;
 
     const url = "https://app.contentforge.cc";
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    const newWindow = window.open(url, "_blank");
+
+    if (newWindow) {
+      // Prevent tabnabbing by explicitly nullifying opener
+      try {
+        newWindow.opener = null;
+      } catch {
+        // Ignore cross-origin errors
+      }
+      return;
+    }
 
     // Fallback when popups are blocked
-    if (!newWindow) {
-      window.location.assign(url);
-    }
+    window.location.assign(url);
   };
 
   return (

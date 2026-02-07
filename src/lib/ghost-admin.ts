@@ -20,6 +20,15 @@ interface GhostMemberSearchResponse {
   }>;
 }
 
+// Email validation regex
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validateEmail(email: string): void {
+  if (!EMAIL_REGEX.test(email)) {
+    throw new Error('Invalid email format');
+  }
+}
+
 function generateGhostAdminToken(): string {
   if (!GHOST_ADMIN_API_KEY) {
     throw new Error('Ghost Admin API key not configured');
@@ -42,6 +51,9 @@ function generateGhostAdminToken(): string {
 }
 
 export async function findMemberByEmail(email: string): Promise<{ id: string; labels: Array<{ id: string; name: string }> } | null> {
+  // Validate email format first
+  validateEmail(email);
+
   const token = generateGhostAdminToken();
 
   // Escape single quotes in email to prevent query injection
@@ -80,6 +92,9 @@ export async function createGhostMember(
   tier: 'lite' | 'pro',
   name?: string
 ): Promise<{ success: boolean; memberId?: string; error?: string }> {
+  // Validate email format first
+  validateEmail(email);
+
   const token = generateGhostAdminToken();
 
   // First check if member already exists
@@ -179,6 +194,9 @@ async function updateMemberTier(
 }
 
 export async function sendMagicLink(email: string): Promise<{ success: boolean; error?: string }> {
+  // Validate email format first
+  validateEmail(email);
+
   const token = generateGhostAdminToken();
 
   // Escape single quotes in email to prevent query injection
